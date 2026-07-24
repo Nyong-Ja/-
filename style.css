@@ -351,3 +351,62 @@ footer {
     color: var(--text-primary);
     word-break: keep-all;
 }
+
+/* ==========================================
+   반응형 사이드바 고정 & 그리드 레이아웃
+   ========================================== */
+
+/* 1. 전체 너비 제한 해제 (화면 전체 활용) */
+.container {
+    max-width: 100% !important;
+    padding: 20px 30px !important;
+}
+
+/* 2. 메인 배치 (좌측 패널 + 우측 패널) */
+.main-content {
+    display: flex !important;
+    gap: 24px !important;
+    align-items: flex-start !important;
+}
+
+/* 3. 좌측 증거 패널 화면 왼쪽 고정 (Sticky) 및 세로 버튼 정렬 */
+.left-panel {
+    width: 300px !important; /* 고정 폭 */
+    flex-shrink: 0 !important;
+    position: sticky !important;
+    top: 20px !important; /* 스크롤 내려도 상단 20px 위치 고정 */
+    max-height: calc(100vh - 40px) !important;
+    overflow-y: auto !important; /* 내용 길어지면 내부 스크롤 */
+}
+
+/* 증거 선택 버튼을 세로 1열로 착착 정렬 */
+.evidence-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+}
+
+/* 4. 우측 유령 리스트: 화면 넓이에 따라 1열 ~ 3열 자동 재배치 */
+.right-panel {
+    flex-grow: 1 !important;
+}
+
+#ghost-list-container {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)) !important;
+    gap: 16px !important;
+}
+
+/* 5. 화면이 아주 좁아질 때 (모바일/작은 창) */
+@media (max-width: 850px) {
+    .main-content {
+        flex-direction: column !important;
+    }
+    .left-panel {
+        width: 100% !important;
+        position: static !important;
+    }
+    #ghost-list-container {
+        grid-template-columns: 1fr !important;
+    }
+}
