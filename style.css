@@ -273,3 +273,20 @@ footer {
     color: var(--text-secondary);
     font-size: 0.85rem;
 }
+
+/* 이동 속도 빨간색 타원형 뱃지 스타일 */
+.ghost-badge-group {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.ghost-speed {
+    font-size: 0.8rem;
+    background-color: rgba(239, 68, 68, 0.2); /* 은은한 빨간 배경 */
+    border: 1px solid #ef4444;                 /* 빨간 테두리 */
+    color: #ef4444;                            /* 빨간 글씨 */
+    padding: 2px 10px;
+    border-radius: 12px;                        /* 타원형 둥근 모서리 */
+    font-weight: 600;
+}
