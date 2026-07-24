@@ -23,7 +23,7 @@
         </div>
 
         <div class="content-wrapper">
-            <!-- 좌측: 증거 선택 섹션 -->
+            <!-- 상단: 증거 선택 섹션 (가로 정렬) -->
             <div class="left-panel">
                 <div class="panel-header">
                     <h2>증거 선택 (Evidence)</h2>
@@ -49,7 +49,7 @@
                 </div>
             </div>
 
-            <!-- 우측: 결과 리스트 섹션 -->
+            <!-- 하단: 결과 리스트 섹션 (4열 그리드) -->
             <div class="right-panel">
                 <div class="result-header">
                     <span>추정 가능한 유령</span>
@@ -62,6 +62,24 @@
             </div>
         </div>
     </div>
+
+    <!-- 우측 고정 퀵 메뉴 아이콘 바 -->
+    <div class="quick-sidebar-bar">
+        <button class="quick-icon-btn" onclick="toggleQuickPanel('news')" title="공지사항/소식">📢</button>
+        <button class="quick-icon-btn" onclick="toggleQuickPanel('stream')" title="방송 보러가기">📺</button>
+        <button class="quick-icon-btn" onclick="toggleQuickPanel('community')" title="커뮤니티">💬</button>
+    </div>
+
+    <!-- 오른쪽에서 열리는 슬라이드 패널 -->
+    <aside id="quick-slide-panel" class="quick-slide-panel">
+        <div class="panel-header">
+            <h3 id="quick-panel-title">공지사항</h3>
+            <button class="close-btn" onclick="closeQuickPanel()">✕</button>
+        </div>
+        <div id="quick-panel-content" class="panel-content">
+            <!-- JS로 내용 동적 삽입 -->
+        </div>
+    </aside>
 
     <footer>
         © 2026 Phasmophobia Interactive CheatSheet
