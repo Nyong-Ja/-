@@ -283,10 +283,10 @@ footer {
 
 .ghost-speed {
     font-size: 0.8rem;
-    background-color: rgba(239, 68, 68, 0.2); /* 은은한 빨간 배경 */
-    border: 1px solid #ef4444;                 /* 빨간 테두리 */
-    color: #ef4444;                            /* 빨간 글씨 */
+    background-color: rgba(239, 68, 68, 0.15); /* 은은한 빨간 배경 */
+    border: 1px solid var(--accent-red);        /* 빨간 테두리 (#ef4444) */
+    color: var(--accent-red);                   /* 빨간 글자 */
     padding: 2px 10px;
-    border-radius: 12px;                        /* 타원형 둥근 모서리 */
+    border-radius: 12px;
     font-weight: 600;
 }
