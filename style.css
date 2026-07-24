@@ -330,11 +330,11 @@ footer {
     color: #ffffff;
 }
 
-/* 펼쳐졌을 때 '접기' 텍스트 변경 느낌을 위한 설정 */
+/* 펼쳐진 상태([open])에서도 누르기 전과 완전히 동일한 스타일 유지 */
 .ghost-details[open] .more-btn {
-    content: "접기 ▴";
-    color: var(--accent-red);
-    background-color: rgba(239, 68, 68, 0.1);
+    color: #ffffff;                             /* 동일한 흰색 글자 */
+    background-color: rgba(255, 255, 255, 0.1);  /* 동일한 회색 배경 */
+    border: 1px solid rgba(255, 255, 255, 0.15); /* 동일한 회색 테두리 */
 }
 
 /* 펼쳐졌을 때 내용 영역 */
