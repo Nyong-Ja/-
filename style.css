@@ -78,57 +78,45 @@ header {
 }
 
 /* ==========================================
-   메인 레이아웃 (좌측 고정 & 우측 그리드)
+   상단 증거 패널 (가로 배치) & 전체 레이아웃
    ========================================== */
 
 .content-wrapper {
     display: flex;
-    gap: 24px;
-    align-items: flex-start;
+    flex-direction: column; /* 위에서 아래로 세로 정렬 */
+    gap: 20px;
 }
 
-/* 좌측 증거 선택 패널: 화면 왼쪽 고정 (Sticky) */
+/* 상단 증거 패널 전체 박스 */
 .left-panel {
-    width: 320px;
-    flex-shrink: 0;
-    position: sticky;
-    top: 20px;
-    max-height: calc(100vh - 40px);
-    overflow-y: auto;
+    width: 100%;
     background-color: var(--card-bg);
     border: 1px solid var(--card-border);
     border-radius: 12px;
-    padding: 1.5rem;
+    padding: 1.2rem 1.5rem;
 }
 
-/* 우측 유령 리스트 패널 */
-.right-panel {
-    flex-grow: 1;
-    background-color: var(--card-bg);
-    border: 1px solid var(--card-border);
-    border-radius: 12px;
-    padding: 1.5rem;
-}
-
+/* 헤더 및 안내문구 숨기기 / 정렬 조정 */
 .panel-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
 }
 
 .panel-header h2 {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
 }
 
 #reset-btn {
     background: transparent;
     border: 1px solid var(--card-border);
     color: var(--text-secondary);
-    padding: 0.4rem 0.8rem;
+    padding: 0.3rem 0.8rem;
     border-radius: 6px;
     cursor: pointer;
     transition: 0.2s;
+    font-size: 0.85rem;
 }
 
 #reset-btn:hover {
@@ -139,7 +127,7 @@ header {
 .guide-text {
     font-size: 0.85rem;
     color: var(--text-secondary);
-    margin-bottom: 1.25rem;
+    margin-bottom: 1rem;
 }
 
 .badge {
@@ -151,24 +139,26 @@ header {
 .state-include { background-color: rgba(16, 185, 129, 0.2); color: var(--accent-green); }
 .state-exclude { background-color: rgba(239, 68, 68, 0.2); color: var(--accent-red); }
 
-/* 증거 선택 버튼 세로 1열 정렬 */
+/* 핵심: 증거 버튼들을 상단에 가로 일렬로 배치 */
 .evidence-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-bottom: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7개 증거 버튼 가로 7열 동일 비율 분할 */
+    gap: 10px;
+    margin-bottom: 0.8rem;
 }
 
 .evidence-btn {
     background-color: var(--bg-color);
     border: 1px solid var(--card-border);
     color: var(--text-primary);
-    padding: 0.8rem;
+    padding: 0.75rem 0.5rem;
     border-radius: 8px;
     cursor: pointer;
     font-weight: 600;
+    font-size: 0.9rem;
     transition: all 0.2s;
     text-align: center;
+    white-space: nowrap; /* 글자 줄바꿈 방지 */
 }
 
 .evidence-btn:hover {
@@ -191,13 +181,21 @@ header {
 .info-notice {
     background-color: rgba(56, 189, 248, 0.1);
     border-left: 3px solid var(--accent-blue);
-    padding: 0.75rem 1rem;
+    padding: 0.5rem 1rem;
     font-size: 0.85rem;
     color: var(--text-secondary);
     border-radius: 0 6px 6px 0;
 }
 
-/* 우측 결과 패널 헤더 */
+/* 하단 유령 리스트 패널 */
+.right-panel {
+    width: 100%;
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
 .result-header {
     display: flex;
     justify-content: space-between;
@@ -213,7 +211,7 @@ header {
     font-size: 1.2rem;
 }
 
-/* 우측 유령 카드 반응형 그리드 */
+/* 유령 카드 반응형 그리드 */
 .ghost-list, #ghost-list-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -229,7 +227,6 @@ header {
     padding: 1.25rem 1rem 1rem 1rem;
 }
 
-/* 유령 이름 + 뱃지 (세로 배치 & 중앙 정렬) */
 .ghost-card-header {
     display: flex;
     flex-direction: column;
@@ -245,7 +242,6 @@ header {
     text-align: center;
 }
 
-/* 속도 및 정신력 뱃지 (중앙 정렬) */
 .ghost-badge-group {
     display: flex;
     gap: 8px;
@@ -271,7 +267,6 @@ header {
     font-weight: 600;
 }
 
-/* 증거 태그 영역 (중앙 정렬) */
 .ghost-evidences {
     display: flex;
     flex-wrap: wrap;
@@ -294,7 +289,6 @@ header {
     color: var(--accent-green);
 }
 
-/* 접이식 더보기(details) 스타일 (양끝 정렬 유지) */
 .ghost-details {
     margin-top: 10px;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -342,7 +336,7 @@ header {
     line-height: 1.5;
     color: var(--text-primary);
     word-break: keep-all;
-    text-align: left; /* 설명글은 가독성을 위해 좌측 정렬 */
+    text-align: left;
 }
 
 footer {
@@ -352,16 +346,15 @@ footer {
     font-size: 0.85rem;
 }
 
-/* 모바일 및 화면이 작아질 때 */
-@media (max-width: 850px) {
-    .content-wrapper {
-        flex-direction: column;
+/* 창이 좁아질 때 (태블릿/모바일) 반응형 대응 */
+@media (max-width: 1024px) {
+    .evidence-grid {
+        grid-template-columns: repeat(4, 1fr); /* 4열로 조정 */
     }
-    .left-panel {
-        width: 100%;
-        position: static;
-    }
-    .ghost-list, #ghost-list-container {
-        grid-template-columns: 1fr;
+}
+
+@media (max-width: 600px) {
+    .evidence-grid {
+        grid-template-columns: repeat(2, 1fr); /* 모바일에선 2열로 조정 */
     }
 }
