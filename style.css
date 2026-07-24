@@ -83,7 +83,7 @@ header {
 
 .content-wrapper {
     display: flex;
-    flex-direction: column; /* 위에서 아래로 세로 정렬 */
+    flex-direction: column;
     gap: 20px;
 }
 
@@ -96,7 +96,6 @@ header {
     padding: 1.2rem 1.5rem;
 }
 
-/* 헤더 및 안내문구 숨기기 / 정렬 조정 */
 .panel-header {
     display: flex;
     justify-content: space-between;
@@ -139,10 +138,10 @@ header {
 .state-include { background-color: rgba(16, 185, 129, 0.2); color: var(--accent-green); }
 .state-exclude { background-color: rgba(239, 68, 68, 0.2); color: var(--accent-red); }
 
-/* 핵심: 증거 버튼들을 상단에 가로 일렬로 배치 */
+/* 증거 버튼 상단 가로 일렬 배치 (7열) */
 .evidence-grid {
     display: grid;
-    grid-template-columns: repeat(7, 1fr); /* 7개 증거 버튼 가로 7열 동일 비율 분할 */
+    grid-template-columns: repeat(7, 1fr);
     gap: 10px;
     margin-bottom: 0.8rem;
 }
@@ -158,7 +157,7 @@ header {
     font-size: 0.9rem;
     transition: all 0.2s;
     text-align: center;
-    white-space: nowrap; /* 글자 줄바꿈 방지 */
+    white-space: nowrap;
 }
 
 .evidence-btn:hover {
@@ -202,7 +201,7 @@ header {
     align-items: center;
     padding-bottom: 1rem;
     border-bottom: 1px solid var(--card-border);
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
     font-weight: 700;
 }
 
@@ -211,20 +210,23 @@ header {
     font-size: 1.2rem;
 }
 
-/* 유령 카드 반응형 그리드 */
+/* ==========================================
+   유령 카드 4열 고정 및 큼직한 스타일링
+   ========================================== */
+
 .ghost-list, #ghost-list-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 16px;
+    grid-template-columns: repeat(4, 1fr); /* 정확히 한 줄에 4개 배치 */
+    gap: 18px;
     padding-right: 4px;
 }
 
-/* 유령 카드 전체 (중앙 정렬) */
+/* 유령 카드 박스 */
 .ghost-card {
     background-color: var(--bg-color);
     border: 1px solid var(--card-border);
-    border-radius: 8px;
-    padding: 1.25rem 1rem 1rem 1rem;
+    border-radius: 10px;
+    padding: 1.5rem 1.2rem 1.2rem 1.2rem; /* 내부 여백 확대 */
 }
 
 .ghost-card-header {
@@ -232,16 +234,18 @@ header {
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    margin-bottom: 0.8rem;
+    margin-bottom: 1rem;
 }
 
+/* 유령 이름 (크기 확대) */
 .ghost-name {
-    font-size: 1.5rem;
+    font-size: 1.65rem;
     font-weight: 700;
     color: var(--text-primary);
     text-align: center;
 }
 
+/* 속도 및 정신력 뱃지 (크기 확대) */
 .ghost-badge-group {
     display: flex;
     gap: 8px;
@@ -250,36 +254,37 @@ header {
 }
 
 .ghost-sanity {
-    font-size: 0.8rem;
+    font-size: 0.88rem;
     background-color: rgba(56, 189, 248, 0.15);
-    padding: 2px 8px;
-    border-radius: 12px;
+    padding: 4px 10px;
+    border-radius: 14px;
     color: var(--accent-blue);
     font-weight: 600;
 }
 
 .ghost-speed {
-    font-size: 0.8rem;
+    font-size: 0.88rem;
     background-color: rgba(239, 68, 68, 0.15);
-    padding: 2px 8px;
-    border-radius: 12px;
+    padding: 4px 10px;
+    border-radius: 14px;
     color: var(--accent-red);
     font-weight: 600;
 }
 
+/* 증거 태그 (크기 확대) */
 .ghost-evidences {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 6px;
-    margin-bottom: 0.8rem;
+    margin-bottom: 1rem;
 }
 
 .ev-tag {
-    font-size: 0.75rem;
+    font-size: 0.82rem;
     background-color: var(--card-bg);
     border: 1px solid var(--card-border);
-    padding: 2px 6px;
+    padding: 4px 8px;
     border-radius: 4px;
     color: var(--text-secondary);
 }
@@ -289,10 +294,11 @@ header {
     color: var(--accent-green);
 }
 
+/* 접이식 더보기(details) 스타일 */
 .ghost-details {
     margin-top: 10px;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
-    padding-top: 8px;
+    padding-top: 10px;
 }
 
 .ghost-summary {
@@ -300,7 +306,7 @@ header {
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
-    font-size: 0.85rem;
+    font-size: 0.88rem;
     color: var(--text-secondary);
     user-select: none;
 }
@@ -310,11 +316,11 @@ header {
 }
 
 .more-btn {
-    font-size: 0.75rem;
+    font-size: 0.78rem;
     color: #ffffff;
     background-color: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.15);
-    padding: 2px 8px;
+    padding: 3px 10px;
     border-radius: 4px;
     transition: all 0.2s ease;
 }
@@ -332,7 +338,7 @@ header {
 
 .ghost-tip-content {
     margin-top: 8px;
-    font-size: 0.88rem;
+    font-size: 0.9rem;
     line-height: 1.5;
     color: var(--text-primary);
     word-break: keep-all;
@@ -346,15 +352,24 @@ footer {
     font-size: 0.85rem;
 }
 
-/* 창이 좁아질 때 (태블릿/모바일) 반응형 대응 */
-@media (max-width: 1024px) {
+/* ==========================================
+   반응형 예외 처리 (창이 많이 좁아질 때)
+   ========================================== */
+
+@media (max-width: 1200px) {
+    .ghost-list, #ghost-list-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
     .evidence-grid {
-        grid-template-columns: repeat(4, 1fr); /* 4열로 조정 */
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
+    .ghost-list, #ghost-list-container {
+        grid-template-columns: 1fr;
+    }
     .evidence-grid {
-        grid-template-columns: repeat(2, 1fr); /* 모바일에선 2열로 조정 */
+        grid-template-columns: repeat(2, 1fr);
     }
 }
