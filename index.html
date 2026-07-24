@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>파스모포비아 치트시트 | 인게임 가이드</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-inner">
+            <span class="logo">PHASMO SHEET</span>
+            <span class="tag">VER 1.0</span>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <div class="title-section">
+            <div class="sub-title">INTERACTIVE CHEAT SHEET</div>
+            <h1>파스모포비아 증거 계산기</h1>
+            <p>발견한 증거를 클릭(포함/제외)하여 남은 유령을 빠르게 추려내세요.</p>
+        </div>
+
+        <div class="content-wrapper">
+            <!-- 좌측: 증거 선택 섹션 -->
+            <div class="left-panel">
+                <div class="panel-header">
+                    <h2>증거 선택 (Evidence)</h2>
+                    <button id="reset-btn">초기화 ↺</button>
+                </div>
+                
+                <div class="guide-text">
+                    * 1번 클릭: <span class="badge state-include">포함</span> | 2번 클릭: <span class="badge state-exclude">제외</span> | 3번 클릭: 미선택
+                </div>
+
+                <div class="evidence-grid">
+                    <button class="evidence-btn" data-evidence="EMF 5">EMF 5단계</button>
+                    <button class="evidence-btn" data-evidence="DOTS">D.O.T.S 프로젝트</button>
+                    <button class="evidence-btn" data-evidence="손자국">자외선 (손자국)</button>
+                    <button class="evidence-btn" data-evidence="고스트 오브">고스트 오브</button>
+                    <button class="evidence-btn" data-evidence="고스트 라이팅">고스트 라이팅</button>
+                    <button class="evidence-btn" data-evidence="스피릿 박스">스피릿 박스</button>
+                    <button class="evidence-btn" data-evidence="서늘함">서늘함</button>
+                </div>
+
+                <div class="info-notice">
+                    ※ 미믹(Mimic)은 기본 증거 외에 항상 <strong>'고스트 오브'</strong>를 추가로 보여줍니다.
+                </div>
+            </div>
+
+            <!-- 우측: 결과 리스트 섹션 -->
+            <div class="right-panel">
+                <div class="result-header">
+                    <span>추정 가능한 유령</span>
+                    <span class="count-badge"><strong id="ghost-count">24</strong>종 남음</span>
+                </div>
+
+                <div id="ghost-list-container" class="ghost-list">
+                    <!-- JS로 카드 목록 생성 -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        © 2026 Phasmophobia Interactive CheatSheet
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
