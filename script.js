@@ -269,23 +269,33 @@ function renderUI() {
 
     ghostCountEl.textContent = filtered.length;
 
-    ghostListContainer.innerHTML = filtered.map(ghost => `
-        <div class="ghost-card">
-            <div class="ghost-card-header">
-                <span class="ghost-name">${ghost.name}</span>
-                <div class="ghost-badge-group">
-                    <span class="ghost-speed">속도: ${ghost.speed}</span>
-                    <span class="ghost-sanity">정신력 기준: ${ghost.sanity}</span>
-                </div>
+ghostListContainer.innerHTML = filtered.map(ghost => `
+    <div class="ghost-card">
+        <div class="ghost-card-header">
+            <span class="ghost-name">${ghost.name}</span>
+            <div class="ghost-badge-group">
+                <span class="ghost-speed">속도: ${ghost.speed}</span>
+                <span class="ghost-sanity">정신력 기준: ${ghost.sanity}</span>
             </div>
-            <div class="ghost-evidences">
-                ${ghost.evidence.map(ev => `
-                    <span class="ev-tag ${selectedEvidences.has(ev) ? 'matched' : ''}">${ev}</span>
-                `).join('')}
-            </div>
-            <div class="ghost-tip">💡 ${ghost.tip}</div>
         </div>
-    `).join('');
+        <div class="ghost-evidences">
+            ${ghost.evidence.map(ev => `
+                <span class="ev-tag ${selectedEvidences.has(ev) ? 'matched' : ''}">${ev}</span>
+            `).join('')}
+        </div>
+
+        <!-- 💡 접이식 더보기 세팅 -->
+        <details class="ghost-details">
+            <summary class="ghost-summary">
+                <span>💡 상세 정보 및 특징</span>
+                <span class="more-btn">더보기 ▾</span>
+            </summary>
+            <div class="ghost-tip-content">
+                ${ghost.tip}
+            </div>
+        </details>
+    </div>
+`).join('');
 }
 
 // 초기 화면 렌더링
