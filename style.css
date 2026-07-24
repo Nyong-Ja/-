@@ -234,10 +234,11 @@ header {
 
 .ghost-sanity {
     font-size: 0.8rem;
-    background-color: var(--card-bg);
+    background-color: rgba(56, 189, 248, 0.15); /* 은은한 반투명 파란 배경 */
     padding: 2px 8px;
     border-radius: 12px;
     color: var(--accent-blue);
+    font-weight: 600;                           /* 글자를 더 또렷하게 보이게 추가 */
 }
 
 .ghost-evidences {
@@ -283,8 +284,9 @@ footer {
 
 .ghost-speed {
     font-size: 0.8rem;
-    background-color: var(--card-bg);
+    background-color: rgba(239, 68, 68, 0.15); /* 은은한 반투명 빨간 배경 */
     padding: 2px 8px;
     border-radius: 12px;
     color: var(--accent-red);
+    font-weight: 600;                          /* 글자를 더 또렷하게 보이게 추가 */
 }
