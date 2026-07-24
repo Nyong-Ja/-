@@ -290,3 +290,55 @@ footer {
     color: var(--accent-red);
     font-weight: 600;                          /* 글자를 더 또렷하게 보이게 추가 */
 }
+
+/* 접이식 더보기(details) 스타일 */
+.ghost-details {
+    margin-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 8px;
+}
+
+/* 기본 화살표 제거 및 커스텀 요약 헤더 */
+.ghost-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    user-select: none;
+}
+
+.ghost-summary::-webkit-details-marker {
+    display: none; /* 브라우저 기본 화살표 숨김 */
+}
+
+/* 더보기 버튼 스타일 */
+.more-btn {
+    font-size: 0.75rem;
+    color: var(--accent-blue);
+    background-color: rgba(56, 189, 248, 0.1);
+    padding: 2px 8px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.ghost-summary:hover .more-btn {
+    background-color: rgba(56, 189, 248, 0.25);
+}
+
+/* 펼쳐졌을 때 '접기' 텍스트 변경 느낌을 위한 설정 */
+.ghost-details[open] .more-btn {
+    content: "접기 ▴";
+    color: var(--accent-red);
+    background-color: rgba(239, 68, 68, 0.1);
+}
+
+/* 펼쳐졌을 때 내용 영역 */
+.ghost-tip-content {
+    margin-top: 8px;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: var(--text-primary);
+    word-break: keep-all;
+}
