@@ -33,17 +33,13 @@ function renderUI() {
     const container = document.getElementById('ghost-list-container');
     const countBadge = document.getElementById('ghost-count');
 
-    // 필터링
     const filtered = ghosts.filter(ghost => {
-        // 포함 검색
         for (let inc of selectedIncludes) {
             if (!ghost.evidence.includes(inc)) {
-                // 미믹 예외 처리
                 if (ghost.name.includes("미믹") && inc === "고스트 오브") continue;
                 return false;
             }
         }
-        // 제외 검색
         for (let exc of selectedExcludes) {
             if (ghost.evidence.includes(exc)) {
                 if (ghost.name.includes("미믹") && exc === "고스트 오브") return false;
@@ -83,7 +79,7 @@ function renderUI() {
     `).join('');
 }
 
-// 버튼 클릭 토글 이벤트 세팅
+// 증거 버튼 이벤트
 document.querySelectorAll('.evidence-btn').forEach(btn => {
     btn.addEventListener('click', () => {
         const ev = btn.dataset.evidence;
@@ -103,7 +99,7 @@ document.querySelectorAll('.evidence-btn').forEach(btn => {
     });
 });
 
-// 초기화 버튼
+// 초기화
 document.getElementById('reset-btn').addEventListener('click', () => {
     selectedIncludes.clear();
     selectedExcludes.clear();
@@ -114,10 +110,19 @@ document.getElementById('reset-btn').addEventListener('click', () => {
 });
 
 // ==========================================
-// 우측 퀵 슬라이드 패널 토글 로직
+// 우측 퀵 슬라이드 패널 토글 및 실시간 검색 로직
 // ==========================================
 
 const panelData = {
+    search: {
+        title: "🔍 유령 정보 실시간 검색",
+        content: `
+            <input type="text" id="quick-search-input" class="search-input-box" placeholder="유령 이름 또는 특징 검색 (예: 데오겐, 향, 소금)..." onkeyup="handleQuickSearch(this.value)">
+            <div id="quick-search-results">
+                <p style="color: var(--text-secondary); font-size: 0.85rem;">검색어를 입력하시면 관련 유령 정보가 바로 나타납니다.</p>
+            </div>
+        `
+    },
     news: {
         title: "📢 최신 업데이트 & 공지",
         content: `
@@ -141,6 +146,17 @@ const panelData = {
         content: `
             <p>시청자 및 게이머분들과 소통하고 제보를 받는 공간입니다.</p>
         `
+    },
+    contact: {
+        title: "✉️ 문의 및 제보",
+        content: `
+            <div style="background: rgba(255, 255, 255, 0.05); padding: 14px; border-radius: 8px; border: 1px solid var(--card-border);">
+                <p style="font-weight: bold; margin-bottom: 8px; color: var(--accent-blue);">피드백 및 정보 제보</p>
+                <p style="margin-bottom: 10px; font-size: 0.85rem; color: var(--text-secondary);">치트시트 데이터 오류 제보 및 건의사항은 아래 채널로 전달해 주세요.</p>
+                <p style="margin-bottom: 6px;">📧 <strong>이메일:</strong> contact@example.com</p>
+                <p>💬 <strong>방송/디스코드:</strong> 방송 중 채팅 또는 커뮤니티 제보</p>
+            </div>
+        `
     }
 };
 
@@ -153,12 +169,50 @@ function toggleQuickPanel(type) {
         titleEl.innerText = panelData[type].title;
         contentEl.innerHTML = panelData[type].content;
         panel.classList.add('open');
+
+        // 검색 탭 클릭 시 입력창에 바로 포커스 이동
+        if (type === 'search') {
+            setTimeout(() => {
+                const searchInput = document.getElementById('quick-search-input');
+                if (searchInput) searchInput.focus();
+            }, 100);
+        }
     }
 }
 
 function closeQuickPanel() {
     const panel = document.getElementById('quick-slide-panel');
     panel.classList.remove('open');
+}
+
+// 우측 슬라이드 패널 내 실시간 검색 함수
+function handleQuickSearch(query) {
+    const resultBox = document.getElementById('quick-search-results');
+    const keyword = query.trim().toLowerCase();
+
+    if (!keyword) {
+        resultBox.innerHTML = '<p style="color: var(--text-secondary); font-size: 0.85rem;">검색어를 입력하시면 관련 유령 정보가 바로 나타납니다.</p>';
+        return;
+    }
+
+    const matchedGhosts = ghosts.filter(g => 
+        g.name.toLowerCase().includes(keyword) || 
+        g.tip.toLowerCase().includes(keyword) ||
+        g.evidence.some(ev => ev.toLowerCase().includes(keyword))
+    );
+
+    if (matchedGhosts.length === 0) {
+        resultBox.innerHTML = '<p style="color: #ef4444; font-size: 0.85rem;">검색 결과가 없습니다.</p>';
+        return;
+    }
+
+    resultBox.innerHTML = matchedGhosts.map(g => `
+        <div class="search-result-card">
+            <div class="search-result-title">${g.name}</div>
+            <div style="font-size: 0.78rem; color: var(--text-secondary); margin-bottom: 4px;">속도: ${g.speed} | 정신력: ${g.sanity}</div>
+            <div style="font-size: 0.82rem; line-height: 1.4; color: var(--text-primary);">${g.tip}</div>
+        </div>
+    `).join('');
 }
 
 // 최초 실행
