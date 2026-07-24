@@ -365,6 +365,11 @@ header {
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
 }
 
+.quick-icon-btn.search-btn {
+    border-color: var(--accent-blue);
+    background-color: rgba(56, 189, 248, 0.15);
+}
+
 .quick-icon-btn:hover {
     background-color: var(--card-border);
     border-color: var(--accent-blue);
@@ -415,6 +420,38 @@ header {
     overflow-y: auto;
     font-size: 0.9rem;
     line-height: 1.6;
+}
+
+/* 검색 탭 전용 입력창 및 검색 결과 카드 스타일 */
+.search-input-box {
+    width: 100%;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid var(--card-border);
+    background-color: var(--bg-color);
+    color: #fff;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    outline: none;
+}
+
+.search-input-box:focus {
+    border-color: var(--accent-blue);
+}
+
+.search-result-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 10px;
+}
+
+.search-result-title {
+    font-weight: bold;
+    color: var(--accent-blue);
+    font-size: 1rem;
+    margin-bottom: 4px;
 }
 
 footer {
