@@ -1,32 +1,45 @@
-// 유령 데이터 베이스 예시
+// 유령 데이터 베이스 (hasAccel: 일반 시야 가속 / hasSpecialSpeed: 조건부 특수 속도)
 const ghosts = [
-    { name: "스피릿 (Spirit)", speed: "1.7 m/s", sanity: "50%", evidence: ["EMF 5", "고스트 라이팅", "스피릿 박스"], tip: "💡 향을 피우면 180초 동안 공격하지 못합니다. (일반 유령은 90초)" },
-    { name: "레이스 (Wraith)", speed: "1.7 m/s", sanity: "50%", evidence: ["EMF 5", "고스트 오브", "DOTS"], tip: "💡 소금을 절대 밟지 않으며, 벽을 관통하여 플레이어 위치로 텔레포트할 수 있습니다." },
-    { name: "팬텀 (Phantom)", speed: "1.7 m/s", sanity: "50%", evidence: ["스피릿 박스", "손자국", "DOTS"], tip: "💡 사진을 찍으면 실체가 실시간으로 사라지며, 실체화 시 깜빡이는 주기가 깁니다." },
-    { name: "폴터가이스트 (Poltergeist)", speed: "1.7 m/s", sanity: "50%", evidence: ["스피릿 박스", "손자국", "고스트 라이팅"], tip: "💡 여러 물건을 한 번에 날려 정신력을 대폭 감소시키는 폭발 능력이 있습니다." },
-    { name: "밴시 (Banshee)", speed: "1.7 m/s", sanity: "50%", evidence: ["손자국", "고스트 오브", "DOTS"], tip: "💡 타겟으로 지정한 1명의 정신력만 기준으로 헌팅을 시작하며, 음파 측정기로 고유 비명을 들려줍니다." },
-    { name: "진 (Jinn)", speed: "1.7 ~ 2.5 m/s", sanity: "50%", evidence: ["EMF 5", "손자국", "서늘함"], tip: "💡 두꺼비집이 켜져 있을 때 멀리 있는 플레이어를 보면 빠른 속도로 추격합니다." },
-    { name: "마레 (Mare)", speed: "1.7 m/s", sanity: "불 꺼짐 60% / 불 켜짐 40%", evidence: ["스피릿 박스", "고스트 오브", "고스트 라이팅"], tip: "💡 어둠 속에서 공격성이 증가하며, 불을 켜면 즉시 스위치를 꺼버리는 특성이 있습니다." },
-    { name: "레버넌트 (Revenant)", speed: "1.0 / 3.0 m/s", sanity: "50%", evidence: ["고스트 오브", "고스트 라이팅", "서늘함"], tip: "💡 시야에 플레이어가 없을 때는 매우 둔하지만, 목격 즉시 엄청난 속도로 추격합니다." },
-    { name: "셰이드 (Shade)", speed: "1.7 m/s", sanity: "35%", evidence: ["EMF 5", "고스트 라이팅", "서늘함"], tip: "💡 수줍음이 많아 같은 방에 사람이 많으면 행동을 멈추고 헌팅 기준 정신력이 매우 낮습니다." },
-    { name: "데몬 (Demon)", speed: "1.7 m/s", sanity: "70%", evidence: ["손자국", "고스트 라이팅", "서늘함"], tip: "💡 정신력과 상관없이 특수 능력으로 헌팅을 시작할 수 있으며, 십자가 영향 범위가 넓습니다." },
-    { name: "유레이 (Yurei)", speed: "1.7 m/s", sanity: "50%", evidence: ["고스트 오브", "서늘함", "DOTS"], tip: "💡 문을 세게 닫으며 주변 플레이어의 정신력을 대폭 깎는 능력이 있습니다." },
-    { name: "오니 (Oni)", speed: "1.7 m/s", sanity: "50%", evidence: ["EMF 5", "서늘함", "DOTS"], tip: "💡 활동성이 매우 높으며 실체화 시 모습이 거의 투명해지지 않고 선명하게 보입니다." },
-    { name: "요괴 (Yokai)", speed: "1.7 m/s", sanity: "80% (목소리 반응)", evidence: ["스피릿 박스", "고스트 오브", "DOTS"], tip: "💡 근처에서 목소리를 내면 높은 정신력에서도 헌팅하며, 헌팅 중 청력이 매우 둔합니다." },
-    { name: "한투 (Hantu)", speed: "1.4 ~ 2.7 m/s", sanity: "50%", evidence: ["손자국", "고스트 오브", "서늘함"], tip: "💡 온도가 낮은 방일수록 이동 속도가 빠르며, 두꺼비집을 켜는 것을 싫어합니다." },
-    { name: "고료 (Goryo)", speed: "1.7 m/s", sanity: "50%", evidence: ["EMF 5", "손자국", "DOTS"], tip: "💡 DOTS 증거는 비디오 카메라를 통해서만 확인할 수 있으며, 다른 방으로 이사를 잘 가지 않습니다." },
-    { name: "마이링 (Myling)", speed: "1.7 m/s", sanity: "50%", evidence: ["EMF 5", "손자국", "고스트 라이팅"], tip: "💡 헌팅 시 발소리가 매우 조용하여 가까이 접근할 때까지 잘 들리지 않습니다." },
-    { name: "온료 (Onryo)", speed: "1.7 m/s", sanity: "60%", evidence: ["스피릿 박스", "고스트 오브", "서늘함"], tip: "💡 불꽃(촛불)을 두려워하며, 촛불이 3번 꺼질 때마다 확정적으로 헌팅을 시도합니다." },
-    { name: "라이주 (Raiju)", speed: "1.7 ~ 2.5 m/s", sanity: "65%", evidence: ["EMF 5", "고스트 오브", "DOTS"], tip: "💡 작동 중인 전자제품 근처에서 속도가 빨라지며, 장비 교란 범위를 넓게 가집니다." },
-    { name: "오바케 (Obake)", speed: "1.7 m/s", sanity: "50%", evidence: ["EMF 5", "손자국", "고스트 오브"], tip: "💡 6손가락 지문을 남길 확률이 있으며, 헌팅 도중 순간적으로 다른 유령으로 변신합니다." },
-    { name: "미믹 (The Mimic)", speed: "변동 (복제)", sanity: "변동", evidence: ["스피릿 박스", "손자국", "서늘함"], tip: "💡 다른 유령의 특성을 복제하며, 항상 거짓 증거로 '고스트 오브'를 보여줍니다." },
-    { name: "모로이 (Moroi)", speed: "1.5 ~ 2.25 m/s", sanity: "50%", evidence: ["스피릿 박스", "고스트 라이팅", "서늘함"], tip: "💡 스피릿 박스 음성을 들은 조사관에게 저주를 걸어 정신력을 빠르게 깎으며, 정신력이 낮을수록 속도가 빨라집니다." },
-    { name: "데오겐 (Deogen)", speed: "0.4 ~ 3.0 m/s", sanity: "40%", evidence: ["스피릿 박스", "고스트 라이팅", "DOTS"], tip: "💡 숨어있는 플레이어의 위치를 항상 알고 다가오며, 가깝게 접근하면 속도가 현저히 느려집니다. 스피릿 박스 특수 숨소리 주파수가 존재합니다." },
-    { name: "타에 (Thaye)", speed: "1.0 ~ 2.75 m/s", sanity: "75%", evidence: ["고스트 오브", "고스트 라이팅", "DOTS"], tip: "💡 초기에는 매우 빠르고 공격적이지만, 플레이어가 근처에 머물수록 나이를 먹어 약해집니다." }
+    { name: "스피릿 (Spirit)", speed: "1.7 m/s", sanity: "50%", evidence: ["EMF 5", "고스트 라이팅", "스피릿 박스"], hasAccel: true, hasSpecialSpeed: false, hasForcedEv: false, hasTargetRoam: false, tip: "💡 향을 피우면 180초 동안 공격하지 못합니다. (일반 유령은 90초)" },
+    { name: "레이스 (Wraith)", speed: "1.7 m/s", sanity: "50%", evidence: ["EMF 5", "고스트 오브", "DOTS"], hasAccel: true, hasSpecialSpeed: false, hasForcedEv: false, hasTargetRoam: true, tip: "💡 소금을 절대 밟지 않으며, 벽을 관통하여 플레이어 위치로 텔레포트할 수 있습니다." },
+    { name: "팬텀 (Phantom)", speed: "1.7 m/s", sanity: "50%", evidence: ["스피릿 박스", "손자국", "DOTS"], hasAccel: true, hasSpecialSpeed: false, hasForcedEv: false, hasTargetRoam: true, tip: "💡 사진을 찍으면 실체가 실시간으로 사라지며, 플레이어 위치로 걸어오는 특성이 있습니다." },
+    { name: "폴터가이스트 (Poltergeist)", speed: "1.7 m/s", sanity: "50%", evidence: ["스피릿 박스", "손자국", "고스트 라이팅"], hasAccel: true, hasSpecialSpeed: false, hasForcedEv: false, hasTargetRoam: false, tip: "💡 여러 물건을 한 번에 날려 정신력을 대폭 감소시키는 폭발 능력이 있습니다." },
+    { name: "밴시 (Banshee)", speed: "1.7 m/s", sanity: "50%", evidence: ["손자국", "고스트 오브", "DOTS"], hasAccel: true, hasSpecialSpeed: false, hasForcedEv: false, hasTargetRoam: true, tip: "💡 타겟으로 지정한 1명을 쫓아 로밍하며, 음파 측정기로 고유 비명을 들려줍니다." },
+    { name: "진 (Jinn)", speed: "1.7 ~ 2.5 m/s", sanity: "50%", evidence: ["EMF 5", "손자국", "서늘함"], hasAccel: true, hasSpecialSpeed: true, hasForcedEv: false, hasTargetRoam: false, tip: "💡 두꺼비집이 켜져 있을 때 멀리 있는 플레이어를 보면 빠른 속도로 가속 추격합니다." },
+    { name: "마레 (Mare)", speed: "1.7 m/s", sanity: "불 꺼짐 60% / 불 켜짐 40%", evidence: ["스피릿 박스", "고스트 오브", "고스트 라이팅"], hasAccel: true, hasSpecialSpeed: false, hasForcedEv: false, hasTargetRoam: false, tip: "💡 어둠 속에서 공격성이 증가하며, 불을 켜면 즉시 스위치를 꺼버리는 특성이 있습니다." },
+    { name: "레버넌트 (Revenant)", speed: "1.0 / 3.0 m/s", sanity: "50%", evidence: ["고스트 오브", "고스트 라이팅", "서늘함"], hasAccel: false, hasSpecialSpeed: true, hasForcedEv: false, hasTargetRoam: false, tip: "💡 시야 가속이 없지만, 시야에 플레이어가 없을 때는 1.0 m/s, 목격 즉시 3.0 m/s로 고정 가속합니다." },
+    { name: "셰이드 (Shade)", speed: "1.7 m/s", sanity: "35%", evidence: ["EMF 5", "고스트 라이팅", "서늘함"], hasAccel: true, hasSpecialSpeed: false, hasForcedEv: false, hasTargetRoam: false, tip: "💡 수줍음이 많아 같은 방에 사람이 많으면 행동을 멈추고 헌팅 기준 정신력이 매우 낮습니다." },
+    { name: "데몬 (Demon)", speed: "1.7 m/s", sanity: "70%", evidence: ["손자국", "고스트 라이팅", "서늘함"], hasAccel: true, hasSpecialSpeed: false, hasForcedEv: false, hasTargetRoam: false, tip: "💡 정신력과 상관없이 특수 능력으로 헌팅을 시작할 수 있으며, 십자가 영향 범위가 넓습니다." },
+    { name: "유레이 (Yurei)", speed: "1.7 m/s", sanity: "50%", evidence: ["고스트 오브", "서늘함", "DOTS"], hasAccel: true, hasSpecialSpeed: false, hasForcedEv: false, hasTargetRoam: false, tip: "💡 문을 세게 닫으며 주변 플레이어의 정신력을 대폭 깎는 능력이 있습니다." },
+    { name: "오니 (Oni)", speed: "1.7 m/s", sanity: "50%", evidence: ["EMF 5", "서늘함", "DOTS"], hasAccel: true, hasSpecialSpeed: false, hasForcedEv: false, hasTargetRoam: false, tip: "💡 활동성이 매우 높으며 실체화 시 모습이 거의 투명해지지 않고 선명하게 보입니다." },
+    { name: "요괴 (Yokai)", speed: "1.7 m/s", sanity: "80% (목소리 반응)", evidence: ["스피릿 박스", "고스트 오브", "DOTS"], hasAccel: true, hasSpecialSpeed: false, hasForcedEv: false, hasTargetRoam: false, tip: "💡 근처에서 목소리를 내면 높은 정신력에서도 헌팅하며, 헌팅 중 청력이 매우 둔합니다." },
+    { name: "한투 (Hantu)", speed: "1.4 ~ 2.7 m/s", sanity: "50%", evidence: ["손자국", "고스트 오브", "서늘함"], hasAccel: false, hasSpecialSpeed: true, hasForcedEv: true, hasTargetRoam: false, tip: "💡 시야 가속이 없지만, 온도가 낮은 방일수록 독자적으로 속도가 빨라집니다." },
+    { name: "고료 (Goryo)", speed: "1.7 m/s", sanity: "50%", evidence: ["EMF 5", "손자국", "DOTS"], hasAccel: true, hasSpecialSpeed: false, hasForcedEv: true, hasTargetRoam: false, tip: "💡 DOTS 증거는 비디오 카메라로만 관찰되며, 악몽 이상 난이도에서 'DOTS'가 고정 증거입니다." },
+    { name: "마이링 (Myling)", speed: "1.7 m/s", sanity: "50%", evidence: ["EMF 5", "손자국", "고스트 라이팅"], hasAccel: true, hasSpecialSpeed: false, hasForcedEv: false, hasTargetRoam: false, tip: "💡 헌팅 시 발소리가 매우 조용하여 가까이 접근할 때까지 잘 들리지 않습니다." },
+    { name: "온료 (Onryo)", speed: "1.7 m/s", sanity: "60%", evidence: ["스피릿 박스", "고스트 오브", "서늘함"], hasAccel: true, hasSpecialSpeed: false, hasForcedEv: false, hasTargetRoam: false, tip: "💡 불꽃(촛불)을 두려워하며, 촛불이 3번 꺼질 때마다 확정적으로 헌팅을 시도합니다." },
+    { name: "라이주 (Raiju)", speed: "1.7 ~ 2.5 m/s", sanity: "65%", evidence: ["EMF 5", "고스트 오브", "DOTS"], hasAccel: true, hasSpecialSpeed: true, hasForcedEv: false, hasTargetRoam: false, tip: "💡 작동 중인 전자제품 근처에서 가속도가 크게 증가하며 속도가 2.5 m/s로 급상승합니다." },
+    { name: "오바케 (Obake)", speed: "1.7 m/s", sanity: "50%", evidence: ["EMF 5", "손자국", "고스트 오브"], hasAccel: true, hasSpecialSpeed: false, hasForcedEv: true, hasTargetRoam: false, tip: "💡 6손가락 지문 확률이 있으며, 악몽 이상 난이도에서 '자외선(손자국)'이 고정 증거입니다." },
+    { name: "미믹 (The Mimic)", speed: "변동 (복제)", sanity: "변동", evidence: ["스피릿 박스", "손자국", "서늘함"], hasAccel: true, hasSpecialSpeed: true, hasForcedEv: true, hasTargetRoam: true, tip: "💡 다른 유령의 속도를 복제하며, 항상 거짓 증거로 '고스트 오브'가 고정 관찰됩니다." },
+    { name: "모로이 (Moroi)", speed: "1.5 ~ 2.25 m/s", sanity: "50%", evidence: ["스피릿 박스", "고스트 라이팅", "서늘함"], hasAccel: true, hasSpecialSpeed: true, hasForcedEv: true, hasTargetRoam: false, tip: "💡 평균 정신력이 낮을수록 기본 속도가 빨라지며, 시야 가속도 함께 적용됩니다." },
+    { name: "데오겐 (Deogen)", speed: "0.4 ~ 3.0 m/s", sanity: "40%", evidence: ["스피릿 박스", "고스트 라이팅", "DOTS"], hasAccel: false, hasSpecialSpeed: true, hasForcedEv: true, hasTargetRoam: false, tip: "💡 시야 가속이 없지만, 먼 거리에서는 3.0 m/s, 가까워질수록 0.4 m/s로 속도가 변합니다." },
+    { name: "타에 (Thaye)", speed: "1.0 ~ 2.75 m/s", sanity: "75%", evidence: ["고스트 오브", "고스트 라이팅", "DOTS"], hasAccel: false, hasSpecialSpeed: true, hasForcedEv: false, hasTargetRoam: false, tip: "💡 시야 가속이 없습니다. 시간이 지나고 나이를 먹을수록 2.75 m/s에서 1.0 m/s까지 느려집니다." }
 ];
 
 const selectedIncludes = new Set();
 const selectedExcludes = new Set();
+
+// 특수 필터 상태 관리
+const activeSpecialFilters = {
+    hasAccel: false,
+    hasSpecialSpeed: false,
+    hasForcedEv: false,
+    hasTargetRoam: false
+};
+
+function toggleFilter(filterKey) {
+    activeSpecialFilters[filterKey] = !activeSpecialFilters[filterKey];
+    renderUI();
+}
 
 // 네비게이션 탭 전환
 function switchTab(tabName) {
@@ -40,18 +53,26 @@ function renderUI() {
     const countBadge = document.getElementById('ghost-count');
 
     const filtered = ghosts.filter(ghost => {
+        // 1. 증거 포함 조건
         for (let inc of selectedIncludes) {
             if (!ghost.evidence.includes(inc)) {
                 if (ghost.name.includes("미믹") && inc === "고스트 오브") continue;
                 return false;
             }
         }
+        // 2. 증거 제외 조건
         for (let exc of selectedExcludes) {
             if (ghost.evidence.includes(exc)) {
                 if (ghost.name.includes("미믹") && exc === "고스트 오브") return false;
                 return false;
             }
         }
+        // 3. 특수 필터 조건 (가속도 / 특수속도 / 고정증거 / 타겟로밍)
+        if (activeSpecialFilters.hasAccel && !ghost.hasAccel) return false;
+        if (activeSpecialFilters.hasSpecialSpeed && !ghost.hasSpecialSpeed) return false;
+        if (activeSpecialFilters.hasForcedEv && !ghost.hasForcedEv) return false;
+        if (activeSpecialFilters.hasTargetRoam && !ghost.hasTargetRoam) return false;
+
         return true;
     });
 
@@ -109,9 +130,18 @@ document.querySelectorAll('.evidence-btn').forEach(btn => {
 document.getElementById('reset-btn').addEventListener('click', () => {
     selectedIncludes.clear();
     selectedExcludes.clear();
+    activeSpecialFilters.hasAccel = false;
+    activeSpecialFilters.hasSpecialSpeed = false;
+    activeSpecialFilters.hasForcedEv = false;
+    activeSpecialFilters.hasTargetRoam = false;
+
     document.querySelectorAll('.evidence-btn').forEach(btn => {
         btn.classList.remove('included', 'excluded');
     });
+    document.querySelectorAll('.special-filters input[type="checkbox"]').forEach(chk => {
+        chk.checked = false;
+    });
+
     renderUI();
 });
 
@@ -157,7 +187,7 @@ const panelData = {
         title: "✉️ 문의 및 제보",
         content: `
             <div style="background: rgba(255, 255, 255, 0.05); padding: 14px; border-radius: 8px; border: 1px solid var(--card-border);">
-                <p style="font-weight: bold; margin-bottom: 8px; color: var(--accent-blue);">피드백 및 정보 제보</p>
+                <p style="font-weight: bold; margin-bottom: 8px; color: var(--accent-light);">피드백 및 정보 제보</p>
                 <p style="margin-bottom: 10px; font-size: 0.85rem; color: var(--text-secondary);">치트시트 데이터 오류 제보 및 건의사항은 아래 채널로 전달해 주세요.</p>
                 <p style="margin-bottom: 6px;">📧 <strong>이메일:</strong> contact@example.com</p>
                 <p>💬 <strong>방송/디스코드:</strong> 방송 중 채팅 또는 커뮤니티 제보</p>
