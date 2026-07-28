@@ -28,6 +28,14 @@ const ghosts = [
 const selectedIncludes = new Set();
 const selectedExcludes = new Set();
 
+// 상단 네비게이션 탭 전환 함수
+function switchTab(tabName) {
+    document.querySelectorAll('.nav-tab').forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+    
+    // 추후 '유령 도감', '장비', '맵' 전용 페이지/뷰 확장 가능
+}
+
 // UI 렌더링 함수
 function renderUI() {
     const container = document.getElementById('ghost-list-container');
@@ -170,7 +178,6 @@ function toggleQuickPanel(type) {
         contentEl.innerHTML = panelData[type].content;
         panel.classList.add('open');
 
-        // 검색 탭 클릭 시 입력창에 바로 포커스 이동
         if (type === 'search') {
             setTimeout(() => {
                 const searchInput = document.getElementById('quick-search-input');
@@ -185,7 +192,6 @@ function closeQuickPanel() {
     panel.classList.remove('open');
 }
 
-// 우측 슬라이드 패널 내 실시간 검색 함수
 function handleQuickSearch(query) {
     const resultBox = document.getElementById('quick-search-results');
     const keyword = query.trim().toLowerCase();
