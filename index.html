@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>파스모포비아 치트시트 | 인게임 가이드</title>
+    <title>파스모포비아 치트시트 & 종합 가이드</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,18 +12,18 @@
         <!-- 상단 헤더 레이아웃 (좌: 타이틀 / 중: 메뉴 탭 / 우: 스타일 검색창) -->
         <div class="title-section">
             <div class="title-left">
-                <div class="sub-title">INTERACTIVE CHEAT SHEET</div>
-                <h1>파스모포비아 증거 계산기</h1>
-                <p>발견한 증거를 클릭(포함/제외)하여 남은 유령을 빠르게 추려내세요.</p>
+                <div class="sub-title">INTERACTIVE CHEAT SHEET & DATABASE</div>
+                <h1 id="page-main-title">파스모포비아 증거 계산기</h1>
+                <p id="page-main-desc">발견한 증거를 클릭(포함/제외)하여 남은 유령을 빠르게 추려내세요.</p>
             </div>
             
             <!-- 중앙 네비게이션 메뉴 탭 -->
             <nav class="top-nav">
-                <button class="nav-tab active" onclick="switchTab('evidence')">증거 계산기</button>
-                <button class="nav-tab" onclick="switchTab('ghosts')">유령 도감</button>
-                <button class="nav-tab" onclick="switchTab('equipment')">장비 가이드</button>
-                <button class="nav-tab" onclick="switchTab('maps')">맵 정보</button>
-                <button class="nav-tab" onclick="switchTab('guide')">공략 / 정보</button>
+                <button class="nav-tab active" data-tab="evidence" onclick="switchTab('evidence')">증거 계산기</button>
+                <button class="nav-tab" data-tab="ghosts" onclick="switchTab('ghosts')">유령 도감</button>
+                <button class="nav-tab" data-tab="equipment" onclick="switchTab('equipment')">장비 가이드</button>
+                <button class="nav-tab" data-tab="maps" onclick="switchTab('maps')">맵 정보</button>
+                <button class="nav-tab" data-tab="guide" onclick="switchTab('guide')">공략 / 정보</button>
             </nav>
 
             <!-- 우측 상단 이미지 스타일 검색창 -->
@@ -32,64 +32,92 @@
             </div>
         </div>
 
-        <div class="content-wrapper">
-            <!-- 상단: 증거 선택 섹션 (가로 정렬) -->
-            <div class="left-panel">
-                <div class="panel-header">
-                    <h2>증거 선택 (Evidence)</h2>
-                    <button id="reset-btn">초기화 ↺</button>
-                </div>
-                
-                <div class="guide-text">
-                    * 1번 클릭: <span class="badge state-include">포함</span> | 2번 클릭: <span class="badge state-exclude">제외</span> | 3번 클릭: 미선택
+        <!-- 1. 증거 계산기 탭 뷰 -->
+        <div id="tab-evidence" class="tab-content active">
+            <div class="content-wrapper">
+                <div class="left-panel">
+                    <div class="panel-header">
+                        <h2>증거 선택 (Evidence)</h2>
+                        <button id="reset-btn">초기화 ↺</button>
+                    </div>
+                    
+                    <div class="guide-text">
+                        * 1번 클릭: <span class="badge state-include">포함</span> | 2번 클릭: <span class="badge state-exclude">제외</span> | 3번 클릭: 미선택
+                    </div>
+
+                    <div class="evidence-grid">
+                        <button class="evidence-btn" data-evidence="EMF 5">EMF 5단계</button>
+                        <button class="evidence-btn" data-evidence="DOTS">D.O.T.S 프로젝트</button>
+                        <button class="evidence-btn" data-evidence="손자국">자외선 (손자국)</button>
+                        <button class="evidence-btn" data-evidence="고스트 오브">고스트 오브</button>
+                        <button class="evidence-btn" data-evidence="고스트 라이팅">고스트 라이팅</button>
+                        <button class="evidence-btn" data-evidence="스피릿 박스">스피릿 박스</button>
+                        <button class="evidence-btn" data-evidence="서늘함">서늘함</button>
+                    </div>
+
+                    <div class="info-notice">
+                        ※ 미믹(Mimic)은 기본 증거 외에 항상 <strong>'고스트 오브'</strong>를 추가로 보여줍니다.
+                    </div>
                 </div>
 
-                <div class="evidence-grid">
-                    <button class="evidence-btn" data-evidence="EMF 5">EMF 5단계</button>
-                    <button class="evidence-btn" data-evidence="DOTS">D.O.T.S 프로젝트</button>
-                    <button class="evidence-btn" data-evidence="손자국">자외선 (손자국)</button>
-                    <button class="evidence-btn" data-evidence="고스트 오브">고스트 오브</button>
-                    <button class="evidence-btn" data-evidence="고스트 라이팅">고스트 라이팅</button>
-                    <button class="evidence-btn" data-evidence="스피릿 박스">스피릿 박스</button>
-                    <button class="evidence-btn" data-evidence="서늘함">서늘함</button>
-                </div>
+                <div class="right-panel">
+                    <div class="result-header">
+                        <div class="result-header-left">
+                            <span>추정 가능한 유령</span>
+                            <div class="special-filters">
+                                <label class="filter-chip">
+                                    <input type="checkbox" id="filter-accel" onchange="toggleFilter('hasAccel')">
+                                    <span>🚀 가속도 유령</span>
+                                </label>
+                                <label class="filter-chip">
+                                    <input type="checkbox" id="filter-special-speed" onchange="toggleFilter('hasSpecialSpeed')">
+                                    <span>⚡ 특수 속도 유령</span>
+                                </label>
+                                <label class="filter-chip">
+                                    <input type="checkbox" id="filter-forced" onchange="toggleFilter('hasForcedEv')">
+                                    <span>📌 고정 증거 보유</span>
+                                </label>
+                                <label class="filter-chip">
+                                    <input type="checkbox" id="filter-roam" onchange="toggleFilter('hasTargetRoam')">
+                                    <span>🎯 타겟 로밍 / 이동</span>
+                                </label>
+                            </div>
+                        </div>
+                        <span class="count-badge"><strong id="ghost-count">24</strong>종 남음</span>
+                    </div>
 
-                <div class="info-notice">
-                    ※ 미믹(Mimic)은 기본 증거 외에 항상 <strong>'고스트 오브'</strong>를 추가로 보여줍니다.
+                    <div id="ghost-list-container" class="ghost-list">
+                        <!-- JS로 카드 생성 -->
+                    </div>
                 </div>
             </div>
+        </div>
 
-            <!-- 하단: 결과 리스트 섹션 (필터 4종 분리 추가) -->
-            <div class="right-panel">
-                <div class="result-header">
-                    <div class="result-header-left">
-                        <span>추정 가능한 유령</span>
-                        <!-- 특수 필터 체크박스 영역 -->
-                        <div class="special-filters">
-                            <label class="filter-chip">
-                                <input type="checkbox" id="filter-accel" onchange="toggleFilter('hasAccel')">
-                                <span>🚀 가속도 유령</span>
-                            </label>
-                            <label class="filter-chip">
-                                <input type="checkbox" id="filter-special-speed" onchange="toggleFilter('hasSpecialSpeed')">
-                                <span>⚡ 특수 속도 유령</span>
-                            </label>
-                            <label class="filter-chip">
-                                <input type="checkbox" id="filter-forced" onchange="toggleFilter('hasForcedEv')">
-                                <span>📌 고정 증거 보유</span>
-                            </label>
-                            <label class="filter-chip">
-                                <input type="checkbox" id="filter-roam" onchange="toggleFilter('hasTargetRoam')">
-                                <span>🎯 타겟 로밍 / 이동</span>
-                            </label>
-                        </div>
-                    </div>
-                    <span class="count-badge"><strong id="ghost-count">24</strong>종 남음</span>
-                </div>
+        <!-- 2. 유령 도감 탭 뷰 -->
+        <div id="tab-ghosts" class="tab-content">
+            <div class="category-grid" id="ghost-dictionary-container">
+                <!-- JS로 동적 생성 -->
+            </div>
+        </div>
 
-                <div id="ghost-list-container" class="ghost-list">
-                    <!-- JS로 카드 목록 생성 -->
-                </div>
+        <!-- 3. 장비 가이드 탭 뷰 -->
+        <div id="tab-equipment" class="tab-content">
+            <div class="category-grid" id="equipment-container">
+                <!-- JS로 동적 생성 -->
+            </div>
+        </div>
+
+        <!-- 4. 맵 정보 탭 뷰 -->
+        <div id="tab-maps" class="tab-content">
+            <div class="category-grid" id="maps-container">
+                <!-- JS로 동적 생성 -->
+            </div>
+        </div>
+
+        <!-- 5. 공략 / 정보 탭 뷰 -->
+        <div id="tab-guide" class="tab-content">
+            <div class="guide-grid" id="guide-container">
+                <!-- JS로 동적 생성 -->
             </div>
         </div>
     </div>
@@ -115,7 +143,7 @@
     </aside>
 
     <footer>
-        © 2026 Phasmophobia Interactive CheatSheet
+        © 2026 Phasmophobia Interactive CheatSheet & Encyclopedia
     </footer>
 
     <script src="script.js"></script>
