@@ -59,10 +59,31 @@
                 </div>
             </div>
 
-            <!-- 하단: 결과 리스트 섹션 (4열 그리드) -->
+            <!-- 하단: 결과 리스트 섹션 (필터 4종 분리 추가) -->
             <div class="right-panel">
                 <div class="result-header">
-                    <span>추정 가능한 유령</span>
+                    <div class="result-header-left">
+                        <span>추정 가능한 유령</span>
+                        <!-- 특수 필터 체크박스 영역 -->
+                        <div class="special-filters">
+                            <label class="filter-chip">
+                                <input type="checkbox" id="filter-accel" onchange="toggleFilter('hasAccel')">
+                                <span>🚀 가속도 유령</span>
+                            </label>
+                            <label class="filter-chip">
+                                <input type="checkbox" id="filter-special-speed" onchange="toggleFilter('hasSpecialSpeed')">
+                                <span>⚡ 특수 속도 유령</span>
+                            </label>
+                            <label class="filter-chip">
+                                <input type="checkbox" id="filter-forced" onchange="toggleFilter('hasForcedEv')">
+                                <span>📌 고정 증거 보유</span>
+                            </label>
+                            <label class="filter-chip">
+                                <input type="checkbox" id="filter-roam" onchange="toggleFilter('hasTargetRoam')">
+                                <span>🎯 타겟 로밍 / 이동</span>
+                            </label>
+                        </div>
+                    </div>
                     <span class="count-badge"><strong id="ghost-count">24</strong>종 남음</span>
                 </div>
 
