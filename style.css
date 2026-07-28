@@ -1,17 +1,15 @@
 :root {
     --bg-color: #060814;          /* 바탕: 딥 다크 네이비 블루 */
     --card-bg: #0f1226;        /* 메인 패널/박스: 차분한 딥 네이비 */
-    
-    /* 기본 테두리 색상을 훨씬 또렷하고 밝게 변경 */
-    --card-border: #3b376d;    /* 밝고 선명해진 보라-네이비 테두리 */
+    --card-border: #3b376d;    /* 밝고 선명한 보라-네이비 테두리 */
     
     --text-primary: #ffffff;   /* 기본 글씨 (흰색) */
-    --text-secondary: #9fa1c0; /* 가독성을 올려 살짝 더 밝아진 설명 글씨 */
+    --text-secondary: #9fa1c0; /* 가독성 높은 설명 글씨 */
     
     /* 핵심 포인트 색상 */
     --accent-vibrant: #6d4cfb; 
     --accent-light: #a68fff;   
-    --accent-glow: rgba(109, 76, 251, 0.4); 
+    --accent-glow: rgba(109, 76, 251, 0.45); 
     
     --accent-green: #34d399;   
     --accent-red: #f87171;     
@@ -149,7 +147,7 @@ body {
 .left-panel {
     width: 100%;
     background-color: var(--card-bg);
-    border: 1.5px solid var(--card-border); /* 테두리 굵기 1.5px 확대 */
+    border: 1.5px solid var(--card-border);
     border-radius: 12px;
     padding: 1.2rem 1.5rem;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
@@ -206,10 +204,9 @@ body {
     margin-bottom: 0.8rem;
 }
 
-/* 아직 클릭 안 한 기본 증거 버튼 테두리 강조 */
 .evidence-btn {
     background-color: #080a18;
-    border: 1.5px solid var(--card-border); /* 1.5px + 밝은 색상으로 눈에 잘 띄게 변경 */
+    border: 1.5px solid var(--card-border);
     color: var(--text-primary);
     padding: 0.75rem 0.5rem;
     border-radius: 8px;
@@ -289,7 +286,7 @@ body {
 
 .ghost-card {
     background-color: #080a18;
-    border: 1.5px solid var(--card-border); /* 카드 테두리 굵기 및 밝기 확대 */
+    border: 1.5px solid var(--card-border);
     border-radius: 12px;
     padding: 1.5rem 1.2rem 1.2rem 1.2rem;
     transition: all 0.25s ease;
@@ -418,7 +415,7 @@ body {
 }
 
 /* ==========================================
-   우측 플로팅 퀵바
+   우측 플로팅 퀵바 (가로로 더 길고 시원하게 수정)
    ========================================== */
 
 .quick-sidebar-bar {
@@ -428,37 +425,38 @@ body {
     transform: translateY(-50%);
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
     z-index: 100;
 }
 
+/* 가로 폭 78px로 확장 & 배경 및 테두리 밝기 대폭 상향 */
 .quick-icon-btn {
-    width: 62px;
-    height: 70px;
-    border-radius: 12px;
-    background-color: var(--card-bg);
-    border: 1.5px solid var(--card-border);
-    color: var(--text-primary);
-    font-size: 1.6rem;
+    width: 78px;               /* 가로 폭 더 길게 확대 */
+    height: 64px;              /* 높이 균형 조정 */
+    border-radius: 14px;
+    background-color: #191c38; /* 더 밝고 또렷한 딥 인디고 배경 */
+    border: 2px solid #524e8e;  /* 2px 두꺼운 테두리로 시인성 확보 */
+    color: #ffffff;
+    font-size: 1.75rem;        /* 아이콘 크기 확대 */
     cursor: pointer;
     transition: all 0.2s ease;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.65);
 }
 
 .quick-icon-btn.search-btn {
-    border-color: var(--accent-vibrant);
-    background-color: rgba(109, 76, 251, 0.2);
-    box-shadow: 0 0 12px var(--accent-glow);
+    border-color: var(--accent-light);
+    background-color: rgba(109, 76, 251, 0.35);
+    box-shadow: 0 0 16px var(--accent-glow);
 }
 
 .quick-icon-btn:hover {
-    background-color: var(--card-border);
+    background-color: #272852;
     border-color: var(--accent-light);
-    transform: translateX(-4px);
-    box-shadow: 0 0 16px var(--accent-glow);
+    transform: translateX(-6px); /* 호버 시 돌출 연출 */
+    box-shadow: 0 0 20px var(--accent-glow);
 }
 
 .quick-slide-panel {
@@ -468,7 +466,7 @@ body {
     width: 350px;
     height: 100vh;
     background-color: #080a18;
-    border-left: 1.5px solid var(--accent-vibrant);
+    border-left: 2px solid var(--accent-vibrant);
     box-shadow: -10px 0 30px rgba(0, 0, 0, 0.85);
     z-index: 200;
     transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
