@@ -190,12 +190,10 @@ function closeQuickPanel() {
     panel.classList.remove('open');
 }
 
-// 상단 헤더 검색창 클릭 시 슬라이드 패널 열기
 function openSearchPanel() {
     toggleQuickPanel('search');
 }
 
-// 상단 헤더 검색창 입력 시 동기화
 function handleHeaderSearch(query) {
     const panel = document.getElementById('quick-slide-panel');
     if (!panel.classList.contains('open')) {
