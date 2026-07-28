@@ -34,10 +34,7 @@ body {
     padding: 0 1.5rem;
 }
 
-/* ==========================================
-   상단 헤더 배치 (좌: 타이틀 / 중: 메뉴 / 우: 검색창)
-   ========================================== */
-
+/* 상단 헤더 배치 */
 .title-section {
     display: flex;
     justify-content: space-between;
@@ -97,7 +94,6 @@ body {
     background-color: rgba(109, 76, 251, 0.2);
 }
 
-/* 활성화 탭 */
 .nav-tab.active {
     background: linear-gradient(135deg, var(--accent-vibrant), #5331ea);
     color: #ffffff;
@@ -105,7 +101,7 @@ body {
     box-shadow: 0 0 16px var(--accent-glow);
 }
 
-/* 우측 상단 박스 검색창 */
+/* 상단 검색창 */
 .top-search-bar {
     flex: 1;
     display: flex;
@@ -137,7 +133,16 @@ body {
     box-shadow: 0 0 18px rgba(166, 143, 255, 0.4);
 }
 
-/* 메인 패널 레이아웃 */
+/* SPA 탭 컨텐츠 활성화 제어 */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* 증거 계산기 레이아웃 */
 .content-wrapper {
     display: flex;
     flex-direction: column;
@@ -196,7 +201,6 @@ body {
 .state-include { background-color: rgba(52, 211, 153, 0.2); color: var(--accent-green); }
 .state-exclude { background-color: rgba(248, 113, 113, 0.2); color: var(--accent-red); }
 
-/* 증거 선택 버튼 가로 7열 배치 */
 .evidence-grid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
@@ -247,7 +251,6 @@ body {
     border-radius: 0 6px 6px 0;
 }
 
-/* 우측 결과 패널 및 특수 필터 스타일 */
 .right-panel {
     width: 100%;
     background-color: var(--card-bg);
@@ -279,7 +282,6 @@ body {
     font-size: 1.05rem;
 }
 
-/* 특수 필터 체크박스 칩 */
 .special-filters {
     display: flex;
     gap: 8px;
@@ -326,7 +328,7 @@ body {
     font-size: 1.2rem;
 }
 
-/* 유령 카드 4열 고정 스타일 */
+/* 4열 유령 카드 레이아웃 */
 .ghost-list, #ghost-list-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -412,7 +414,6 @@ body {
     color: var(--accent-green);
 }
 
-/* 접이식 더보기(details) */
 .ghost-details {
     margin-top: 10px;
     border-top: 1.5px solid var(--card-border);
@@ -464,10 +465,67 @@ body {
     text-align: left;
 }
 
-/* ==========================================
-   우측 플로팅 퀵바 (가로 확장 디자인)
-   ========================================== */
+/* 범용 그리드 레이아웃 (유령 도감, 장비, 맵 공통) */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
 
+.detail-card {
+    background-color: var(--card-bg);
+    border: 1.5px solid var(--card-border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    transition: all 0.25s ease;
+}
+
+.detail-card:hover {
+    border-color: var(--accent-vibrant);
+    box-shadow: 0 0 18px var(--accent-glow);
+}
+
+.card-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--accent-light);
+    margin-bottom: 0.8rem;
+    border-bottom: 1px solid var(--card-border);
+    padding-bottom: 0.6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-tag-inline {
+    font-size: 0.78rem;
+    background: rgba(109, 76, 251, 0.2);
+    border: 1px solid var(--accent-vibrant);
+    color: #ffffff;
+    padding: 2px 8px;
+    border-radius: 12px;
+}
+
+.card-body p {
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+.card-body strong {
+    color: var(--accent-light);
+}
+
+/* 공략/정보 2열 반응형 그리드 */
+.guide-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+/* 우측 플로팅 퀵바 */
 .quick-sidebar-bar {
     position: fixed;
     right: 12px;
@@ -610,6 +668,9 @@ footer {
     .evidence-grid {
         grid-template-columns: repeat(4, 1fr);
     }
+    .category-grid, .guide-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 900px) {
@@ -629,6 +690,9 @@ footer {
 
 @media (max-width: 650px) {
     .ghost-list, #ghost-list-container {
+        grid-template-columns: 1fr;
+    }
+    .category-grid, .guide-grid {
         grid-template-columns: 1fr;
     }
     .evidence-grid {
