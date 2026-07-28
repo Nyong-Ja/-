@@ -28,12 +28,10 @@ const ghosts = [
 const selectedIncludes = new Set();
 const selectedExcludes = new Set();
 
-// 상단 네비게이션 탭 전환 함수
+// 네비게이션 탭 전환
 function switchTab(tabName) {
     document.querySelectorAll('.nav-tab').forEach(btn => btn.classList.remove('active'));
     event.target.classList.add('active');
-    
-    // 추후 '유령 도감', '장비', '맵' 전용 페이지/뷰 확장 가능
 }
 
 // UI 렌더링 함수
@@ -118,7 +116,7 @@ document.getElementById('reset-btn').addEventListener('click', () => {
 });
 
 // ==========================================
-// 우측 퀵 슬라이드 패널 토글 및 실시간 검색 로직
+// 상단 검색창 및 우측 슬라이드 패널 연동
 // ==========================================
 
 const panelData = {
@@ -190,6 +188,24 @@ function toggleQuickPanel(type) {
 function closeQuickPanel() {
     const panel = document.getElementById('quick-slide-panel');
     panel.classList.remove('open');
+}
+
+// 상단 헤더 검색창 클릭 시 슬라이드 패널 열기
+function openSearchPanel() {
+    toggleQuickPanel('search');
+}
+
+// 상단 헤더 검색창 입력 시 동기화
+function handleHeaderSearch(query) {
+    const panel = document.getElementById('quick-slide-panel');
+    if (!panel.classList.contains('open')) {
+        toggleQuickPanel('search');
+    }
+    const panelInput = document.getElementById('quick-search-input');
+    if (panelInput) {
+        panelInput.value = query;
+        handleQuickSearch(query);
+    }
 }
 
 function handleQuickSearch(query) {
