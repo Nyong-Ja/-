@@ -1,12 +1,14 @@
 :root {
-    /* 파란색 기운을 더 섞은 차분한 딥 네이비/미드나잇 블루 배경 */
-    --bg-color: #060814;          /* 전체 바탕: 딥 다크 네이비 블루 */
+    --bg-color: #060814;          /* 바탕: 딥 다크 네이비 블루 */
     --card-bg: #0f1226;        /* 메인 패널/박스: 차분한 딥 네이비 */
-    --card-border: #23224a;    /* 은은한 네이비-인디고 테두리 */
-    --text-primary: #ffffff;   /* 기본 글씨 (흰색) */
-    --text-secondary: #8c8ea8; /* 부드러운 설명 글씨 (회푸른색) */
     
-    /* 기존 포인트 컬러 유지 (라벤더 / 바이올렛) */
+    /* 기본 테두리 색상을 훨씬 또렷하고 밝게 변경 */
+    --card-border: #3b376d;    /* 밝고 선명해진 보라-네이비 테두리 */
+    
+    --text-primary: #ffffff;   /* 기본 글씨 (흰색) */
+    --text-secondary: #9fa1c0; /* 가독성을 올려 살짝 더 밝아진 설명 글씨 */
+    
+    /* 핵심 포인트 색상 */
     --accent-vibrant: #6d4cfb; 
     --accent-light: #a68fff;   
     --accent-glow: rgba(109, 76, 251, 0.4); 
@@ -76,7 +78,7 @@ body {
     background-color: rgba(15, 18, 38, 0.85);
     padding: 6px;
     border-radius: 12px;
-    border: 1px solid var(--card-border);
+    border: 1.5px solid var(--card-border);
 }
 
 .nav-tab {
@@ -94,7 +96,7 @@ body {
 
 .nav-tab:hover {
     color: var(--text-primary);
-    background-color: rgba(109, 76, 251, 0.15);
+    background-color: rgba(109, 76, 251, 0.2);
 }
 
 /* 활성화 탭 */
@@ -147,7 +149,7 @@ body {
 .left-panel {
     width: 100%;
     background-color: var(--card-bg);
-    border: 1px solid var(--card-border);
+    border: 1.5px solid var(--card-border); /* 테두리 굵기 1.5px 확대 */
     border-radius: 12px;
     padding: 1.2rem 1.5rem;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
@@ -167,7 +169,7 @@ body {
 
 #reset-btn {
     background: transparent;
-    border: 1px solid var(--card-border);
+    border: 1.5px solid var(--card-border);
     color: var(--text-secondary);
     padding: 0.3rem 0.8rem;
     border-radius: 6px;
@@ -204,9 +206,10 @@ body {
     margin-bottom: 0.8rem;
 }
 
+/* 아직 클릭 안 한 기본 증거 버튼 테두리 강조 */
 .evidence-btn {
     background-color: #080a18;
-    border: 1px solid var(--card-border);
+    border: 1.5px solid var(--card-border); /* 1.5px + 밝은 색상으로 눈에 잘 띄게 변경 */
     color: var(--text-primary);
     padding: 0.75rem 0.5rem;
     border-radius: 8px;
@@ -221,6 +224,7 @@ body {
 .evidence-btn:hover {
     border-color: var(--accent-vibrant);
     color: var(--accent-light);
+    box-shadow: 0 0 8px var(--accent-glow);
 }
 
 .evidence-btn.included {
@@ -238,7 +242,7 @@ body {
 }
 
 .info-notice {
-    background-color: rgba(109, 76, 251, 0.1);
+    background-color: rgba(109, 76, 251, 0.12);
     border-left: 3px solid var(--accent-vibrant);
     padding: 0.5rem 1rem;
     font-size: 0.85rem;
@@ -250,7 +254,7 @@ body {
 .right-panel {
     width: 100%;
     background-color: var(--card-bg);
-    border: 1px solid var(--card-border);
+    border: 1.5px solid var(--card-border);
     border-radius: 12px;
     padding: 1.5rem;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
@@ -261,7 +265,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding-bottom: 1rem;
-    border-bottom: 1px solid var(--card-border);
+    border-bottom: 1.5px solid var(--card-border);
     margin-bottom: 1.2rem;
     font-weight: 700;
 }
@@ -284,8 +288,8 @@ body {
 }
 
 .ghost-card {
-    background-color: #080a18; /* 차분한 딥 미드나잇 블루 */
-    border: 1px solid var(--card-border);
+    background-color: #080a18;
+    border: 1.5px solid var(--card-border); /* 카드 테두리 굵기 및 밝기 확대 */
     border-radius: 12px;
     padding: 1.5rem 1.2rem 1.2rem 1.2rem;
     transition: all 0.25s ease;
@@ -325,7 +329,7 @@ body {
     padding: 4px 10px;
     border-radius: 14px;
     color: var(--accent-light);
-    border: 1px solid rgba(166, 143, 255, 0.3);
+    border: 1px solid rgba(166, 143, 255, 0.4);
     font-weight: 600;
 }
 
@@ -335,7 +339,7 @@ body {
     padding: 4px 10px;
     border-radius: 14px;
     color: var(--accent-red);
-    border: 1px solid rgba(248, 113, 113, 0.3);
+    border: 1px solid rgba(248, 113, 113, 0.4);
     font-weight: 600;
 }
 
@@ -350,7 +354,7 @@ body {
 .ev-tag {
     font-size: 0.82rem;
     background-color: var(--card-bg);
-    border: 1px solid var(--card-border);
+    border: 1.5px solid var(--card-border);
     padding: 4px 8px;
     border-radius: 4px;
     color: var(--text-secondary);
@@ -364,7 +368,7 @@ body {
 /* 접이식 더보기(details) */
 .ghost-details {
     margin-top: 10px;
-    border-top: 1px solid var(--card-border);
+    border-top: 1.5px solid var(--card-border);
     padding-top: 10px;
 }
 
@@ -478,7 +482,7 @@ body {
 
 .quick-slide-panel .panel-header {
     padding: 1.2rem;
-    border-bottom: 1px solid var(--card-border);
+    border-bottom: 1.5px solid var(--card-border);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -531,7 +535,7 @@ body {
 
 .search-result-card {
     background: var(--card-bg);
-    border: 1px solid var(--card-border);
+    border: 1.5px solid var(--card-border);
     border-radius: 8px;
     padding: 12px;
     margin-bottom: 10px;
