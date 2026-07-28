@@ -12,7 +12,7 @@
         <!-- 상단 헤더 레이아웃 (좌: 타이틀 / 중: 메뉴 탭 / 우: 스타일 검색창) -->
         <div class="title-section">
             <div class="title-left">
-                <div class="sub-title">INTERACTIVE CHEAT SHEET & DATABASE</div>
+                <div class="sub-title">INTERACTIVE CHEAT SHEET & WIKI DATABASE</div>
                 <h1 id="page-main-title">파스모포비아 증거 계산기</h1>
                 <p id="page-main-desc">발견한 증거를 클릭(포함/제외)하여 남은 유령을 빠르게 추려내세요.</p>
             </div>
@@ -26,7 +26,7 @@
                 <button class="nav-tab" data-tab="guide" onclick="switchTab('guide')">공략 / 정보</button>
             </nav>
 
-            <!-- 우측 상단 이미지 스타일 검색창 -->
+            <!-- 우측 상단 박스 검색창 -->
             <div class="top-search-bar">
                 <input type="text" placeholder="유령 이름 또는 특징 검색 (예: 데오겐, 향, 소금)..." onkeyup="handleHeaderSearch(this.value)" onclick="openSearchPanel()">
             </div>
@@ -87,37 +87,43 @@
                     </div>
 
                     <div id="ghost-list-container" class="ghost-list">
-                        <!-- JS로 카드 생성 -->
+                        <!-- JS 생성 -->
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- 2. 유령 도감 탭 뷰 -->
+        <!-- 2. 유령 도감 탭 뷰 (상세 도감 카드 스타일) -->
         <div id="tab-ghosts" class="tab-content">
-            <div class="category-grid" id="ghost-dictionary-container">
-                <!-- JS로 동적 생성 -->
+            <div class="ghost-dict-grid" id="ghost-dictionary-container">
+                <!-- JS 생성 -->
             </div>
         </div>
 
-        <!-- 3. 장비 가이드 탭 뷰 -->
+        <!-- 3. 장비 가이드 탭 뷰 (티어별스펙 테이블 카드 스타일) -->
         <div id="tab-equipment" class="tab-content">
-            <div class="category-grid" id="equipment-container">
-                <!-- JS로 동적 생성 -->
+            <div class="equipment-grid" id="equipment-container">
+                <!-- JS 생성 -->
             </div>
         </div>
 
-        <!-- 4. 맵 정보 탭 뷰 -->
+        <!-- 4. 맵 정보 탭 뷰 (크기별 필터링 + 데이터시트 스타일) -->
         <div id="tab-maps" class="tab-content">
-            <div class="category-grid" id="maps-container">
-                <!-- JS로 동적 생성 -->
+            <div class="map-filter-bar">
+                <button class="map-filter-btn active" onclick="filterMapCategory('ALL')">전체 맵</button>
+                <button class="map-filter-btn" onclick="filterMapCategory('Small')">소형 (Small)</button>
+                <button class="map-filter-btn" onclick="filterMapCategory('Medium')">중형 (Medium)</button>
+                <button class="map-filter-btn" onclick="filterMapCategory('Large')">대형 (Large)</button>
+            </div>
+            <div class="maps-grid" id="maps-container">
+                <!-- JS 생성 -->
             </div>
         </div>
 
-        <!-- 5. 공략 / 정보 탭 뷰 -->
+        <!-- 5. 공략 / 정보 탭 뷰 (위키 기반 2열 가이드 스타일) -->
         <div id="tab-guide" class="tab-content">
             <div class="guide-grid" id="guide-container">
-                <!-- JS로 동적 생성 -->
+                <!-- JS 생성 -->
             </div>
         </div>
     </div>
@@ -138,7 +144,7 @@
             <button class="close-btn" onclick="closeQuickPanel()">✕</button>
         </div>
         <div id="quick-panel-content" class="panel-content">
-            <!-- JS로 내용 동적 삽입 -->
+            <!-- JS 내용 -->
         </div>
     </aside>
 
