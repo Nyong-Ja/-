@@ -1,12 +1,18 @@
 :root {
-    --bg-color: #0f172a;
-    --card-bg: #1e293b;
-    --card-border: #334155;
-    --text-primary: #f8fafc;
-    --text-secondary: #94a3b8;
-    --accent-green: #10b981;
-    --accent-red: #ef4444;
-    --accent-blue: #38bdf8;
+    /* SKT 공모전 이미지 기반 컬러 팔레트 */
+    --bg-color: #080612;          /* 전체 딥 블랙/퍼플 배경 */
+    --card-bg: #120f26;        /* 카드/패널 다크 퍼플 배경 */
+    --card-border: #2a224a;    /* 은은한 보랏빛 테두리 */
+    --text-primary: #ffffff;   /* 기본 메인 글씨 (흰색) */
+    --text-secondary: #a19aac; /* 부드러운 설명 글씨 (회보라) */
+    
+    /* 퍼플 포인트 컬러 */
+    --accent-purple: #c084fc;  /* 밝고 선명한 라벤더 퍼플 */
+    --accent-violet: #a855f7;  /* 비비드 바이올렛 */
+    --accent-purple-glow: rgba(168, 85, 247, 0.35); /* 퍼플 네온 글로우 */
+    
+    --accent-green: #34d399;   /* 포함 상태 (에메랄드 민트) */
+    --accent-red: #f87171;     /* 제외 상태 (소프트 레드) */
 }
 
 * {
@@ -45,7 +51,7 @@ body {
 }
 
 .sub-title {
-    color: var(--accent-blue);
+    color: var(--accent-purple);
     font-size: 0.875rem;
     font-weight: 700;
     letter-spacing: 1px;
@@ -54,6 +60,8 @@ body {
 .title-section h1 {
     font-size: 1.8rem;
     margin: 0.2rem 0;
+    color: #ffffff;
+    text-shadow: 0 0 15px rgba(192, 132, 252, 0.2);
 }
 
 .title-section p {
@@ -65,7 +73,7 @@ body {
 .top-nav {
     display: flex;
     gap: 8px;
-    background-color: rgba(30, 41, 59, 0.6);
+    background-color: rgba(18, 15, 38, 0.8);
     padding: 6px;
     border-radius: 12px;
     border: 1px solid var(--card-border);
@@ -86,14 +94,15 @@ body {
 
 .nav-tab:hover {
     color: var(--text-primary);
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: rgba(168, 85, 247, 0.1);
 }
 
+/* 활성화 탭 (이미지 스타일의 네온 퍼플 박스) */
 .nav-tab.active {
-    background-color: var(--accent-blue);
-    color: #0f172a;
+    background: linear-gradient(135deg, var(--accent-violet), #7e22ce);
+    color: #ffffff;
     font-weight: 700;
-    box-shadow: 0 2px 8px rgba(56, 189, 248, 0.3);
+    box-shadow: 0 0 14px var(--accent-purple-glow);
 }
 
 /* 우측 상단 모던 라운드 박스 검색창 */
@@ -107,13 +116,13 @@ body {
     width: 320px;
     padding: 10px 16px;
     border-radius: 10px;
-    border: 1.5px solid var(--accent-blue);
-    background-color: rgba(15, 23, 42, 0.8);
+    border: 1.5px solid var(--accent-violet);
+    background-color: rgba(8, 6, 18, 0.9);
     color: var(--text-primary);
     font-size: 0.88rem;
     outline: none;
     transition: all 0.2s ease;
-    box-shadow: 0 0 12px rgba(56, 189, 248, 0.15);
+    box-shadow: 0 0 12px var(--accent-purple-glow);
 }
 
 .top-search-bar input::placeholder {
@@ -123,8 +132,9 @@ body {
 
 .top-search-bar input:focus {
     width: 350px;
+    border-color: var(--accent-purple);
     background-color: var(--bg-color);
-    box-shadow: 0 0 16px rgba(56, 189, 248, 0.35);
+    box-shadow: 0 0 18px rgba(192, 132, 252, 0.45);
 }
 
 /* 메인 패널 레이아웃 */
@@ -140,6 +150,7 @@ body {
     border: 1px solid var(--card-border);
     border-radius: 12px;
     padding: 1.2rem 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
 .panel-header {
@@ -151,6 +162,7 @@ body {
 
 .panel-header h2 {
     font-size: 1.1rem;
+    color: var(--accent-purple);
 }
 
 #reset-btn {
@@ -181,8 +193,8 @@ body {
     font-weight: 600;
 }
 
-.state-include { background-color: rgba(16, 185, 129, 0.2); color: var(--accent-green); }
-.state-exclude { background-color: rgba(239, 68, 68, 0.2); color: var(--accent-red); }
+.state-include { background-color: rgba(52, 211, 153, 0.2); color: var(--accent-green); }
+.state-exclude { background-color: rgba(248, 113, 113, 0.2); color: var(--accent-red); }
 
 /* 증거 선택 버튼 가로 7열 배치 */
 .evidence-grid {
@@ -207,25 +219,27 @@ body {
 }
 
 .evidence-btn:hover {
-    border-color: var(--text-secondary);
+    border-color: var(--accent-purple);
+    color: var(--accent-purple);
 }
 
 .evidence-btn.included {
-    background-color: rgba(16, 185, 129, 0.15);
+    background-color: rgba(52, 211, 153, 0.15);
     border-color: var(--accent-green);
     color: var(--accent-green);
+    box-shadow: 0 0 10px rgba(52, 211, 153, 0.2);
 }
 
 .evidence-btn.excluded {
-    background-color: rgba(239, 68, 68, 0.15);
+    background-color: rgba(248, 113, 113, 0.15);
     border-color: var(--accent-red);
     color: var(--accent-red);
     text-decoration: line-through;
 }
 
 .info-notice {
-    background-color: rgba(56, 189, 248, 0.1);
-    border-left: 3px solid var(--accent-blue);
+    background-color: rgba(168, 85, 247, 0.1);
+    border-left: 3px solid var(--accent-purple);
     padding: 0.5rem 1rem;
     font-size: 0.85rem;
     color: var(--text-secondary);
@@ -239,6 +253,7 @@ body {
     border: 1px solid var(--card-border);
     border-radius: 12px;
     padding: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
 .result-header {
@@ -251,12 +266,16 @@ body {
     font-weight: 700;
 }
 
+.result-header span {
+    color: var(--accent-purple);
+}
+
 .count-badge strong {
-    color: var(--accent-blue);
+    color: var(--accent-purple);
     font-size: 1.2rem;
 }
 
-/* 유령 카드 4열 고정 스타일 */
+/* 유령 카드 4열 고정 스타일 (퍼플 글로우 테마) */
 .ghost-list, #ghost-list-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -267,8 +286,15 @@ body {
 .ghost-card {
     background-color: var(--bg-color);
     border: 1px solid var(--card-border);
-    border-radius: 10px;
+    border-radius: 12px;
     padding: 1.5rem 1.2rem 1.2rem 1.2rem;
+    transition: all 0.25s ease;
+}
+
+.ghost-card:hover {
+    border-color: var(--accent-purple);
+    box-shadow: 0 0 16px var(--accent-purple-glow);
+    transform: translateY(-2px);
 }
 
 .ghost-card-header {
@@ -282,7 +308,7 @@ body {
 .ghost-name {
     font-size: 1.65rem;
     font-weight: 700;
-    color: var(--text-primary);
+    color: #ffffff;
     text-align: center;
 }
 
@@ -295,19 +321,21 @@ body {
 
 .ghost-sanity {
     font-size: 0.88rem;
-    background-color: rgba(56, 189, 248, 0.15);
+    background-color: rgba(192, 132, 252, 0.15);
     padding: 4px 10px;
     border-radius: 14px;
-    color: var(--accent-blue);
+    color: var(--accent-purple);
+    border: 1px solid rgba(192, 132, 252, 0.3);
     font-weight: 600;
 }
 
 .ghost-speed {
     font-size: 0.88rem;
-    background-color: rgba(239, 68, 68, 0.15);
+    background-color: rgba(248, 113, 113, 0.15);
     padding: 4px 10px;
     border-radius: 14px;
     color: var(--accent-red);
+    border: 1px solid rgba(248, 113, 113, 0.3);
     font-weight: 600;
 }
 
@@ -336,7 +364,7 @@ body {
 /* 접이식 더보기(details) */
 .ghost-details {
     margin-top: 10px;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 1px solid var(--card-border);
     padding-top: 10px;
 }
 
@@ -357,22 +385,23 @@ body {
 .more-btn {
     font-size: 0.78rem;
     color: #ffffff;
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    background-color: rgba(168, 85, 247, 0.2);
+    border: 1px solid var(--accent-purple);
     padding: 3px 10px;
     border-radius: 4px;
     transition: all 0.2s ease;
 }
 
 .ghost-summary:hover .more-btn {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: var(--accent-violet);
     color: #ffffff;
+    box-shadow: 0 0 10px var(--accent-purple-glow);
 }
 
 .ghost-details[open] .more-btn {
     color: #ffffff;
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    background-color: rgba(168, 85, 247, 0.3);
+    border: 1px solid var(--accent-purple);
 }
 
 .ghost-tip-content {
@@ -385,45 +414,47 @@ body {
 }
 
 /* ==========================================
-   우측 플로팅 퀵바 & 슬라이드 드로어 패널
+   우측 플로팅 퀵바 (직사각형 이미지 테마)
    ========================================== */
 
 .quick-sidebar-bar {
     position: fixed;
-    right: 14px;
+    right: 12px;
     top: 50%;
     transform: translateY(-50%);
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 8px;
     z-index: 100;
 }
 
 .quick-icon-btn {
-    width: 46px;
-    height: 46px;
+    width: 62px;
+    height: 70px;
     border-radius: 12px;
     background-color: var(--card-bg);
-    border: 1px solid var(--card-border);
+    border: 1.5px solid var(--card-border);
     color: var(--text-primary);
-    font-size: 1.25rem;
+    font-size: 1.6rem;
     cursor: pointer;
     transition: all 0.2s ease;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
 }
 
 .quick-icon-btn.search-btn {
-    border-color: var(--accent-blue);
-    background-color: rgba(56, 189, 248, 0.15);
+    border-color: var(--accent-purple);
+    background-color: rgba(168, 85, 247, 0.15);
+    box-shadow: 0 0 12px var(--accent-purple-glow);
 }
 
 .quick-icon-btn:hover {
     background-color: var(--card-border);
-    border-color: var(--accent-blue);
-    transform: scale(1.08);
+    border-color: var(--accent-purple);
+    transform: translateX(-4px);
+    box-shadow: 0 0 14px var(--accent-purple-glow);
 }
 
 .quick-slide-panel {
@@ -432,9 +463,9 @@ body {
     right: -380px;
     width: 350px;
     height: 100vh;
-    background-color: #0b1120;
-    border-left: 1px solid var(--card-border);
-    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.6);
+    background-color: #0d0a1d;
+    border-left: 1.5px solid var(--accent-violet);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.8);
     z-index: 200;
     transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
@@ -451,6 +482,10 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.quick-slide-panel .panel-header h3 {
+    color: var(--accent-purple);
 }
 
 .quick-slide-panel .close-btn {
@@ -472,18 +507,17 @@ body {
     line-height: 1.6;
 }
 
-/* 슬라이드 패널 내 검색창도 동일 스타일 적용 */
 .search-input-box {
     width: 100%;
     padding: 10px 16px;
     border-radius: 10px;
-    border: 1.5px solid var(--accent-blue);
-    background-color: rgba(15, 23, 42, 0.8);
+    border: 1.5px solid var(--accent-violet);
+    background-color: rgba(8, 6, 18, 0.9);
     color: #fff;
     font-size: 0.9rem;
     margin-bottom: 1rem;
     outline: none;
-    box-shadow: 0 0 12px rgba(56, 189, 248, 0.15);
+    box-shadow: 0 0 12px var(--accent-purple-glow);
 }
 
 .search-input-box::placeholder {
@@ -492,7 +526,7 @@ body {
 }
 
 .search-input-box:focus {
-    box-shadow: 0 0 16px rgba(56, 189, 248, 0.35);
+    box-shadow: 0 0 16px rgba(192, 132, 252, 0.4);
 }
 
 .search-result-card {
@@ -505,7 +539,7 @@ body {
 
 .search-result-title {
     font-weight: bold;
-    color: var(--accent-blue);
+    color: var(--accent-purple);
     font-size: 1rem;
     margin-bottom: 4px;
 }
