@@ -9,7 +9,7 @@
 <body>
 
     <div class="main-container">
-        <!-- 상단 헤더 레이아웃 (좌: 타이틀 / 중: 메뉴 탭 / 우: 돋보기 검색창) -->
+        <!-- 상단 헤더 레이아웃 (좌: 타이틀 / 중: 메뉴 탭 / 우: 스타일 검색창) -->
         <div class="title-section">
             <div class="title-left">
                 <div class="sub-title">INTERACTIVE CHEAT SHEET</div>
@@ -26,10 +26,9 @@
                 <button class="nav-tab" onclick="switchTab('guide')">공략 / 정보</button>
             </nav>
 
-            <!-- 우측 상단 라운드 검색창 -->
+            <!-- 우측 상단 이미지 스타일 검색창 -->
             <div class="top-search-bar">
-                <span class="search-icon">🔍</span>
-                <input type="text" placeholder="유령, 특성 검색..." onkeyup="handleHeaderSearch(this.value)" onclick="openSearchPanel()">
+                <input type="text" placeholder="유령 이름 또는 특징 검색 (예: 데오겐, 향, 소금)..." onkeyup="handleHeaderSearch(this.value)" onclick="openSearchPanel()">
             </div>
         </div>
 
