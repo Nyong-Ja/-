@@ -1,4 +1,4 @@
-// 나무위키(Phasmophobia/유령) 최신 데이터 기준 29종 전체 유령 DB
+// 나무위키(Phasmophobia/유령) 최신 데이터 기준 29종 전체 유령 DB (상세 메커니즘 완전판)
 const ghosts = [
     { 
         name: "스피릿 (Spirit)", 
@@ -6,9 +6,9 @@ const ghosts = [
         sanity: "50%", 
         evidence: ["EMF 5", "고스트 라이팅", "스피릿 박스"], 
         hasAccel: true, hasSpecialSpeed: false, hasForcedEv: false, hasTargetRoam: false,
-        strength: "특별한 공격적 장점은 없으나 일반적인 헌팅 패턴을 가짐",
-        weakness: "정화 향초(Incense)를 피우면 180초 동안 사냥을 시작할 수 없음",
-        tip: "💡 향초 투척 후 재사냥 불가능 시간이 3분(180초)으로 매우 깁니다. (일반 유령 90초, 데몬 60초)"
+        strength: "특별한 공격적 장점이나 이동 속도 변동은 없으나 가장 흔하고 전형적인 헌팅 패턴을 가짐",
+        weakness: "정화 향초(Incense)를 맞으면 180초(3분) 동안 사냥을 시작할 수 없음 (일반 유령 90초, 데몬 60초)",
+        tip: "💡 정화 향초를 피운 후 90초~180초 사이에 사냥이 발동하지 않는다면 스피릿 가능성이 매우 높습니다. 고난이도에서 소거법으로 판별할 때는 정신력을 0%로 만들고 3분간 타이머를 측정하며 테스트하는 것이 정석입니다."
     },
     { 
         name: "레이스 (Wraith)", 
@@ -16,9 +16,9 @@ const ghosts = [
         sanity: "50%", 
         evidence: ["EMF 5", "스피릿 박스", "DOTS"], 
         hasAccel: true, hasSpecialSpeed: false, hasForcedEv: false, hasTargetRoam: true,
-        strength: "벽을 관통해 무작위 플레이어 등 뒤로 순간이동 가능",
+        strength: "벽과 장애물을 관통하여 거리와 층간에 상관없이 무작위 플레이어 등 뒤로 순간이동하여 EMF 2 또는 5단계 신호를 남김",
         weakness: "소금을 절대 밟지 않음 (소금 상호작용 및 자외선 발자국 미발생)",
-        tip: "💡 소금 위를 지나갔음에도 소금이 흩날리지 않거나 UV 자외선 발자국이 남지 않으면 100% 레이스입니다."
+        tip: "💡 소금을 유령 동선에 설치했을 때 유령이 위를 통과해도 소금이 흩날리지 않거나, 자외선(UV)등을 비췄을 때 발자국 흔적이 전혀 찍히지 않는다면 100% 레이스입니다. 순간이동 후 곧바로 이벤트나 사냥을 시작할 수 있으므로 주의해야 합니다."
     },
     { 
         name: "팬텀 (Phantom)", 
@@ -26,9 +26,9 @@ const ghosts = [
         sanity: "50%", 
         evidence: ["스피릿 박스", "손자국", "DOTS"], 
         hasAccel: true, hasSpecialSpeed: false, hasForcedEv: false, hasTargetRoam: true,
-        strength: "팬텀을 바라보는 플레이어의 정신력이 2배 빠른 속도로 감소 (초당 -0.5%)",
-        weakness: "사진을 찍으면 순간 실체가 사라짐 (사진첩에는 '유령'으로 노이즈 없이 정상 기록)",
-        tip: "💡 유령 이벤트 시 사진을 찍었을 때 실체가 스르륵 사라지고 심장 소리만 유지된다면 팬텀입니다."
+        strength: "실체화 상태에서 팬텀을 바라볼 경우 주변 10m 이내 플레이어의 정신력이 초당 0.5%씩 급격히 감소함. 무작위 플레이어에게 다가가는 스토킹 능력 보유",
+        weakness: "실체화 이벤트 중 유령 사진을 찍으면 순간 실체가 스르륵 사라짐 (사진첩에는 노이즈 없이 '유령'으로 정상 촬영됨)",
+        tip: "💡 유령 이벤트가 떴을 때 카메라로 찍어서 모습이 완전히 사라졌는데 심장 소리나 오디오는 계속 유지된다면 팬텀입니다. 또한 헌팅 시 점멸 깜빡임 간격(1~2초)이 다른 유령(0.3~1초)보다 확연히 길어 투명한 시간이 깁니다."
     },
     { 
         name: "폴터가이스트 (Poltergeist)", 
@@ -36,9 +36,9 @@ const ghosts = [
         sanity: "50%", 
         evidence: ["스피릿 박스", "손자국", "고스트 라이팅"], 
         hasAccel: true, hasSpecialSpeed: false, hasForcedEv: false, hasTargetRoam: false,
-        strength: "주변의 여러 물건을 한 번에 날리는 '물건 폭발' 능력 보유 (개당 정신력 2% 차감)",
-        weakness: "던질 물건이 없는 빈 방에서는 능력이 무력화됨",
-        tip: "💡 물건을 한곳에 수십 개 쌓아두고 한 번에 주르륵 튀어 나가는지 확인하세요."
+        strength: "주변의 여러 물건을 한 번에 크게 날려버리는 '물건 폭발' 능력을 사용하며, 던져진 물건 1개당 주변 플레이어의 정신력을 2%씩 기습 차감함. 헌팅 중 0.5초마다 100% 확률로 물건을 집어던짐",
+        weakness: "던질 사물이 없는 빈 방에서는 특수 능력이 완전히 무력화됨",
+        tip: "💡 물건을 한곳에 수십 개 모아두었을 때 사방으로 장풍처럼 튀어나가는지 확인하세요. 헌팅 도중 폴터가이스트가 지나간 자리는 식탁이나 바닥의 물건이 싹 청소된 것처럼 깨끗해집니다."
     },
     { 
         name: "밴시 (Banshee)", 
@@ -46,9 +46,9 @@ const ghosts = [
         sanity: "목표물 50%", 
         evidence: ["손자국", "고스트 오브", "DOTS"], 
         hasAccel: true, hasSpecialSpeed: false, hasForcedEv: false, hasTargetRoam: true,
-        strength: "파티원 중 오직 1명의 '타겟'만 지정하여 추적하며 타겟의 정신력으로 헌팅 판단 (여성 유령 모델만 등장)",
-        weakness: "음파 측정기 / 사운드 레코더에 33% 확률로 '고유 비명 소리'를 출력",
-        tip: "💡 음파 측정기를 들고 스캔할 때 찢어지는 듯한 고유 여성 비명이 들리면 밴시 확정입니다."
+        strength: "파티원 중 오직 1명의 '목표물(타겟)'만 지정하여 스토킹하며, 평균 정신력이 아닌 오직 타겟 플레이어의 정신력만 측정하여 헌팅을 시작함 (여성 유령 모델만 등장)",
+        weakness: "파라볼릭 마이크 / 사운드 레코더 사용 시 33% 확률로 찢어지는 듯한 고유 여성 비명 소리를 출력함",
+        tip: "💡 밴시는 타겟이 사망하거나 게임을 나가지 않는 이상 타겟을 바꾸지 않습니다. 헌팅 시에도 타겟이 아닌 다른 플레이어와 부딪혀도 죽이지 못하고 일절 무시합니다. 파라볼릭 마이크로 고유 비명이 들리면 확정입니다."
     },
     { 
         name: "진 (Jinn)", 
@@ -56,9 +56,9 @@ const ghosts = [
         sanity: "50%", 
         evidence: ["EMF 5", "손자국", "서늘함"], 
         hasAccel: true, hasSpecialSpeed: true, hasForcedEv: false, hasTargetRoam: false,
-        strength: "두꺼비집이 켜져 있을 때 3m 이상 떨어진 플레이어를 목격하면 2.5 m/s 고속 추격",
-        weakness: "두꺼비집을 내리면 능력이 차단되며, 직접 두꺼비집을 끌 수 없음",
-        tip: "💡 퓨즈를 내렸을 때 속도가 일반 유령(1.7 m/s)으로 평범해진다면 진입니다."
+        strength: "두꺼비집이 올라가 있을 때 3m 이상 떨어진 플레이어를 목격하면 2.5 m/s로 초고속 급가속하여 다가옴. 퓨즈가 켜져 있을 때 낮은 확률로 주변 플레이어의 정신력을 즉시 -25% 차감하는 능력을 사용함",
+        weakness: "두꺼비집(퓨즈박스)을 내리면 특수 능력이 봉인되며, 진은 스스로 두꺼비집을 끌 수 없음",
+        tip: "💡 퓨즈가 올려져 있을 때 멀리서 미친 듯이 뛰어오다가 내 앞 3m 근처에 오면 속도가 갑자기 일반 속도(1.7 m/s)로 뚝 떨어집니다. 두꺼비집이 꺼진다면 진을 제외할 수 있습니다."
     },
     { 
         name: "메어 (Mare)", 
@@ -66,9 +66,9 @@ const ghosts = [
         sanity: "불 꺼짐 60% / 불 켜짐 40%", 
         evidence: ["스피릿 박스", "고스트 오브", "고스트 라이팅"], 
         hasAccel: true, hasSpecialSpeed: false, hasForcedEv: false, hasTargetRoam: false,
-        strength: "어두운 방에서 사냥 시작 임계점이 60%로 상승",
-        weakness: "불이 켜진 방에서는 40%로 공격성이 떨어지며, 전등 스위치를 즉시 꺼버림 (전등 올릴 수 없음)",
-        tip: "💡 스위치를 켜자마자 0.1초 만에 딸깍 끄는 특성(스위치 쿨타임 무시)을 자주 보입니다."
+        strength: "현재 유령이 위치한 방의 전등이 꺼져 있으면 사냥 임계점이 정신력 60%로 상승하며, 전등을 끌 확률과 전구를 깨뜨릴 확률이 높음",
+        weakness: "전등이 켜진 방에서는 사냥 임계점이 40%로 하락하며, 스스로 전등 스위치를 켤 수 없음",
+        tip: "💡 플레이어가 전등 스위치를 켜자마자 0.1초 만에 딸깍하고 즉시 꺼버리는 쿨타임 무시 특성을 자주 보여줍니다. 유령이 스위치를 스스로 켜는 행동을 보이면 메어를 제외하세요."
     },
     { 
         name: "레버넌트 (Revenant)", 
@@ -76,9 +76,9 @@ const ghosts = [
         sanity: "50%", 
         evidence: ["고스트 오브", "고스트 라이팅", "서늘함"], 
         hasAccel: false, hasSpecialSpeed: true, hasForcedEv: false, hasTargetRoam: false,
-        strength: "시야에 플레이어가 들어오는 순간 3.0 m/s 초폭속으로 추격",
-        weakness: "시야에 플레이어가 없으면 1.0 m/s로 매우 느리게 배회",
-        tip: "💡 발소리가 뚜... 뚜... 하고 느리다가 플레이어를 목격하는 순간 타타타타! 폭속으로 바뀝니다."
+        strength: "헌팅 중 시야에 플레이어가 들어오거나 위치를 인식하는 즉시 3.0 m/s 초폭속으로 추격함",
+        weakness: "시야에 플레이어가 없거나 감지하지 못했을 때는 1.0 m/s로 매우 둔하게 배회함 (일반 시야 가속은 적용되지 않음)",
+        tip: "💡 헌팅 발소리가 뚜... 뚜... 하고 매우 느리게 들리다가, 플레이어를 목격하는 순간 타타타타! 하고 미친 듯한 폭속으로 바뀝니다. 향초가 없으면 코너를 돌더라도 추격 지점까지 가속을 유지하므로 매우 위험합니다."
     },
     { 
         name: "셰이드 (Shade)", 
@@ -86,9 +86,9 @@ const ghosts = [
         sanity: "35%", 
         evidence: ["EMF 5", "고스트 라이팅", "서늘함"], 
         hasAccel: true, hasSpecialSpeed: false, hasForcedEv: false, hasTargetRoam: false,
-        strength: "사냥 임계점이 35%로 매우 낮음",
-        weakness: "플레이어와 같은 방에 있을 때 모든 상호작용 및 사냥이 차단됨 (저주 도구 시 50% 그림자 실체화)",
-        tip: "💡 방에 여럿이 모여 있을 때는 아무 활동도 안 하다가 혼자 남거나 정신력이 35% 미만이어야 반응합니다."
+        strength: "사냥 시작 임계점이 정신력 35%로 모든 유령 중 가장 낮음. 유령 이벤트 발생 확률이 정신력 저하에 비례함",
+        weakness: "플레이어가 유레이와 같은 방에 단 한 명이라도 존재할 경우, 배회를 제외한 상호작용 및 헌팅이 완전히 불가능해짐",
+        tip: "💡 유령방에 파티원들이 모여있을 때는 아무 반응도 안 하다가, 혼자 남거나 정신력이 35% 밑으로 떨어져야 행동하기 시작합니다. 저주받은 물건 사용 시 50% 확률로 완전한 실체화 대신 '그림자 형체'로 나타납니다."
     },
     { 
         name: "데몬 (Demon)", 
@@ -96,9 +96,9 @@ const ghosts = [
         sanity: "70% (특수 100%)", 
         evidence: ["손자국", "고스트 라이팅", "서늘함"], 
         hasAccel: true, hasSpecialSpeed: false, hasForcedEv: false, hasTargetRoam: false,
-        strength: "특수 능력으로 정신력 100%에서도 즉시 사냥 시작 가능 (사냥 쿨타임 20초)",
-        weakness: "십자가의 차단 범위가 5m로 넓음 (일반 유령 3m), 향초 봉인 시간 60초",
-        tip: "💡 게임 시작 1분도 안 되어 사냥이 터지거나 십자가가 타버린다면 데몬입니다."
+        strength: "기본 사냥 임계점이 70%로 매우 높으며, 낮은 확률로 정신력 100%에서도 즉시 사냥을 발동하는 특수 능력을 가짐. 사냥 쿨타임이 20초로 매우 짧음",
+        weakness: "십자가의 사냥 차단 범위가 5m(+50%)로 매우 넓음. 정화 향초 피격 시 헌팅 차단 시간이 60초로 짧음",
+        tip: "💡 현관문을 열고 들어간 지 1분도 채 되지 않아 사냥이 터지거나 3티어 십자가가 대형 방 전체를 커버하며 연속으로 타버린다면 데몬 확정입니다."
     },
     { 
         name: "유레이 (Yurei)", 
@@ -106,9 +106,9 @@ const ghosts = [
         sanity: "50%", 
         evidence: ["고스트 오브", "서늘함", "DOTS"], 
         hasAccel: true, hasSpecialSpeed: false, hasForcedEv: false, hasTargetRoam: false,
-        strength: "문을 쾅 세게 닫으며 주변 플레이어의 정신력을 15% 기습 차감 (현관문 닫기 가능)",
-        weakness: "유레이 방에 정화 향초를 피우면 90초 동안 그 방에 갇혀 로밍 불가",
-        tip: "💡 문이 쾅 소리와 함께 완전히 닫히며 정신력이 순간적으로 툭 떨어지면 유레이입니다."
+        strength: "특수 능력 사용 시 5m 이내 플레이어들의 정신력을 15% 기습 차감하며, 유령방 문을 흔들다가 천천히 느리게 닫음. 이벤트 없이 능력만으로 현관문을 닫을 수 있는 유일한 유령 (미믹 제외)",
+        weakness: "정화 향초에 맞을 경우 60초 동안 유령방 밖으로 나가지 못하고 방 안에만 갇혀 배회함",
+        tip: "💡 문이 쾅 소리와 함께 빠르게 닫히는 일반 이벤트와 달리, 문을 흔들고 나서 '천천히 느리게' 닫히면서 정신력이 툭 떨어진다면 유레이입니다. 유령방에 문이 없으면 능력이 봉인됩니다. 밴시와 구별할 때는 옆방에 모션 센서를 까신 후 향초를 맞췄을 때 유령방으로 즉시 돌아가는지 확인하세요."
     },
     { 
         name: "오니 (Oni)", 
@@ -116,9 +116,9 @@ const ghosts = [
         sanity: "50%", 
         evidence: ["EMF 5", "서늘함", "DOTS"], 
         hasAccel: true, hasSpecialSpeed: false, hasForcedEv: false, hasTargetRoam: false,
-        strength: "플레이어가 가까이 있을 때 활성화되며 실체화 모습이 매우 선명함 (이벤트 피격 시 정신력 -20%)",
-        weakness: "공기 방울(Ghost Mist) 안개 이벤트를 발생시킬 수 없음",
-        tip: "💡 헌팅 시 유령이 깜빡거릴 때 투명해지는 순간이 거의 없이 계속 선명하게 보입니다."
+        strength: "사람이 같은 방에 있을 때 활동성이 대폭 상승함. 유령 이벤트 피격 시 플레이어의 정신력을 일반 유령(10%)의 2배인 20%나 차감함",
+        weakness: "공기 방울(Ghost Mist) 안개 하악질 이벤트를 일으킬 수 없으며, 사냥 중 깜빡일 때 모습을 덜 감춤",
+        tip: "💡 헌팅 때 유령이 깜빡거리며 투명해지는 시간이 거의 없이 모습이 계속 선명하게 보입니다. 안개 공기방울 이벤트를 목격했다면 오니를 즉시 제외하세요."
     },
     { 
         name: "요괴 (Yokai)", 
@@ -126,9 +126,9 @@ const ghosts = [
         sanity: "80% (음성 반응)", 
         evidence: ["스피릿 박스", "고스트 오브", "DOTS"], 
         hasAccel: true, hasSpecialSpeed: false, hasForcedEv: false, hasTargetRoam: false,
-        strength: "근처에서 마이크로 말할 때 80% 높은 정신력에서도 사냥 시작",
-        weakness: "사냥 중 청력 및 전자기기 감지 범위가 2.5m 이내로 극히 제한됨",
-        tip: "💡 사냥 중 근처에서 목소리를 내거나 무전을 쳐도 나를 인식하지 못하고 그냥 지나쳐 갑니다."
+        strength: "요괴 근처에서 마이크로 보이스를 내거나 무전을 칠 경우, 평균 정신력이 80%인 높은 상태에서도 사냥을 시작함",
+        weakness: "사냥 중 목소리 감지 및 전자기기 감지 범위가 2.5m 이내로 극히 제한됨 (일반 유령 7.5m)",
+        tip: "💡 헌팅 중인 요괴 근처 3m 밖에서 대놓고 목소리를 내거나 무전을 켜고 떠들어도 나를 인식하지 못하고 그냥 지나쳐서 지나갑니다."
     },
     { 
         name: "한투 (Hantu)", 
@@ -136,9 +136,9 @@ const ghosts = [
         sanity: "50%", 
         evidence: ["손자국", "고스트 오브", "서늘함"], 
         hasAccel: false, hasSpecialSpeed: true, hasForcedEv: true, hasTargetRoam: false,
-        strength: "온도가 낮은 차가운 방일수록 이동 속도가 극도로 빨라짐 (최대 2.7 m/s)",
-        weakness: "시야 가속이 전혀 없으며, 사냥 중 입에서 입김 입자가 보임, 두꺼비집 조작 선호 및 올리기 불가",
-        tip: "💡 시야 가속이 없고 추운 곳에서 빠르게 걷는 유령입니다. 악몽 이상 고정증거: 서늘함"
+        strength: "방의 온도가 낮을수록 이동 속도가 급상승함 (15°C 이상 1.4 m/s ~ 3°C 이하 2.7 m/s). 퓨즈를 내릴 확률이 2배 높음",
+        weakness: "시야 가속이 전혀 없으며, 두꺼비집을 스스로 올릴 수 없음. 헌팅 중 입에서 흰 입김 입자를 불어냄",
+        tip: "💡 시야 가속이 전혀 없는데 추운 유령방에서는 발소리가 매우 빠른 유령입니다. 헌팅 때 손전등을 끄고 유령 입가를 보면 입김이 보입니다. 악몽 이상 고정증거: 서늘함"
     },
     { 
         name: "고료 (Goryo)", 
@@ -146,9 +146,9 @@ const ghosts = [
         sanity: "50%", 
         evidence: ["EMF 5", "손자국", "DOTS"], 
         hasAccel: true, hasSpecialSpeed: false, hasForcedEv: true, hasTargetRoam: false,
-        strength: "DOTS 프로젝터 증거가 비디오 카메라 모니터로만 관측됨 (맨눈 관측 불가)",
-        weakness: "유령방을 다른 곳으로 옮기지 못함 (로밍 거리 5m 제한)",
-        tip: "💡 방 안에서는 DOTS가 안 보이는데 트럭/모니터 비디오 카메라로만 관측된다면 고료입니다. 악몽 고정증거: DOTS"
+        strength: "D.O.T.S. 프로젝터 실루엣이 육안으로는 절대로 보이지 않고, 오직 비디오 카메라/CCTV 모니터를 통해서만 관측됨",
+        weakness: "유령방을 다른 방으로 이사할 수 없음 (로밍 범위 5m 제한)",
+        tip: "💡 유령방 안에 사람이 없고 밖에서 비디오 카메라 모니터로 볼 때만 D.O.T.S.가 잡힌다면 고료 확정입니다. 같은 방에 사람이 있으면 D.O.T.S.를 띄우지 않습니다. 악몽 이상 고정증거: DOTS"
     },
     { 
         name: "마이링 (Myling)", 
@@ -156,9 +156,9 @@ const ghosts = [
         sanity: "50%", 
         evidence: ["EMF 5", "손자국", "고스트 라이팅"], 
         hasAccel: true, hasSpecialSpeed: false, hasForcedEv: false, hasTargetRoam: false,
-        strength: "사냥 중 발소리가 매우 조용함 (손전등 교란 거리 10m보다 가까운 12m 범위에서만 들림)",
-        weakness: "파라볼릭 마이크 / 사운드 레코더에 속삭이는 소리를 자주 남김",
-        tip: "💡 손전등이 깜빡거리는데도 발소리가 안 들리다가 내 코앞에 와서야 발소리가 들리면 마이링입니다."
+        strength: "헌팅 시 발소리와 목소리가 들리는 범위가 12m로 매우 좁음 (전자기기 교란 범위 10m와 비슷함)",
+        weakness: "파라볼릭 마이크 / 사운드 레코더에 속삭이는 초자연적 음성을 매우 빈번하게 남김",
+        tip: "💡 손전등이 깜빡거리며 전자기기가 교란되기 시작하는데도 발소리가 전혀 들리지 않다가, 내 코앞에 접근해서야 발소리가 들린다면 마이링입니다."
     },
     { 
         name: "온료 (Onryo)", 
@@ -166,9 +166,9 @@ const ghosts = [
         sanity: "60%", 
         evidence: ["스피릿 박스", "고스트 오브", "서늘함"], 
         hasAccel: true, hasSpecialSpeed: false, hasForcedEv: false, hasTargetRoam: false,
-        strength: "촛불/라이터 불꽃이 3번 꺼질 때마다 확정적으로 사냥을 시도 (불꽃 없을 시 60%)",
-        weakness: "주변 4m 내에 불꽃이 켜져 있으면 십자가처럼 사냥을 차단함 (불꽃 존재 시 40%)",
-        tip: "💡 촛불을 3번째 끌 때마다 십자가를 타게 만들거나 사냥을 터뜨리면 온료입니다."
+        strength: "양초/라이터 불꽃을 3번 끌 때마다 정신력과 관계없이 확정적으로 사냥을 시작함 (불꽃이 없을 시 기본 사냥 임계점 60%)",
+        weakness: "주변 4m 이내에 불꽃이 켜져 있으면 십자가처럼 작동하여 사냥을 완전 차단함 (불꽃 존재 시 임계점 40%)",
+        tip: "💡 유령방에 촛불을 켜두었을 때 3번째 불을 끌 때마다 십자가를 태우거나 즉시 사냥을 발동하면 온료입니다. 주변에 다른 켜진 촛불이 있으면 사냥이 막히고 그 촛불을 다음 순서로 끕니다."
     },
     { 
         name: "라이주 (Raiju)", 
@@ -176,9 +176,9 @@ const ghosts = [
         sanity: "65% (전자기기 주변)", 
         evidence: ["EMF 5", "고스트 오브", "DOTS"], 
         hasAccel: true, hasSpecialSpeed: true, hasForcedEv: false, hasTargetRoam: false,
-        strength: "작동 중인 전자기기 근처에서 속도가 2.5 m/s로 급상승하며 65%에서 사냥 가능",
-        weakness: "전자기기 고장 범위(15m)가 다른 유령보다 넓어 위치 파악이 용이함",
-        tip: "💡 바닥에 전자 장비를 켜두었을 때 사냥 속도가 미친 듯이 빨라진다면 라이주입니다."
+        strength: "작동 중인 전자기기 근처에 있을 때 이동 속도가 2.5 m/s로 급상승하며 65% 높은 정신력에서 사냥 시작 가능",
+        weakness: "사냥 중 전자기기를 고장 내고 교란시키는 범위가 15m로 다른 유령(10m)보다 훨씬 넓음",
+        tip: "💡 바닥에 장비를 켜두었을 때 이동 속도가 미친 듯이 빨라집니다. 증거 수집 장비를 꺼두면 속도가 일반 속도(1.7 m/s)로 떨어집니다."
     },
     { 
         name: "오바케 (Obake)", 
@@ -186,9 +186,9 @@ const ghosts = [
         sanity: "50%", 
         evidence: ["EMF 5", "손자국", "고스트 오브"], 
         hasAccel: true, hasSpecialSpeed: false, hasForcedEv: true, hasTargetRoam: false,
-        strength: "16.7% 확률로 6손가락 손자국을 남김, 지문 지속시간 절반 감소",
-        weakness: "사냥 중 6.6% 확률로 순간 다른 유령 모델로 변신(Morph)함",
-        tip: "💡 지문을 비췄을 때 손가락이 6개이거나 사냥 도중 모습이 순간 바뀐다면 오바케입니다. 악몽 고정증거: 자외선"
+        strength: "16.7% 확률로 6손가락 손자국, 스위치 2개 지문, 철창 5개 지문을 남김. 지문 지속시간을 절반으로 빠르게 지움",
+        weakness: "헌팅 중 6.6% 확률로 점멸 순간 다른 유령 모델로 둔갑(Morph)했다가 돌아옴",
+        tip: "💡 자외선(UV)을 비췄을 때 손가락이 6개이거나, 사냥하는 모습을 주시할 때 순간적으로 모습이 다른 유령으로 바뀐다면 오바케입니다. 악몽 이상 고정증거: 자외선"
     },
     { 
         name: "미믹 (The Mimic)", 
@@ -196,9 +196,9 @@ const ghosts = [
         sanity: "변동", 
         evidence: ["스피릿 박스", "손자국", "서늘함"], 
         hasAccel: true, hasSpecialSpeed: true, hasForcedEv: true, hasTargetRoam: true,
-        strength: "다른 모든 유령의 행동, 속도, 특성을 주기적으로 복제함",
-        weakness: "기본 3개 증거 외에 항상 '고스트 오브'를 4번째 거짓 증거로 출력",
-        tip: "💡 전문/악몽 난이도에서 증거가 4개(오브 포함) 이상 발견되면 100% 미믹입니다."
+        strength: "다른 모든 유령의 행동, 이동 속도, 특수 능력을 주기적으로 완벽하게 복제함",
+        weakness: "기본 3개 증거 외에 항상 '고스트 오브'를 4번째 거짓 증거(약점)로 항상 출력함",
+        tip: "💡 전문/악몽 난이도에서 증거가 4개(고스트 오브 포함) 이상 발견되거나, 증거 0개 커스텀 난이도에서 고스트 오브가 보인다면 100% 미믹입니다."
     },
     { 
         name: "모로이 (Moroi)", 
@@ -206,9 +206,9 @@ const ghosts = [
         sanity: "50%", 
         evidence: ["스피릿 박스", "고스트 라이팅", "서늘함"], 
         hasAccel: true, hasSpecialSpeed: true, hasForcedEv: true, hasTargetRoam: false,
-        strength: "스피릿 박스 응답을 들은 조사관에게 저주를 걸어 정신력 감소 속도 2배, 정신력이 낮을수록 기본 속도 급증",
-        weakness: "정화 향초를 맞으면 12초 동안 시야 차단 (일반 유령 6초)",
-        tip: "💡 평균 정신력이 0%일 때 이동속도가 2.25 m/s까지 오르며 시야 가속도 중첩됩니다. 악몽 고정증거: 스피릿 박스"
+        strength: "스피릿 박스나 마이크로폰 오디오를 들은 조사관에게 저주를 걸어 정신력 소모 속도를 2배로 만듦. 평균 정신력이 낮을수록 기본 속도가 2.25 m/s까지 상승함",
+        weakness: "정화 향초를 맞으면 12초 동안 시야 및 추격이 차단됨 (일반 유령 6초)",
+        tip: "💡 정신력이 0%에 가까울 때 기본 이동 속도가 매우 빠르고 시야 가속까지 중첩되어 폭속이 됩니다. 진정제를 먹으면 저주가 해제됩니다. 악몽 이상 고정증거: 스피릿 박스"
     },
     { 
         name: "데오겐 (Deogen)", 
@@ -216,9 +216,9 @@ const ghosts = [
         sanity: "40%", 
         evidence: ["스피릿 박스", "고스트 라이팅", "DOTS"], 
         hasAccel: false, hasSpecialSpeed: true, hasForcedEv: true, hasTargetRoam: false,
-        strength: "벽장/숨기 장소에 숨어도 위치를 항상 파악하고 다가옴 (3.0 m/s)",
-        weakness: "플레이어 2m 이내로 접근 시 0.4 m/s로 거의 멈출 듯이 느려짐, 스피릿 박스 특수 거친 숨소리 출력",
-        tip: "💡 숨지 말고 평지에서 카이팅하세요! 스피릿 박스 1m 근처 질문 시 33% 확률로 '후욱후욱/하악하악' 거친 숨소리를 냅니다. 악몽 고정증거: 스피릿 박스"
+        strength: "벽장이나 은신처에 숨어도 위치를 항상 맵핵처럼 알고 다가옴 (멀리서 3.0 m/s 폭속)",
+        weakness: "플레이어 2m 근처에 접근 시 0.4 m/s로 거의 멈추듯 극도로 느려짐. 스피릿 박스 1m 밀착 시 33% 확률로 특수 신음 숨소리 출력",
+        tip: "💡 절대로 캐비닛이나 은신처에 숨지 마세요! 평지나 탁자를 끼고 빙글빙글 카이팅(뺑뺑이)하면 쉽게 살아남을 수 있습니다. 악몽 이상 고정증거: 스피릿 박스"
     },
     { 
         name: "타에 (Thaye)", 
@@ -226,9 +226,9 @@ const ghosts = [
         sanity: "75% ~ 15%", 
         evidence: ["고스트 오브", "고스트 라이팅", "DOTS"], 
         hasAccel: false, hasSpecialSpeed: true, hasForcedEv: false, hasTargetRoam: false,
-        strength: "게임 시작 극초반 75% 높인 정신력에서 2.75 m/s 폭속으로 사냥",
-        weakness: "플레이어가 근처에 머무르면 노화하여(최대 10단계) 속도가 1.0 m/s, 정신력 15%로 약화됨",
-        tip: "💡 시야 가속이 전혀 없으며, 방에 오래 같이 머물면 발소리가 점점 둔해집니다."
+        strength: "게임 극초반 75% 높인 정신력에서 2.75 m/s 폭속 및 200% 높은 상호작용 확률로 사냥을 시작함",
+        weakness: "플레이어가 근처에 머무르면 2분마다 체크하여 노화(최대 10단계)하며, 최종 1.0 m/s 속도와 정신력 15%로 대폭 약화됨",
+        tip: "💡 시야 가속이 전혀 없으며, 유령방에서 같이 오래 머물수록 사냥 발소리가 확연히 느려집니다. 위자 보드로 나이를 물어보면 계속 늘어납니다."
     },
     { 
         name: "트윈스 (The Twins)", 
@@ -236,9 +236,9 @@ const ghosts = [
         sanity: "50%", 
         evidence: ["EMF 5", "스피릿 박스", "서늘함"], 
         hasAccel: true, hasSpecialSpeed: true, hasForcedEv: false, hasTargetRoam: false,
-        strength: "본체와 분신이 서로 다른 장소에서 동시에 상호작용을 일으킴 (트윈스 커브 그래프)",
-        weakness: "사냥 시작 시 50% 확률로 본체(1.5 m/s) 또는 분신(1.87 m/s)이 번갈아 사냥을 시작함",
-        tip: "💡 사냥 시 발소리 속도가 헌팅마다 느리거나 빠른 속도로 차이를 보입니다."
+        strength: "유령방 내부의 본체와 16m 이내 무작위 위치의 분신이 동시에 상호작용을 일으켜 그래프에 급경사를 만듦",
+        weakness: "사냥 시작 시 50% 확률로 본체(1.5 m/s 느림) 또는 분신(1.87 m/s 빠름) 위치에서 번갈아 사냥을 발동함",
+        tip: "💡 사냥 시 발소리 속도가 헌팅마다 살짝 느리거나 빠른 속도로 차이를 보입니다. 본체가 있는 유령방에 십자가를 깔아두면 분신 위치의 사냥도 차단됩니다."
     },
     { 
         name: "다얀 (Dayan)", 
@@ -246,9 +246,9 @@ const ghosts = [
         sanity: "45% | 50% | 60%", 
         evidence: ["EMF 5", "고스트 오브", "스피릿 박스"], 
         hasAccel: false, hasSpecialSpeed: true, hasForcedEv: false, hasTargetRoam: false,
-        strength: "플레이어들이 가까이서 움직이거나 '춤추면' 스스로를 보호하기 위해 힘을 얻어 속도와 헌팅 임계점 상승 (여성 모델 전용)",
-        weakness: "가까이 있는 플레이어들이 가만히 서 있으면 힘을 잃고 둔해짐",
-        tip: "💡 가까이에 플레이어가 가만히 있으면 약화 상태(1.12 m/s, 45%), 활발히 움직이면 격노 상태(2.25 m/s, 60%)로 변합니다."
+        strength: "플레이어들이 가까이서 활발히 움직이거나 '춤추면' 스스로를 보호하기 위해 힘을 얻어 속도(2.25 m/s)와 사냥 임계점(60%)이 상승함 (여성 모델 전용)",
+        weakness: "가까이 있는 플레이어들이 가만히 서 있으면 힘을 잃고 약화 상태(1.12 m/s, 45%)로 전환됨",
+        tip: "💡 플레이어의 움직임 유무에 따라 약화, 일반, 격노 상태로 스탯이 실시간 변동합니다."
     },
     { 
         name: "갈루 (Gallu)", 
@@ -256,9 +256,9 @@ const ghosts = [
         sanity: "40% | 50% | 60%", 
         evidence: ["EMF 5", "손자국", "스피릿 박스"], 
         hasAccel: true, hasSpecialSpeed: true, hasForcedEv: false, hasTargetRoam: false,
-        strength: "보호 장비(십자가, 향초)를 사용하면 유령을 자극하여 '격노' 상태로 만듦",
-        weakness: "격노 상태는 갈루를 지치게 하여 보호 장비가 이후 더 효과적으로 작용하게 함",
-        tip: "💡 유령의 상태가 약화, 일반, 격노 3가지로 나뉘며 보호 장비 자극에 따라 속도와 사냥 임계점이 변동합니다."
+        strength: "보호 장비(십자가, 향초)를 사용하면 유령을 격분시켜 '격노' 상태(1.96 m/s, 60%)로 만들어 사냥을 자극함",
+        weakness: "격노 상태는 갈루를 지치게 만들어 이후 약화 상태(1.36 m/s, 40%)로 전환되어 보호 장비가 더 효과적으로 작용함",
+        tip: "💡 약화, 일반, 격노 3가지 상태를 가지며 보호 장비 자극 여부에 따라 성능이 변합니다."
     },
     { 
         name: "오밤보 (Obambo)", 
@@ -266,8 +266,8 @@ const ghosts = [
         sanity: "10% | 65%", 
         evidence: ["고스트 라이팅", "손자국", "DOTS"], 
         hasAccel: true, hasSpecialSpeed: true, hasForcedEv: false, hasTargetRoam: false,
-        strength: "2분마다 상태가 변경되며, 공격적인 상태에서는 65% 임계점 및 1.96 m/s 고속 사냥",
-        weakness: "차분한 상태일 때 1.45 m/s 속도와 10% 낮은 사냥 임계점을 가지며, 공격적일 때는 사냥 지속시간이 20% 단축됨",
+        strength: "2분마다 상태가 변경되며, 공격적인 상태일 때는 사냥 임계점 65% 및 1.96 m/s 고속으로 사냥함",
+        weakness: "차분한 상태일 때는 1.45 m/s 속도와 사냥 임계점 10%로 매우 순해지며, 공격적일 때는 사냥 지속시간이 20% 짧아짐",
         tip: "💡 2분 주기로 차분함과 공격성 사이를 오가며 상태에 따라 사냥 타이밍과 속도가 완전히 바뀝니다."
     },
     { 
@@ -276,9 +276,9 @@ const ghosts = [
         sanity: "50%", 
         evidence: ["서늘함", "고스트 라이팅", "DOTS"], 
         hasAccel: true, hasSpecialSpeed: true, hasForcedEv: false, hasTargetRoam: false,
-        strength: "목표를 발견하면 추격 속도가 급격히 빨라짐",
-        weakness: "탐색보다 추격을 선호하여 시야 확보 전 탐색 배회가 비효율적임",
-        tip: "💡 야생적이면서 도시 환경에 섞여 드는 유령으로 목격 시 가속 추격 특성이 두드러집니다."
+        strength: "목표를 눈으로 발견하면 추격 속도가 매우 가파르게 급상승함",
+        weakness: "시야 확보 전 단순 탐색보다 추격을 선호하여 시야가 가려지면 추격 지속성이 떨어짐",
+        tip: "💡 야생적이면서 도시 환경에 섞여 드는 유령으로 목격 시 가속 추격 특성이 매우 강합니다."
     },
     { 
         name: "코르모스 (Kormos)", 
@@ -286,8 +286,8 @@ const ghosts = [
         sanity: "50%", 
         evidence: ["고스트 오브", "스피릿 박스", "손자국"], 
         hasAccel: true, hasSpecialSpeed: false, hasForcedEv: false, hasTargetRoam: false,
-        strength: "발달한 청각으로 소음에 매우 민감하게 반응하여 희생자를 추적",
-        weakness: "시력이 거의 없어 시각적인 탐색 및 추격 능력이 떨어짐",
+        strength: "발달한 청각으로 주변의 미세한 소음과 플레이어 목소리를 예민하게 추적함",
+        weakness: "앞을 보지 못하는 시각 장애 유령으로 시각적인 탐색 및 시야 추격 능력이 거의 없음",
         tip: "💡 '보지 않는 자'라는 뜻의 유령으로 앞을 보지 못하는 대신 뛰어난 청각으로 플레이어의 소리를 추적합니다."
     }
 ];
@@ -315,9 +315,9 @@ const mapsData = [
 
 // 4. 나무위키 기반 핵심 공략 데이터
 const guidesData = [
-    { title: "🔥 향(Incense) 타임 메커니즘", desc: "향을 태웠을 때 유령이 다시 헌팅을 시작하지 못하는 봉인 시간:<br>• <strong>스피릿:</strong> 180초 (3분)<br>• <strong>데몬:</strong> 60초 (1분)<br>• <strong>일반 모든 유령:</strong> 90초 (1분 30초)" },
-    { title: "📻 데오겐 특수 숨소리 주파수 판별법", desc: "데오겐은 스피릿 박스를 들고 유령과 1m 이내 거리에서 질문할 때 <strong>33% 확률로 '후욱후욱/하악하악' 하는 거친 숨소리 주파수</strong>를 출력합니다." },
-    { title: "🕯️ 온료(Onryo)의 촛불 헌팅 규칙", desc: "온료는 불꽃(촛불, 라이터)을 십자가처럼 사용합니다. 촛불이 <strong>3번 꺼질 때마다 확정적으로 헌팅을 시도</strong>하며, 주변에 불꽃이 있으면 헌팅이 차단됩니다." },
+    { title: "🔥 향(Incense) 타임 메커니즘", desc: "향을 태웠을 때 유령이 다시 헌팅을 시작하지 못하는 봉인 시간:<br>• <strong>스피릿:</strong> 180초 (3분)<br>• <strong>데몬:</strong> 60초 (1분)<br>• <strong>유레이:</strong> 90초 (단, 60초 동안 유령방 강제 배회 유포)<br>• <strong>일반 모든 유령:</strong> 90초 (1분 30초)" },
+    { title: "📻 데오겐 특수 숨소리 주파수 판별법", desc: "데오겐은 스피릿 박스를 들고 유령과 1m 이내 거리에서 질문할 때 <strong>33% 확률로 '후욱후욱/하악하악' 하는 거친 신음 숨소리 주파수</strong>를 출력합니다." },
+    { title: "🕯️ 온료(Onryo)의 촛불 헌팅 규칙", desc: "온료는 불꽃(촛불, 라이터)을 십자가처럼 사용합니다. 촛불이 <strong>3번 꺼질 때마다 확정적으로 헌팅을 시도</strong>하며, 주변 4m 내에 켜진 불꽃이 있으면 헌팅이 차단됩니다." },
     { title: "🧂 레이스(Wraith)의 소금 판별법", desc: "레이스는 유일하게 <strong>소금을 절대 밟지 않는 유령</strong>입니다. 소금을 깔아두어도 발자국 자외선 흔적이 남지 않는다면 레이스입니다." },
     { title: "👁️ 팬텀 vs 오니 실체화 비교", desc: "• <strong>팬텀:</strong> 사진을 찍으면 순간 사라지며 깜빡이는 주기가 깁니다.<br>• <strong>오니:</strong> 실체화 시 모습이 거의 투명해지지 않고 선명하게 보입니다." },
     { title: "📌 악몽 이상 난이도 고정 증거", desc: "증거가 일부만 나오는 고난이도에서 반드시 나오는 확정 증거:<br>• <strong>고료:</strong> DOTS 프로젝트<br>• <strong>한투:</strong> 서늘함<br>• <strong>모로이/데오겐:</strong> 스피릿 박스<br>• <strong>오바케:</strong> 자외선(손자국)<br>• <strong>미믹:</strong> 고스트 오브 (거짓 증거)" }
@@ -356,7 +356,7 @@ function switchTab(tabName) {
             break;
         case 'ghosts':
             titleEl.innerText = "파스모포비아 유령 도감";
-            descEl.innerText = "29종 전체 유령의 고유 특징, 헌팅 정신력, 나무위키 기반 특수 능력을 확인하세요.";
+            descEl.innerText = "29종 전체 유령의 고유 특징, 헌팅 정신력, 나무위키 기반 상세 메커니즘을 확인하세요.";
             renderGhostDictionary();
             break;
         case 'equipment':
@@ -433,7 +433,7 @@ function renderUI() {
     `).join('');
 }
 
-// 2. 유령 도감 렌더링 (나무위키 상세 도감)
+// 2. 유령 도감 렌더링 (나무위키 상세 메커니즘 도감)
 function renderGhostDictionary() {
     const container = document.getElementById('ghost-dictionary-container');
     container.innerHTML = ghosts.map(g => `
@@ -450,7 +450,7 @@ function renderGhostDictionary() {
             <div class="dict-text">${g.strength}</div>
             <div class="dict-section-title">🟢 약점 (Weaknesses)</div>
             <div class="dict-text">${g.weakness}</div>
-            <div class="dict-section-title">💡 판별 팁</div>
+            <div class="dict-section-title">💡 상세 판별법 & 가이드</div>
             <div class="dict-text" style="color:var(--text-primary);">${g.tip}</div>
         </div>
     `).join('');
@@ -584,10 +584,10 @@ const panelData = {
         content: `
             <div style="background: rgba(56, 189, 248, 0.1); padding: 12px; border-radius: 8px; border-left: 3px solid #38bdf8; margin-bottom: 12px;">
                 <strong>치트시트 VER 1.0 오픈!</strong><br>
-                파스모포비아 나무위키 최신 29종 유령 데이터로 업데이트되었습니다.
+                파스모포비아 나무위키 상세 메커니즘 정보로 완벽하게 업데이트되었습니다.
             </div>
-            <p style="margin-bottom: 6px;">• 신규 유령(다얀, 갈루, 오밤보, 아스왕, 코르모스) 정밀 스펙 반영</p>
-            <p>• 밴시 레이스 등 최신 층간 로밍 메커니즘 업데이트 완료</p>
+            <p style="margin-bottom: 6px;">• 유레이 현관문/문 닫기 메커니즘 및 밴시 구분법 수록</p>
+            <p>• 29종 유령 강점, 약점, 판별법 정밀 보강 완료</p>
         `
     },
     stream: {
@@ -668,6 +668,8 @@ function handleQuickSearch(query) {
     const matchedGhosts = ghosts.filter(g => 
         g.name.toLowerCase().includes(keyword) || 
         g.tip.toLowerCase().includes(keyword) ||
+        g.strength.toLowerCase().includes(keyword) ||
+        g.weakness.toLowerCase().includes(keyword) ||
         g.evidence.some(ev => ev.toLowerCase().includes(keyword))
     );
 
