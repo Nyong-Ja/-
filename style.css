@@ -25,14 +25,14 @@
 body {
     background-color: var(--bg-color);
     color: var(--text-primary);
-    line-height: 1.65;
-    font-size: 24px; /* 전체 기준 폰트 200% 대폭 확대 (기본 12px -> 24px) */
+    line-height: 1.6;
+    font-size: 18px; /* 25% 축소 조정 (24px -> 18px) */
 }
 
 .main-container {
     max-width: 100%;
-    margin: 1.8rem auto;
-    padding: 0 1.8rem;
+    margin: 1.5rem auto;
+    padding: 0 1.5rem;
 }
 
 /* 상단 헤더 배치 */
@@ -40,8 +40,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 2.5rem;
-    gap: 24px;
+    margin-bottom: 2rem;
+    gap: 20px;
 }
 
 .title-left {
@@ -50,31 +50,32 @@ body {
 
 .sub-title {
     color: var(--accent-light);
-    font-size: 1.65rem;
+    font-size: 1.25rem;
     font-weight: 700;
     letter-spacing: 1px;
 }
 
 .title-section h1 {
-    font-size: 3.4rem; /* 200% 메인 타이틀 */
-    margin: 0.4rem 0;
+    font-size: 2.5rem5; /* 축소 조정 */
+    font-size: 2.55rem;
+    margin: 0.3rem 0;
     color: #ffffff;
-    text-shadow: 0 0 20px rgba(166, 143, 255, 0.3);
+    text-shadow: 0 0 16px rgba(166, 143, 255, 0.25);
 }
 
 .title-section p {
     color: var(--text-secondary);
-    font-size: 1.8rem;
+    font-size: 1.35rem;
 }
 
 /* 중앙 네비게이션 메뉴 탭 */
 .top-nav {
     display: flex;
-    gap: 10px;
+    gap: 8px;
     background-color: rgba(15, 18, 38, 0.85);
-    padding: 10px;
-    border-radius: 16px;
-    border: 2px solid var(--card-border);
+    padding: 8px;
+    border-radius: 14px;
+    border: 1.5px solid var(--card-border);
     flex-wrap: wrap;
 }
 
@@ -82,10 +83,10 @@ body {
     background: transparent;
     border: none;
     color: var(--text-secondary);
-    padding: 14px 22px;
-    border-radius: 12px;
-    font-weight: 700;
-    font-size: 1.6rem; /* 200% 메뉴 탭 글씨 */
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1.25rem;
     cursor: pointer;
     transition: all 0.2s ease;
     white-space: nowrap;
@@ -93,14 +94,14 @@ body {
 
 .nav-tab:hover {
     color: var(--text-primary);
-    background-color: rgba(109, 76, 251, 0.25);
+    background-color: rgba(109, 76, 251, 0.2);
 }
 
 .nav-tab.active {
     background: linear-gradient(135deg, var(--accent-vibrant), #5331ea);
     color: #ffffff;
     font-weight: 700;
-    box-shadow: 0 0 18px var(--accent-glow);
+    box-shadow: 0 0 16px var(--accent-glow);
 }
 
 /* 상단 검색창 */
@@ -111,28 +112,28 @@ body {
 }
 
 .top-search-bar input {
-    width: 440px;
-    padding: 16px 24px;
-    border-radius: 14px;
-    border: 2.5px solid var(--accent-vibrant);
+    width: 350px;
+    padding: 12px 18px;
+    border-radius: 12px;
+    border: 2px solid var(--accent-vibrant);
     background-color: rgba(6, 8, 20, 0.9);
     color: var(--text-primary);
-    font-size: 1.55rem;
+    font-size: 1.2rem;
     outline: none;
     transition: all 0.2s ease;
-    box-shadow: 0 0 16px var(--accent-glow);
+    box-shadow: 0 0 12px var(--accent-glow);
 }
 
 .top-search-bar input::placeholder {
     color: var(--text-secondary);
-    opacity: 0.85;
+    opacity: 0.8;
 }
 
 .top-search-bar input:focus {
-    width: 480px;
+    width: 390px;
     border-color: var(--accent-light);
     background-color: var(--bg-color);
-    box-shadow: 0 0 22px rgba(166, 143, 255, 0.45);
+    box-shadow: 0 0 18px rgba(166, 143, 255, 0.4);
 }
 
 /* SPA 탭 컨텐츠 활성화 */
@@ -148,40 +149,40 @@ body {
 .content-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 28px;
+    gap: 22px;
 }
 
 .left-panel {
     width: 100%;
     background-color: var(--card-bg);
-    border: 2px solid var(--card-border);
-    border-radius: 16px;
-    padding: 2rem 2.4rem;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+    border: 1.5px solid var(--card-border);
+    border-radius: 14px;
+    padding: 1.5rem 1.8rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 .panel-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1.2rem;
+    margin-bottom: 0.9rem;
 }
 
 .panel-header h2 {
-    font-size: 2.1rem;
+    font-size: 1.6rem;
     color: var(--accent-light);
 }
 
 #reset-btn {
     background: transparent;
-    border: 2px solid var(--card-border);
+    border: 1.5px solid var(--card-border);
     color: var(--text-secondary);
-    padding: 0.6rem 1.5rem;
-    border-radius: 10px;
+    padding: 0.4rem 1.1rem;
+    border-radius: 8px;
     cursor: pointer;
     transition: 0.2s;
-    font-size: 1.55rem;
-    font-weight: 700;
+    font-size: 1.2rem;
+    font-weight: 600;
 }
 
 #reset-btn:hover {
@@ -190,15 +191,15 @@ body {
 }
 
 .guide-text {
-    font-size: 1.55rem;
+    font-size: 1.2rem;
     color: var(--text-secondary);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.1rem;
 }
 
 .badge {
-    padding: 4px 10px;
-    border-radius: 8px;
-    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-weight: 600;
 }
 
 .state-include { background-color: rgba(52, 211, 153, 0.2); color: var(--accent-green); }
@@ -207,19 +208,19 @@ body {
 .evidence-grid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    gap: 14px;
-    margin-bottom: 1.2rem;
+    gap: 10px;
+    margin-bottom: 1rem;
 }
 
 .evidence-btn {
     background-color: #080a18;
-    border: 2px solid var(--card-border);
+    border: 1.5px solid var(--card-border);
     color: var(--text-primary);
-    padding: 1.2rem 0.8rem;
-    border-radius: 12px;
+    padding: 0.9rem 0.5rem;
+    border-radius: 10px;
     cursor: pointer;
-    font-weight: 700;
-    font-size: 1.65rem;
+    font-weight: 600;
+    font-size: 1.3rem;
     transition: all 0.2s;
     text-align: center;
     white-space: nowrap;
@@ -228,14 +229,14 @@ body {
 .evidence-btn:hover {
     border-color: var(--accent-vibrant);
     color: var(--accent-light);
-    box-shadow: 0 0 12px var(--accent-glow);
+    box-shadow: 0 0 8px var(--accent-glow);
 }
 
 .evidence-btn.included {
     background-color: rgba(52, 211, 153, 0.15);
     border-color: var(--accent-green);
     color: var(--accent-green);
-    box-shadow: 0 0 12px rgba(52, 211, 153, 0.3);
+    box-shadow: 0 0 10px rgba(52, 211, 153, 0.25);
 }
 
 .evidence-btn.excluded {
@@ -247,47 +248,47 @@ body {
 
 .info-notice {
     background-color: rgba(109, 76, 251, 0.12);
-    border-left: 5px solid var(--accent-vibrant);
-    padding: 1rem 1.5rem;
-    font-size: 1.55rem;
+    border-left: 4px solid var(--accent-vibrant);
+    padding: 0.7rem 1.1rem;
+    font-size: 1.2rem;
     color: var(--text-secondary);
-    border-radius: 0 10px 10px 0;
+    border-radius: 0 8px 8px 0;
 }
 
 .right-panel {
     width: 100%;
     background-color: var(--card-bg);
-    border: 2px solid var(--card-border);
-    border-radius: 16px;
-    padding: 2.2rem;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+    border: 1.5px solid var(--card-border);
+    border-radius: 14px;
+    padding: 1.6rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 .result-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 1.5rem;
-    border-bottom: 2px solid var(--card-border);
-    margin-bottom: 1.8rem;
+    padding-bottom: 1.1rem;
+    border-bottom: 1.5px solid var(--card-border);
+    margin-bottom: 1.3rem;
     font-weight: 700;
 }
 
 .result-header-left {
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: 18px;
     flex-wrap: wrap;
 }
 
 .result-header-left span {
     color: var(--accent-light);
-    font-size: 1.9rem;
+    font-size: 1.45rem;
 }
 
 .special-filters {
     display: flex;
-    gap: 12px;
+    gap: 8px;
     align-items: center;
     flex-wrap: wrap;
 }
@@ -304,21 +305,21 @@ body {
 }
 
 .filter-chip span {
-    font-size: 1.5rem;
-    padding: 9px 20px;
-    border-radius: 28px;
+    font-size: 1.15rem;
+    padding: 6px 14px;
+    border-radius: 20px;
     background-color: #080a18;
-    border: 2px solid var(--card-border);
+    border: 1.5px solid var(--card-border);
     color: var(--text-secondary);
     transition: all 0.2s ease;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .filter-chip input[type="checkbox"]:checked + span {
     background-color: rgba(109, 76, 251, 0.25);
     border-color: var(--accent-vibrant);
     color: #ffffff;
-    box-shadow: 0 0 14px var(--accent-glow);
+    box-shadow: 0 0 10px var(--accent-glow);
 }
 
 .filter-chip span:hover {
@@ -328,88 +329,88 @@ body {
 
 .count-badge strong {
     color: var(--accent-light);
-    font-size: 2.3rem;
+    font-size: 1.7rem;
 }
 
 /* 4열 유령 계산기 카드 */
 .ghost-list, #ghost-list-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 26px;
+    gap: 20px;
     padding-right: 4px;
 }
 
 .ghost-card {
     background-color: #080a18;
-    border: 2px solid var(--card-border);
-    border-radius: 16px;
-    padding: 2.2rem 1.6rem 1.6rem 1.6rem;
+    border: 1.5px solid var(--card-border);
+    border-radius: 14px;
+    padding: 1.6rem 1.2rem 1.2rem 1.2rem;
     transition: all 0.25s ease;
 }
 
 .ghost-card:hover {
     border-color: var(--accent-vibrant);
-    box-shadow: 0 0 20px var(--accent-glow);
-    transform: translateY(-3px);
+    box-shadow: 0 0 16px var(--accent-glow);
+    transform: translateY(-2px);
 }
 
 .ghost-card-header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 14px;
-    margin-bottom: 1.4rem;
+    gap: 10px;
+    margin-bottom: 1.1rem;
 }
 
 .ghost-name {
-    font-size: 2.8rem; /* 200% 초대형 유령 이름 */
-    font-weight: 800;
+    font-size: 2.1rem; /* 가독성 최적화 유령 이름 크기 */
+    font-weight: 700;
     color: #ffffff;
     text-align: center;
 }
 
 .ghost-badge-group {
     display: flex;
-    gap: 12px;
+    gap: 8px;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
 }
 
 .ghost-sanity {
-    font-size: 1.5rem;
+    font-size: 1.15rem;
     background-color: rgba(166, 143, 255, 0.15);
-    padding: 6px 14px;
-    border-radius: 18px;
+    padding: 4px 10px;
+    border-radius: 14px;
     color: var(--accent-light);
-    border: 1.5px solid rgba(166, 143, 255, 0.4);
-    font-weight: 700;
+    border: 1px solid rgba(166, 143, 255, 0.4);
+    font-weight: 600;
 }
 
 .ghost-speed {
-    font-size: 1.5rem;
+    font-size: 1.15rem;
     background-color: rgba(248, 113, 113, 0.15);
-    padding: 6px 14px;
-    border-radius: 18px;
+    padding: 4px 10px;
+    border-radius: 14px;
     color: var(--accent-red);
-    border: 1.5px solid rgba(248, 113, 113, 0.4);
-    font-weight: 700;
+    border: 1px solid rgba(248, 113, 113, 0.4);
+    font-weight: 600;
 }
 
 .ghost-evidences {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
-    margin-bottom: 1.4rem;
+    gap: 7px;
+    margin-bottom: 1.1rem;
 }
 
 .ev-tag {
-    font-size: 1.45rem;
+    font-size: 1.1rem;
     background-color: var(--card-bg);
     border: 1.5px solid var(--card-border);
-    padding: 7px 14px;
-    border-radius: 8px;
+    padding: 5px 10px;
+    border-radius: 6px;
     color: var(--text-secondary);
 }
 
@@ -419,9 +420,9 @@ body {
 }
 
 .ghost-details {
-    margin-top: 14px;
+    margin-top: 10px;
     border-top: 1.5px solid var(--card-border);
-    padding-top: 14px;
+    padding-top: 10px;
 }
 
 .ghost-summary {
@@ -429,7 +430,7 @@ body {
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
-    font-size: 1.55rem;
+    font-size: 1.15rem;
     color: var(--text-secondary);
     user-select: none;
 }
@@ -439,31 +440,31 @@ body {
 }
 
 .more-btn {
-    font-size: 1.35rem;
+    font-size: 1.0rem;
     color: #ffffff;
     background-color: rgba(109, 76, 251, 0.25);
-    border: 1.5px solid var(--accent-vibrant);
-    padding: 5px 14px;
-    border-radius: 8px;
+    border: 1px solid var(--accent-vibrant);
+    padding: 3px 10px;
+    border-radius: 6px;
     transition: all 0.2s ease;
 }
 
 .ghost-summary:hover .more-btn {
     background-color: var(--accent-vibrant);
     color: #ffffff;
-    box-shadow: 0 0 12px var(--accent-glow);
+    box-shadow: 0 0 10px var(--accent-glow);
 }
 
 .ghost-details[open] .more-btn {
     color: #ffffff;
     background-color: rgba(109, 76, 251, 0.4);
-    border: 1.5px solid var(--accent-light);
+    border: 1px solid var(--accent-light);
 }
 
 .ghost-tip-content {
-    margin-top: 12px;
-    font-size: 1.6rem; /* 200% 상세 가이드 */
-    line-height: 1.65;
+    margin-top: 8px;
+    font-size: 1.2rem;
+    line-height: 1.55;
     color: var(--text-primary);
     word-break: keep-all;
     text-align: left;
@@ -473,51 +474,51 @@ body {
 .ghost-dict-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 28px;
+    gap: 22px;
 }
 
 .dict-card {
     background-color: var(--card-bg);
-    border: 2px solid var(--card-border);
-    border-radius: 16px;
-    padding: 2.2rem;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+    border: 1.5px solid var(--card-border);
+    border-radius: 14px;
+    padding: 1.6rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
     transition: all 0.25s ease;
 }
 
 .dict-card:hover {
     border-color: var(--accent-vibrant);
-    box-shadow: 0 0 20px var(--accent-glow);
+    box-shadow: 0 0 18px var(--accent-glow);
 }
 
 .dict-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid var(--card-border);
-    padding-bottom: 1.2rem;
-    margin-bottom: 1.4rem;
+    border-bottom: 1.5px solid var(--card-border);
+    padding-bottom: 1rem;
+    margin-bottom: 1.1rem;
 }
 
 .dict-title {
-    font-size: 2.6rem;
-    font-weight: 800;
+    font-size: 1.95rem;
+    font-weight: 700;
     color: #ffffff;
 }
 
 .dict-spec-bar {
     display: flex;
-    gap: 18px;
-    margin-bottom: 1.4rem;
+    gap: 14px;
+    margin-bottom: 1.1rem;
     background-color: #080a18;
-    padding: 14px 22px;
-    border-radius: 12px;
-    border: 1.5px solid var(--card-border);
+    padding: 10px 16px;
+    border-radius: 10px;
+    border: 1px solid var(--card-border);
     flex-wrap: wrap;
 }
 
 .dict-spec-item {
-    font-size: 1.55rem;
+    font-size: 1.15rem;
     color: var(--text-secondary);
 }
 
@@ -526,18 +527,18 @@ body {
 }
 
 .dict-section-title {
-    font-size: 1.65rem;
+    font-size: 1.25rem;
     font-weight: 700;
     color: var(--accent-vibrant);
-    margin-top: 1.5rem;
-    margin-bottom: 0.6rem;
+    margin-top: 1.1rem;
+    margin-bottom: 0.4rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
 .dict-text {
-    font-size: 1.6rem;
-    line-height: 1.7;
+    font-size: 1.2rem;
+    line-height: 1.6;
     color: var(--text-primary);
 }
 
@@ -545,15 +546,15 @@ body {
 .equipment-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
+    gap: 22px;
 }
 
 .eq-card {
     background-color: var(--card-bg);
-    border: 2px solid var(--card-border);
-    border-radius: 16px;
-    padding: 2.2rem;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+    border: 1.5px solid var(--card-border);
+    border-radius: 14px;
+    padding: 1.6rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -563,65 +564,65 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 1.4rem;
-    border-bottom: 1.5px solid var(--card-border);
-    padding-bottom: 1.2rem;
+    margin-bottom: 1.1rem;
+    border-bottom: 1px solid var(--card-border);
+    padding-bottom: 0.9rem;
 }
 
 .eq-name {
-    font-size: 2.3rem;
-    font-weight: 800;
+    font-size: 1.7rem;
+    font-weight: 700;
     color: #ffffff;
 }
 
 .eq-category {
-    font-size: 1.4rem;
+    font-size: 1.05rem;
     background-color: rgba(109, 76, 251, 0.2);
-    border: 1.5px solid var(--accent-vibrant);
+    border: 1px solid var(--accent-vibrant);
     color: var(--accent-light);
-    padding: 5px 14px;
-    border-radius: 16px;
-    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-weight: 600;
 }
 
 .eq-tier-box {
     background-color: #080a18;
-    border: 1.5px solid var(--card-border);
-    border-radius: 12px;
-    padding: 14px 18px;
-    margin-bottom: 12px;
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 10px 14px;
+    margin-bottom: 9px;
 }
 
 .eq-tier-title {
-    font-size: 1.55rem;
+    font-size: 1.15rem;
     font-weight: 700;
     color: var(--accent-light);
-    margin-bottom: 8px;
+    margin-bottom: 5px;
     display: flex;
     justify-content: space-between;
 }
 
 .eq-tier-desc {
-    font-size: 1.45rem;
+    font-size: 1.1rem;
     color: var(--text-secondary);
-    line-height: 1.55;
+    line-height: 1.45;
 }
 
 /* 4. 맵 정보 전용 레이아웃 */
 .map-filter-bar {
     display: flex;
-    gap: 14px;
-    margin-bottom: 2.2rem;
+    gap: 10px;
+    margin-bottom: 1.6rem;
 }
 
 .map-filter-btn {
     background-color: var(--card-bg);
-    border: 2px solid var(--card-border);
+    border: 1.5px solid var(--card-border);
     color: var(--text-secondary);
-    padding: 12px 28px;
-    border-radius: 28px;
-    font-weight: 700;
-    font-size: 1.55rem;
+    padding: 9px 20px;
+    border-radius: 22px;
+    font-weight: 600;
+    font-size: 1.2rem;
     cursor: pointer;
     transition: all 0.2s ease;
 }
@@ -630,66 +631,66 @@ body {
     background-color: rgba(109, 76, 251, 0.25);
     border-color: var(--accent-vibrant);
     color: #ffffff;
-    box-shadow: 0 0 14px var(--accent-glow);
+    box-shadow: 0 0 10px var(--accent-glow);
 }
 
 .maps-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
+    gap: 22px;
 }
 
 .map-card {
     background-color: var(--card-bg);
-    border: 2px solid var(--card-border);
-    border-radius: 16px;
-    padding: 2.2rem;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+    border: 1.5px solid var(--card-border);
+    border-radius: 14px;
+    padding: 1.6rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
     transition: all 0.25s ease;
 }
 
 .map-card:hover {
     border-color: var(--accent-vibrant);
-    box-shadow: 0 0 20px var(--accent-glow);
+    box-shadow: 0 0 18px var(--accent-glow);
 }
 
 .map-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1.5px solid var(--card-border);
-    padding-bottom: 1.2rem;
-    margin-bottom: 1.4rem;
+    border-bottom: 1px solid var(--card-border);
+    padding-bottom: 0.9rem;
+    margin-bottom: 1.1rem;
 }
 
 .map-name {
-    font-size: 2.4rem;
-    font-weight: 800;
+    font-size: 1.8rem;
+    font-weight: 700;
     color: #ffffff;
 }
 
 .map-badge {
-    font-size: 1.45rem;
-    padding: 5px 14px;
-    border-radius: 16px;
-    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-weight: 600;
 }
 
-.map-badge.Small { background-color: rgba(52, 211, 153, 0.15); color: var(--accent-green); border: 1.5px solid var(--accent-green); }
-.map-badge.Medium { background-color: rgba(166, 143, 255, 0.15); color: var(--accent-light); border: 1.5px solid var(--accent-light); }
-.map-badge.Large { background-color: rgba(248, 113, 113, 0.15); color: var(--accent-red); border: 1.5px solid var(--accent-red); }
+.map-badge.Small { background-color: rgba(52, 211, 153, 0.15); color: var(--accent-green); border: 1px solid var(--accent-green); }
+.map-badge.Medium { background-color: rgba(166, 143, 255, 0.15); color: var(--accent-light); border: 1px solid var(--accent-light); }
+.map-badge.Large { background-color: rgba(248, 113, 113, 0.15); color: var(--accent-red); border: 1px solid var(--accent-red); }
 
 .map-info-list {
     background-color: #080a18;
-    border: 1.5px solid var(--card-border);
-    border-radius: 12px;
-    padding: 14px 18px;
-    margin-bottom: 16px;
-    font-size: 1.55rem;
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 10px 14px;
+    margin-bottom: 12px;
+    font-size: 1.15rem;
 }
 
 .map-info-item {
-    margin-bottom: 8px;
+    margin-bottom: 5px;
     color: var(--text-secondary);
 }
 
@@ -701,82 +702,82 @@ body {
 .guide-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 28px;
+    gap: 22px;
 }
 
 .guide-card {
     background-color: var(--card-bg);
-    border: 2px solid var(--card-border);
-    border-radius: 16px;
-    padding: 2.2rem;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+    border: 1.5px solid var(--card-border);
+    border-radius: 14px;
+    padding: 1.6rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 .guide-card-title {
-    font-size: 2.2rem;
-    font-weight: 800;
+    font-size: 1.7rem;
+    font-weight: 700;
     color: var(--accent-light);
-    margin-bottom: 1.2rem;
-    border-bottom: 1.5px solid var(--card-border);
-    padding-bottom: 1rem;
+    margin-bottom: 0.9rem;
+    border-bottom: 1px solid var(--card-border);
+    padding-bottom: 0.7rem;
 }
 
 .guide-card-body {
-    font-size: 1.65rem;
-    line-height: 1.75;
+    font-size: 1.25rem;
+    line-height: 1.65;
     color: var(--text-primary);
 }
 
 /* 우측 플로팅 퀵바 */
 .quick-sidebar-bar {
     position: fixed;
-    right: 14px;
+    right: 12px;
     top: 50%;
     transform: translateY(-50%);
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 10px;
     z-index: 100;
 }
 
 .quick-icon-btn {
-    width: 96px;
-    height: 80px;
-    border-radius: 18px;
+    width: 80px;
+    height: 66px;
+    border-radius: 14px;
     background-color: #191c38;
-    border: 2.5px solid #524e8e;
+    border: 2px solid #524e8e;
     color: #ffffff;
-    font-size: 2.5rem;
+    font-size: 1.9rem;
     cursor: pointer;
     transition: all 0.2s ease;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.65);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.65);
 }
 
 .quick-icon-btn.search-btn {
     border-color: var(--accent-light);
     background-color: rgba(109, 76, 251, 0.35);
-    box-shadow: 0 0 18px var(--accent-glow);
+    box-shadow: 0 0 16px var(--accent-glow);
 }
 
 .quick-icon-btn:hover {
     background-color: #272852;
     border-color: var(--accent-light);
     transform: translateX(-6px);
-    box-shadow: 0 0 22px var(--accent-glow);
+    box-shadow: 0 0 20px var(--accent-glow);
 }
 
 .quick-slide-panel {
     position: fixed;
     top: 0;
-    right: -480px;
-    width: 450px;
+    right: -400px;
+    width: 370px;
     height: 100vh;
     background-color: #080a18;
-    border-left: 2.5px solid var(--accent-vibrant);
-    box-shadow: -10px 0 35px rgba(0, 0, 0, 0.85);
+    border-left: 2px solid var(--accent-vibrant);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.85);
     z-index: 200;
     transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
@@ -788,8 +789,8 @@ body {
 }
 
 .quick-slide-panel .panel-header {
-    padding: 1.8rem;
-    border-bottom: 2px solid var(--card-border);
+    padding: 1.4rem;
+    border-bottom: 1.5px solid var(--card-border);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -797,14 +798,14 @@ body {
 
 .quick-slide-panel .panel-header h3 {
     color: var(--accent-light);
-    font-size: 2.0rem;
+    font-size: 1.5rem;
 }
 
 .quick-slide-panel .close-btn {
     background: transparent;
     border: none;
     color: var(--text-secondary);
-    font-size: 2.0rem;
+    font-size: 1.5rem;
     cursor: pointer;
 }
 
@@ -813,54 +814,54 @@ body {
 }
 
 .quick-slide-panel .panel-content {
-    padding: 1.8rem;
+    padding: 1.4rem;
     overflow-y: auto;
-    font-size: 1.6rem;
-    line-height: 1.7;
+    font-size: 1.2rem;
+    line-height: 1.6;
 }
 
 .search-input-box {
     width: 100%;
-    padding: 14px 22px;
-    border-radius: 14px;
-    border: 2px solid var(--accent-vibrant);
+    padding: 11px 16px;
+    border-radius: 10px;
+    border: 1.5px solid var(--accent-vibrant);
     background-color: rgba(6, 8, 20, 0.9);
     color: #fff;
-    font-size: 1.6rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    margin-bottom: 1.1rem;
     outline: none;
-    box-shadow: 0 0 14px var(--accent-glow);
+    box-shadow: 0 0 12px var(--accent-glow);
 }
 
 .search-input-box::placeholder {
     color: var(--text-secondary);
-    opacity: 0.85;
+    opacity: 0.8;
 }
 
 .search-input-box:focus {
-    box-shadow: 0 0 18px rgba(166, 143, 255, 0.45);
+    box-shadow: 0 0 16px rgba(166, 143, 255, 0.4);
 }
 
 .search-result-card {
     background: var(--card-bg);
-    border: 2px solid var(--card-border);
-    border-radius: 12px;
-    padding: 16px;
-    margin-bottom: 14px;
+    border: 1.5px solid var(--card-border);
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 10px;
 }
 
 .search-result-title {
     font-weight: bold;
     color: var(--accent-light);
-    font-size: 1.8rem;
-    margin-bottom: 8px;
+    font-size: 1.35rem;
+    margin-bottom: 5px;
 }
 
 footer {
     text-align: center;
-    padding: 3rem 0;
+    padding: 2.2rem 0;
     color: var(--text-secondary);
-    font-size: 1.55rem;
+    font-size: 1.2rem;
 }
 
 /* 반응형 대응 */
