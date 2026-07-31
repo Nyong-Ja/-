@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>파스모포비아 치트시트 & 종합 가이드</title>
+    <title>뇽스모 - 파스모포비아 전문 정보 & 공략 사이트</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,15 +13,18 @@
         <div class="title-section">
             <div class="title-left">
                 <div class="sub-title">INTERACTIVE CHEAT SHEET & WIKI DATABASE</div>
-                <h1 id="page-main-title">파스모포비아 증거 계산기</h1>
+                <h1 id="page-main-title">뇽스모 - 파스모포비아 전문 정보 & 공략 사이트</h1>
                 <p id="page-main-desc">발견한 증거를 클릭(포함/제외)하여 남은 유령을 빠르게 추려내세요.</p>
             </div>
             
-            <!-- 중앙 네비게이션 메뉴 탭 -->
+            <!-- 중앙 네비게이션 메뉴 탭 ('패치 소식'을 '증거 분석' 뒤로 이동) -->
             <nav class="top-nav">
-                <button class="nav-tab active" data-tab="evidence" onclick="switchTab('evidence')">증거 계산기</button>
+                <button class="nav-tab active" data-tab="evidence" onclick="switchTab('evidence')">증거 분석</button>
+                <button class="nav-tab" data-tab="news" onclick="switchTab('news')">패치 소식</button>
                 <button class="nav-tab" data-tab="ghosts" onclick="switchTab('ghosts')">유령 도감</button>
                 <button class="nav-tab" data-tab="equipment" onclick="switchTab('equipment')">장비 가이드</button>
+                <button class="nav-tab" data-tab="weekly" onclick="switchTab('weekly')">주간 도전 과제</button>
+                <button class="nav-tab" data-tab="idcard" onclick="switchTab('idcard')">ID 카드</button>
                 <button class="nav-tab" data-tab="maps" onclick="switchTab('maps')">맵 정보</button>
                 <button class="nav-tab" data-tab="guide" onclick="switchTab('guide')">공략 / 정보</button>
             </nav>
@@ -32,7 +35,7 @@
             </div>
         </div>
 
-        <!-- 1. 증거 계산기 탭 뷰 -->
+        <!-- 1. 증거 분석 탭 뷰 -->
         <div id="tab-evidence" class="tab-content active">
             <div class="content-wrapper">
                 <div class="left-panel">
@@ -93,21 +96,42 @@
             </div>
         </div>
 
-        <!-- 2. 유령 도감 탭 뷰 -->
+        <!-- 2. 패치 소식 탭 뷰 -->
+        <div id="tab-news" class="tab-content">
+            <div class="guide-grid" id="news-container">
+                <!-- JS 생성 -->
+            </div>
+        </div>
+
+        <!-- 3. 유령 도감 탭 뷰 -->
         <div id="tab-ghosts" class="tab-content">
             <div class="ghost-dict-grid" id="ghost-dictionary-container">
                 <!-- JS 생성 -->
             </div>
         </div>
 
-        <!-- 3. 장비 가이드 탭 뷰 -->
+        <!-- 4. 장비 가이드 탭 뷰 -->
         <div id="tab-equipment" class="tab-content">
             <div class="equipment-grid" id="equipment-container">
                 <!-- JS 생성 -->
             </div>
         </div>
 
-        <!-- 4. 맵 정보 탭 뷰 -->
+        <!-- 5. 주간 도전 과제 탭 뷰 -->
+        <div id="tab-weekly" class="tab-content">
+            <div class="guide-grid" id="weekly-container">
+                <!-- JS 생성 -->
+            </div>
+        </div>
+
+        <!-- 6. ID 카드 탭 뷰 -->
+        <div id="tab-idcard" class="tab-content">
+            <div class="equipment-grid" id="idcard-container">
+                <!-- JS 생성 -->
+            </div>
+        </div>
+
+        <!-- 7. 맵 정보 탭 뷰 -->
         <div id="tab-maps" class="tab-content">
             <div class="map-filter-bar">
                 <button class="map-filter-btn active" onclick="filterMapCategory('ALL')">전체 맵</button>
@@ -120,7 +144,7 @@
             </div>
         </div>
 
-        <!-- 5. 공략 / 정보 탭 뷰 -->
+        <!-- 8. 공략 / 정보 탭 뷰 -->
         <div id="tab-guide" class="tab-content">
             <div class="guide-grid" id="guide-container">
                 <!-- JS 생성 -->
@@ -149,7 +173,7 @@
     </aside>
 
     <footer>
-        © 2026 Phasmophobia Interactive CheatSheet & Encyclopedia
+        © 2026 뇽스모 - Phasmophobia Interactive CheatSheet & Encyclopedia
     </footer>
 
     <script src="script.js"></script>
