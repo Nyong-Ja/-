@@ -26,7 +26,7 @@ body {
     background-color: var(--bg-color);
     color: var(--text-primary);
     line-height: 1.55;
-    font-size: 16.2px; /* 10% 추가 축소 적용 */
+    font-size: 16.2px;
 }
 
 .main-container {
@@ -156,7 +156,7 @@ body {
     background-color: var(--card-bg);
     border: 1.5px solid var(--card-border);
     border-radius: 12px;
-    padding: 1.3.5rem 1.6rem;
+    padding: 1.35rem 1.6rem;
     box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5);
 }
 
@@ -358,7 +358,7 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 9px;
-    margin-bottom: 1rem;
+    margin-bottom: 0.9rem;
 }
 
 .ghost-name {
@@ -401,7 +401,7 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     gap: 6px;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
 }
 
 .ev-tag {
@@ -416,6 +416,42 @@ body {
 .ev-tag.matched {
     border-color: var(--accent-green);
     color: var(--accent-green);
+}
+
+/* 🔴 증거 아래 메인 전면 배치 유튜브 버튼 스타일 */
+.main-youtube-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0 10px 0;
+}
+
+.yt-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    background-color: rgba(239, 68, 68, 0.15);
+    border: 1.5px solid #ef4444;
+    color: #ff6b6b;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    box-shadow: 0 0 8px rgba(239, 68, 68, 0.2);
+}
+
+.yt-btn:hover {
+    background-color: #ef4444;
+    color: #ffffff;
+    box-shadow: 0 0 16px rgba(239, 68, 68, 0.5);
+    transform: translateY(-2px);
+}
+
+.yt-icon {
+    font-size: 0.9rem;
 }
 
 .ghost-details {
@@ -508,7 +544,6 @@ body {
 .dict-spec-bar {
     display: flex;
     gap: 12px;
-    margin-bottom: 1m;
     margin-bottom: 1rem;
     background-color: #080a18;
     padding: 9px 14px;
@@ -564,7 +599,6 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 1m;
     margin-bottom: 1rem;
     border-bottom: 1px solid var(--card-border);
     padding-bottom: 0.8rem;
@@ -816,7 +850,7 @@ body {
 
 .quick-slide-panel .panel-content {
     padding: 1.2rem;
-    overflow-y: auto;
+    overflow-y_auto;
     font-size: 1.1rem;
     line-height: 1.55;
 }
