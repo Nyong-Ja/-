@@ -418,7 +418,7 @@ body {
     color: var(--accent-green);
 }
 
-/* 🔴 증거 아래 메인 전면 배치 유튜브 버튼 스타일 */
+/* 💜 퍼플-바이올렛 테마 톤다운 유튜브 공략 버튼 */
 .main-youtube-wrapper {
     display: flex;
     justify-content: center;
@@ -431,27 +431,32 @@ body {
     justify-content: center;
     gap: 8px;
     width: 100%;
-    background-color: rgba(239, 68, 68, 0.15);
-    border: 1.5px solid #ef4444;
-    color: #ff6b6b;
+    background-color: rgba(166, 143, 255, 0.12);
+    border: 1.5px solid rgba(166, 143, 255, 0.35);
+    color: var(--accent-light);
     padding: 8px 12px;
     border-radius: 8px;
     font-size: 1.1rem;
     font-weight: 700;
     text-decoration: none;
     transition: all 0.2s ease;
-    box-shadow: 0 0 8px rgba(239, 68, 68, 0.2);
 }
 
 .yt-btn:hover {
-    background-color: #ef4444;
+    background-color: rgba(109, 76, 251, 0.35);
+    border-color: var(--accent-light);
     color: #ffffff;
-    box-shadow: 0 0 16px rgba(239, 68, 68, 0.5);
+    box-shadow: 0 0 12px var(--accent-glow);
     transform: translateY(-2px);
 }
 
 .yt-icon {
     font-size: 0.9rem;
+    color: var(--accent-light);
+}
+
+.yt-btn:hover .yt-icon {
+    color: #ffffff;
 }
 
 .ghost-details {
@@ -850,7 +855,7 @@ body {
 
 .quick-slide-panel .panel-content {
     padding: 1.2rem;
-    overflow-y_auto;
+    overflow-y: auto;
     font-size: 1.1rem;
     line-height: 1.55;
 }
