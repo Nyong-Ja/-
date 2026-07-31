@@ -1,8 +1,9 @@
-// 나무위키(Phasmophobia/유령) 최신 데이터 기준 29종 전체 유령 DB
+// 나무위키(Phasmophobia/유령) 최신 데이터 기준 30종 전체 유령 DB
 // youtubeUrl 항목에 유령별 유튜브 영상 주소를 넣어주시면 됩니다.
 const ghosts = [
     { 
         name: "스피릿 (Spirit)", 
+        icon: "images/ghosts/spirit.png",
         speed: "1.7 m/s (가속 O)", 
         sanity: "50%", 
         evidence: ["EMF 5", "고스트 라이팅", "스피릿 박스"], 
@@ -14,6 +15,7 @@ const ghosts = [
     },
     { 
         name: "레이스 (Wraith)", 
+        icon: "images/ghosts/wraith.png",
         speed: "1.7 m/s (가속 O)", 
         sanity: "50%", 
         evidence: ["EMF 5", "스피릿 박스", "DOTS"], 
@@ -25,6 +27,7 @@ const ghosts = [
     },
     { 
         name: "팬텀 (Phantom)", 
+        icon: "images/ghosts/phantom.png",
         speed: "1.7 m/s (가속 O)", 
         sanity: "50%", 
         evidence: ["스피릿 박스", "손자국", "DOTS"], 
@@ -36,6 +39,7 @@ const ghosts = [
     },
     { 
         name: "폴터가이스트 (Poltergeist)", 
+        icon: "images/ghosts/poltergeist.png",
         speed: "1.7 m/s (가속 O)", 
         sanity: "50%", 
         evidence: ["스피릿 박스", "손자국", "고스트 라이팅"], 
@@ -47,6 +51,7 @@ const ghosts = [
     },
     { 
         name: "밴시 (Banshee)", 
+        icon: "images/ghosts/banshee.png",
         speed: "1.7 m/s (가속 O)", 
         sanity: "목표물 50%", 
         evidence: ["손자국", "고스트 오브", "DOTS"], 
@@ -58,6 +63,7 @@ const ghosts = [
     },
     { 
         name: "진 (Jinn)", 
+        icon: "images/ghosts/jinn.png",
         speed: "1.7 ~ 2.5 m/s", 
         sanity: "50%", 
         evidence: ["EMF 5", "손자국", "서늘함"], 
@@ -69,6 +75,7 @@ const ghosts = [
     },
     { 
         name: "메어 (Mare)", 
+        icon: "images/ghosts/mare.png",
         speed: "1.7 m/s (가속 O)", 
         sanity: "불 꺼짐 60% / 불 켜짐 40%", 
         evidence: ["스피릿 박스", "고스트 오브", "고스트 라이팅"], 
@@ -80,6 +87,7 @@ const ghosts = [
     },
     { 
         name: "레버넌트 (Revenant)", 
+        icon: "images/ghosts/revenant.png",
         speed: "1.0 / 3.0 m/s (가속 X)", 
         sanity: "50%", 
         evidence: ["고스트 오브", "고스트 라이팅", "서늘함"], 
@@ -91,6 +99,7 @@ const ghosts = [
     },
     { 
         name: "셰이드 (Shade)", 
+        icon: "images/ghosts/shade.png",
         speed: "1.7 m/s (가속 O)", 
         sanity: "35%", 
         evidence: ["EMF 5", "고스트 라이팅", "서늘함"], 
@@ -102,6 +111,7 @@ const ghosts = [
     },
     { 
         name: "데몬 (Demon)", 
+        icon: "images/ghosts/demon.png",
         speed: "1.7 m/s (가속 O)", 
         sanity: "70% (특수 100%)", 
         evidence: ["손자국", "고스트 라이팅", "서늘함"], 
@@ -113,6 +123,7 @@ const ghosts = [
     },
     { 
         name: "유레이 (Yurei)", 
+        icon: "images/ghosts/yurei.png",
         speed: "1.7 m/s (가속 O)", 
         sanity: "50%", 
         evidence: ["고스트 오브", "서늘함", "DOTS"], 
@@ -124,6 +135,7 @@ const ghosts = [
     },
     { 
         name: "오니 (Oni)", 
+        icon: "images/ghosts/oni.png",
         speed: "1.7 m/s (가속 O)", 
         sanity: "50%", 
         evidence: ["EMF 5", "서늘함", "DOTS"], 
@@ -135,6 +147,7 @@ const ghosts = [
     },
     { 
         name: "요괴 (Yokai)", 
+        icon: "images/ghosts/yokai.png",
         speed: "1.7 m/s (가속 O)", 
         sanity: "80% (음성 반응)", 
         evidence: ["스피릿 박스", "고스트 오브", "DOTS"], 
@@ -146,6 +159,7 @@ const ghosts = [
     },
     { 
         name: "한투 (Hantu)", 
+        icon: "images/ghosts/hantu.png",
         speed: "1.4 ~ 2.7 m/s (가속 X)", 
         sanity: "50%", 
         evidence: ["손자국", "고스트 오브", "서늘함"], 
@@ -157,6 +171,7 @@ const ghosts = [
     },
     { 
         name: "고료 (Goryo)", 
+        icon: "images/ghosts/goryo.png",
         speed: "1.7 m/s (가속 O)", 
         sanity: "50%", 
         evidence: ["EMF 5", "손자국", "DOTS"], 
@@ -168,6 +183,7 @@ const ghosts = [
     },
     { 
         name: "마이링 (Myling)", 
+        icon: "images/ghosts/myling.png",
         speed: "1.7 m/s (가속 O)", 
         sanity: "50%", 
         evidence: ["EMF 5", "손자국", "고스트 라이팅"], 
@@ -179,6 +195,7 @@ const ghosts = [
     },
     { 
         name: "온료 (Onryo)", 
+        icon: "images/ghosts/onryo.png",
         speed: "1.7 m/s (가속 O)", 
         sanity: "60%", 
         evidence: ["스피릿 박스", "고스트 오브", "서늘함"], 
@@ -190,6 +207,7 @@ const ghosts = [
     },
     { 
         name: "라이주 (Raiju)", 
+        icon: "images/ghosts/raiju.png",
         speed: "1.7 ~ 2.5 m/s", 
         sanity: "65% (전자기기 주변)", 
         evidence: ["EMF 5", "고스트 오브", "DOTS"], 
@@ -201,17 +219,19 @@ const ghosts = [
     },
     { 
         name: "오바케 (Obake)", 
+        icon: "images/ghosts/obake.png",
         speed: "1.7 m/s (가속 O)", 
         sanity: "50%", 
         evidence: ["EMF 5", "손자국", "고스트 오브"], 
         hasAccel: true, hasSpecialSpeed: false, hasForcedEv: true, hasTargetRoam: false,
         strength: "16.7% 확률로 6손가락 손자국, 스위치 2개 지문, 철창 5개 지문을 남김. 지문 지속시간을 절반으로 빠르게 지움",
         weakness: "헌팅 중 6.6% 확률로 점멸 순간 다른 유령 모델로 둔갑(Morph)했다가 돌아옴",
-        tip: "💡 자외선(UV)을 비췄을 때 손가락이 6개이거나, 사냥하는 모습을 주시할 때 순간적으로 모습이 다른 유령으로 바뀐다면 오바케입니다. 악몽 이상 고정증거: 자외선",
+        tip: "💡 자외선(UV)을 비췄을 때 손가락이 6개이거나, 사냥하는 모습을 주시할 때 순간적으로 모습이 다른 유령으로 바뀝니다. 악몽 이상 고정증거: 자외선",
         youtubeUrl: "https://www.youtube.com"
     },
     { 
         name: "미믹 (The Mimic)", 
+        icon: "images/ghosts/mimic.png",
         speed: "변동 (복제)", 
         sanity: "변동", 
         evidence: ["스피릿 박스", "손자국", "서늘함"], 
@@ -223,6 +243,7 @@ const ghosts = [
     },
     { 
         name: "모로이 (Moroi)", 
+        icon: "images/ghosts/moroi.png",
         speed: "1.5 ~ 2.25 m/s", 
         sanity: "50%", 
         evidence: ["스피릿 박스", "고스트 라이팅", "서늘함"], 
@@ -234,6 +255,7 @@ const ghosts = [
     },
     { 
         name: "데오겐 (Deogen)", 
+        icon: "images/ghosts/deogen.png",
         speed: "0.4 ~ 3.0 m/s (가속 X)", 
         sanity: "40%", 
         evidence: ["스피릿 박스", "고스트 라이팅", "DOTS"], 
@@ -245,6 +267,7 @@ const ghosts = [
     },
     { 
         name: "타에 (Thaye)", 
+        icon: "images/ghosts/thaye.png",
         speed: "1.0 ~ 2.75 m/s (가속 X)", 
         sanity: "75% ~ 15%", 
         evidence: ["고스트 오브", "고스트 라이팅", "DOTS"], 
@@ -256,6 +279,7 @@ const ghosts = [
     },
     { 
         name: "트윈스 (The Twins)", 
+        icon: "images/ghosts/twins.png",
         speed: "1.5 m/s (본체) / 1.87 m/s (분신)", 
         sanity: "50%", 
         evidence: ["EMF 5", "스피릿 박스", "서늘함"], 
@@ -267,6 +291,7 @@ const ghosts = [
     },
     { 
         name: "다얀 (Dayan)", 
+        icon: "images/ghosts/dayan.png",
         speed: "1.12 / 1.7 / 2.25 m/s (가속 X)", 
         sanity: "45% | 50% | 60%", 
         evidence: ["EMF 5", "고스트 오브", "스피릿 박스"], 
@@ -278,6 +303,7 @@ const ghosts = [
     },
     { 
         name: "갈루 (Gallu)", 
+        icon: "images/ghosts/gallu.png",
         speed: "1.36 / 1.7 / 1.96 m/s (가속 O)", 
         sanity: "40% | 50% | 60%", 
         evidence: ["EMF 5", "손자국", "스피릿 박스"], 
@@ -289,6 +315,7 @@ const ghosts = [
     },
     { 
         name: "오밤보 (Obambo)", 
+        icon: "images/ghosts/obambo.png",
         speed: "1.45 / 1.96 m/s (가속 O)", 
         sanity: "10% | 65%", 
         evidence: ["고스트 라이팅", "손자국", "DOTS"], 
@@ -300,6 +327,7 @@ const ghosts = [
     },
     { 
         name: "아스왕 (Aswang)", 
+        icon: "images/ghosts/aswang.png",
         speed: "1.7 m/s (가속 O)", 
         sanity: "50%", 
         evidence: ["서늘함", "고스트 라이팅", "DOTS"], 
@@ -311,6 +339,7 @@ const ghosts = [
     },
     { 
         name: "코르모스 (Kormos)", 
+        icon: "images/ghosts/kormos.png",
         speed: "1.7 m/s (가속 O)", 
         sanity: "50%", 
         evidence: ["고스트 오브", "스피릿 박스", "손자국"], 
@@ -318,6 +347,18 @@ const ghosts = [
         strength: "발달한 청각으로 주변의 미세한 소음과 플레이어 목소리를 예민하게 추적함",
         weakness: "앞을 보지 못하는 시각 장애 유령으로 시각적인 탐색 및 시야 추격 능력이 거의 없음",
         tip: "💡 '보지 않는 자'라는 뜻의 유령으로 앞을 보지 못하는 대신 뛰어난 청각으로 플레이어의 소리를 추적합니다.",
+        youtubeUrl: "https://www.youtube.com"
+    },
+    { 
+        name: "데일드가스트 (Deildegast)", 
+        icon: "images/ghosts/deildegast.png",
+        speed: "1.0 ~ 2.8 m/s (가속 X)", 
+        sanity: "50%", 
+        evidence: ["EMF 5", "고스트 라이팅", "DOTS"], 
+        hasAccel: false, hasSpecialSpeed: true, hasForcedEv: false, hasTargetRoam: false,
+        strength: "조사 초기에는 2.8 m/s의 미친듯한 초폭속으로 움직이며, 문이나 스위치를 거의 건드리지 않음",
+        weakness: "주변의 물건이 이동하거나 던져질수록 지쳐서 이동 속도가 점차 감소함 (헌팅 중엔 던져도 속도 미변동)",
+        tip: "💡 조사 시작 직후엔 폭속이지만 유령방 인근 사물을 사방으로 많이 집어던지거나 움직여 두면 속도가 급격히 둔해집니다. 악몽 이상 고정증거 테스트 시 물건 이동에 따른 속도 변화를 체크하세요.",
         youtubeUrl: "https://www.youtube.com"
     }
 ];
@@ -437,7 +478,7 @@ function switchTab(tabName) {
             break;
         case 'ghosts':
             titleEl.innerText = "파스모포비아 유령 도감";
-            descEl.innerText = "29종 전체 유령의 고유 특징, 헌팅 정신력, 나무위키 기반 상세 메커니즘을 확인하세요.";
+            descEl.innerText = "30종 전체 유령의 고유 특징, 헌팅 정신력, 나무위키 기반 상세 메커니즘을 확인하세요.";
             renderGhostDictionary();
             break;
         case 'equipment':
@@ -468,7 +509,7 @@ function switchTab(tabName) {
     }
 }
 
-// 1. 증거 분석 UI 렌더링
+// 1. 증거 분석 UI 렌더링 (아이콘 및 유튜브 버튼 출력 포함)
 function renderUI() {
     const container = document.getElementById('ghost-list-container');
     const countBadge = document.getElementById('ghost-count');
@@ -499,6 +540,7 @@ function renderUI() {
     container.innerHTML = filtered.map(ghost => `
         <div class="ghost-card">
             <div class="ghost-card-header">
+                ${ghost.icon ? `<img src="${ghost.icon}" alt="${ghost.name}" class="ghost-icon" onerror="this.style.display='none'">` : ''}
                 <span class="ghost-name">${ghost.name}</span>
                 <div class="ghost-badge-group">
                     <span class="ghost-speed">속도: ${ghost.speed}</span>
@@ -513,7 +555,6 @@ function renderUI() {
                 ${ghost.name.includes("미믹") ? '<span class="ev-tag matched" style="border-color:#38bdf8; color:#38bdf8;">+고스트 오브(특수)</span>' : ''}
             </div>
 
-            <!-- 🔴 증거 아래 전면 배치 유튜브 공략 버튼 -->
             ${ghost.youtubeUrl ? `
                 <div class="main-youtube-wrapper">
                     <a href="${ghost.youtubeUrl}" target="_blank" rel="noopener noreferrer" class="yt-btn">
@@ -541,7 +582,10 @@ function renderGhostDictionary() {
     container.innerHTML = ghosts.map(g => `
         <div class="dict-card">
             <div class="dict-header">
-                <span class="dict-title">${g.name}</span>
+                <div style="display:flex; align-items:center; gap:12px;">
+                    ${g.icon ? `<img src="${g.icon}" alt="${g.name}" class="ghost-icon" style="width:48px; height:48px;" onerror="this.style.display='none'">` : ''}
+                    <span class="dict-title">${g.name}</span>
+                </div>
                 <span class="ghost-sanity">헌팅 기준: ${g.sanity}</span>
             </div>
             <div class="dict-spec-bar">
@@ -745,7 +789,7 @@ const panelData = {
                 파스모포비아 나무위키 상세 메커니즘 정보로 완벽하게 업데이트되었습니다.
             </div>
             <p style="margin-bottom: 6px;">• 유레이 현관문/문 닫기 메커니즘 및 밴시 구분법 수록</p>
-            <p>• 29종 유령 강점, 약점, 판별법 정밀 보강 완료</p>
+            <p>• 30종 유령 강점, 약점, 판별법 정밀 보강 완료</p>
         `
     },
     stream: {
