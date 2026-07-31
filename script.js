@@ -292,7 +292,53 @@ const ghosts = [
     }
 ];
 
-// 2. 장비 Fandom Wiki 데이터
+// 2. 주간 도전 과제 DB
+const weeklyChallenges = [
+    {
+        title: "🎯 주간 도전 과제: 감각 차단 (Sensory Deprivation)",
+        desc: "<strong>특수 규칙:</strong> 모든 손전등 사용 불가, 플레이어 속도 100%, 유령 속도 100%, 십자가/향초 지급 제한.<br>• <strong>클리어 팁:</strong> 양초와 양초 라이터를 적극 활용해 유령방 동선을 밝히고, 음파 측정기/파라볼릭을 적극 활용해 위치를 특정하세요."
+    },
+    {
+        title: "⚡ 주간 도전 과제: 스피드런 (Speedrun)",
+        desc: "<strong>특수 규칙:</strong> 플레이어 이동 속도 150%, 유령 이동 속도 150%, 준비 시간 0초, 정신력 100%.<br>• <strong>클리어 팁:</strong> 시작하자마자 유령방으로 빠르게 달려가 D.O.T.S와 EMF를 설치하고 고난이도 속도 사냥을 대비해 은신처 동선을 파악해두세요."
+    },
+    {
+        title: "🙈 주간 도전 과제: 숨바꼭질 (Hide and Seek)",
+        desc: "<strong>특수 규칙:</strong> 증거 0개 (악몽/광기 이상), 은신처 100% 개방, 정신력 약물 지급 불가.<br>• <strong>클리어 팁:</strong> 유령의 고유 발소리 패턴, 향초 맞춤 피격 반응, 양초 상호작용 및 오바케 지문 등 특수 능력을 테스트하여 유령을 추론하세요."
+    }
+];
+
+// 3. ID 카드 및 명예 뱃지 DB
+const idCardsData = [
+    {
+        name: "레벨 ID 카드 프리셋",
+        category: "기본 플레이어 ID 카드",
+        t1: "Tier I: 프레스티지 I (기본 목재 프레임 ID 카드)",
+        t2: "Tier II: 프레스티지 III (은색 광택 금속 ID 카드)",
+        t3: "Tier III: 프레스티지 X (네온 바이올렛 다이아몬드 ID 카드)"
+    },
+    {
+        name: "이벤트 한정 ID 배지",
+        category: "명예 업적 배지",
+        t1: "🎃 할로윈 특별 배지: 할로윈 특별 도전과제 클리어 시 해금",
+        t2: "❄️ 크리스마스 특별 배지: 메리 스노우맨 이벤트 완료 시 해금",
+        t3: "🏆 아포칼립스 배지: 아포칼립스 골드 (15배율 한판 클리어 시 해금)"
+    }
+];
+
+// 4. 패치 소식 DB
+const patchNewsData = [
+    {
+        title: "📢 6 Tanglewood Drive 맵 대규모 리워크 패치노트",
+        desc: "• 주방 인근 뺑뺑이 루핑 스팟 보완 및 지하 입구 구조 최적화<br>• 은신처 및 수장고 인근 오브젝트 배치 변경 및 유령 상호작용 그래픽 개선"
+    },
+    {
+        title: "📢 유령 특성 밸런스 패치 (0.14 ~ 0.15 버전 기준)",
+        desc: "• <strong>밴시:</strong> 여성 유령 모델 고정 및 층간 로밍 메커니즘 개선<br>• <strong>유레이:</strong> 문 닫기 상호작용 시 정신력 차감 범위 5m 설정 및 향초 피격 시 60초 유령방 가둠 고정<br>• <strong>데오겐:</strong> 스피릿 박스 1m 이내 밀착 사용 시 33% 확률 특수 거친 숨소리 주파수 고정출력"
+    }
+];
+
+// 5. 장비 Fandom Wiki 데이터
 const equipments = [
     { name: "EMF 측정기 (EMF Reader)", category: "증거 탐지", t1: "Tier I: 아날로그 바늘형 (범위 1.5m / 오차 높음)", t2: "Tier II: 디지털 LED 수치 표시 (범위 1.7m / 정확)", t3: "Tier III: 방향 표시 및 거리 사운드 지원 (범위 3.5m / 동시에 3개 감지)" },
     { name: "D.O.T.S. 프로젝트", category: "증거 탐지", t1: "Tier I: 핸디형 손전등 형태 (범위 5m / 이동식)", t2: "Tier II: 바닥 설치형 구체 레이저 (범위 2.5m)", t3: "Tier III: 넓은 범위 스캔 설치형 (범위 7m / 회전 기능)" },
@@ -302,7 +348,7 @@ const equipments = [
     { name: "십자가 (Crucifix)", category: "방어 장비", t1: "Tier I: 나무 십자가 (범위 3m / 1회 차단)", t2: "Tier II: 금속 십자가 (범위 3m / 2회 차단)", t3: "Tier III: 성물 십자가 (범위 5m / 2회 차단 / 데몬 5m+a)" }
 ];
 
-// 3. 맵 Fandom Wiki 데이터
+// 6. 맵 Fandom Wiki 데이터
 const mapsData = [
     { name: "6 Tanglewood Drive", size: "Small", rooms: "11개 방", floors: "1층 + 지하실", fuse: "차고 또는 지하실", desc: "가장 인기 있는 대표 소형 주택입니다. 리워크 업데이트로 입구 동선과 숨기 장소가 최적화되어 빠른 조사에 적합합니다." },
     { name: "4 Ridgeview Court", size: "Small", rooms: "12개 방", floors: "2층 + 지하실", desc: "복도와 계단 구조가 좁아 유령 동선 확인에 용이합니다." },
@@ -313,7 +359,7 @@ const mapsData = [
     { name: "Sunny Meadows Mental Institution", size: "Large", rooms: "69개 구역", floors: "1층, 2층, 지하실", desc: "파스모포비아 최대 규모의 병원 맵입니다. 동선이 매우 길어 트럭 장비 배치가 핵심입니다." }
 ];
 
-// 4. 나무위키 기반 핵심 공략 데이터
+// 7. 공략 데이터
 const guidesData = [
     { title: "🔥 향(Incense) 타임 메커니즘", desc: "향을 태웠을 때 유령이 다시 헌팅을 시작하지 못하는 봉인 시간:<br>• <strong>스피릿:</strong> 180초 (3분)<br>• <strong>데몬:</strong> 60초 (1분)<br>• <strong>유레이:</strong> 90초 (단, 60초 동안 유령방 강제 배회 유포)<br>• <strong>일반 모든 유령:</strong> 90초 (1분 30초)" },
     { title: "📻 데오겐 특수 숨소리 주파수 판별법", desc: "데오겐은 스피릿 박스를 들고 유령과 1m 이내 거리에서 질문할 때 <strong>33% 확률로 '후욱후욱/하악하악' 하는 거친 신음 숨소리 주파수</strong>를 출력합니다." },
@@ -350,9 +396,14 @@ function switchTab(tabName) {
 
     switch(tabName) {
         case 'evidence':
-            titleEl.innerText = "파스모포비아 증거 계산기";
+            titleEl.innerText = "뇽스모 - 파스모포비아 전문 정보 & 공략 사이트";
             descEl.innerText = "발견한 증거를 클릭(포함/제외)하여 남은 유령을 빠르게 추려내세요.";
             renderUI();
+            break;
+        case 'news':
+            titleEl.innerText = "파스모포비아 패치 소식";
+            descEl.innerText = "최신 개발 로드맵, 유령 밸런스 조정 및 맵 리워크 소식 모음입니다.";
+            renderNewsPage();
             break;
         case 'ghosts':
             titleEl.innerText = "파스모포비아 유령 도감";
@@ -363,6 +414,16 @@ function switchTab(tabName) {
             titleEl.innerText = "장비 티어 데이터 가이드";
             descEl.innerText = "Fandom Wiki 기준 조사 및 생존 장비의 Tier I~III 스펙을 비교해보세요.";
             renderEquipmentPage();
+            break;
+        case 'weekly':
+            titleEl.innerText = "주간 도전 과제 가이드";
+            descEl.innerText = "이번 주 도전 과제의 특수 규칙과 클리어 노하우 및 팁을 안내합니다.";
+            renderWeeklyPage();
+            break;
+        case 'idcard':
+            titleEl.innerText = "ID 카드 & 명예 배지";
+            descEl.innerText = "플레이어 프레스티지 레벨 카드 및 한정 수집 배지 획득 조건을 확인하세요.";
+            renderIdCardPage();
             break;
         case 'maps':
             titleEl.innerText = "조사 구역 맵 정보";
@@ -377,7 +438,7 @@ function switchTab(tabName) {
     }
 }
 
-// 1. 증거 계산기 UI 렌더링
+// 1. 증거 분석 UI 렌더링
 function renderUI() {
     const container = document.getElementById('ghost-list-container');
     const countBadge = document.getElementById('ghost-count');
@@ -433,7 +494,7 @@ function renderUI() {
     `).join('');
 }
 
-// 2. 유령 도감 렌더링 (나무위키 상세 메커니즘 도감)
+// 2. 유령 도감 렌더링
 function renderGhostDictionary() {
     const container = document.getElementById('ghost-dictionary-container');
     container.innerHTML = ghosts.map(g => `
@@ -483,7 +544,56 @@ function renderEquipmentPage() {
     `).join('');
 }
 
-// 4. 맵 정보 렌더링
+// 4. 주간 도전 과제 렌더링
+function renderWeeklyPage() {
+    const container = document.getElementById('weekly-container');
+    container.innerHTML = weeklyChallenges.map(w => `
+        <div class="guide-card">
+            <div class="guide-card-title">${w.title}</div>
+            <div class="guide-card-body">${w.desc}</div>
+        </div>
+    `).join('');
+}
+
+// 5. ID 카드 렌더링
+function renderIdCardPage() {
+    const container = document.getElementById('idcard-container');
+    container.innerHTML = idCardsData.map(card => `
+        <div class="eq-card">
+            <div>
+                <div class="eq-header">
+                    <span class="eq-name">${card.name}</span>
+                    <span class="eq-category">${card.category}</span>
+                </div>
+                <div class="eq-tier-box">
+                    <div class="eq-tier-title"><span>단계 1</span></div>
+                    <div class="eq-tier-desc">${card.t1}</div>
+                </div>
+                <div class="eq-tier-box">
+                    <div class="eq-tier-title"><span>단계 2</span></div>
+                    <div class="eq-tier-desc">${card.t2}</div>
+                </div>
+                <div class="eq-tier-box">
+                    <div class="eq-tier-title"><span>단계 3</span></div>
+                    <div class="eq-tier-desc">${card.t3}</div>
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
+
+// 6. 패치 소식 렌더링
+function renderNewsPage() {
+    const container = document.getElementById('news-container');
+    container.innerHTML = patchNewsData.map(n => `
+        <div class="guide-card">
+            <div class="guide-card-title">${n.title}</div>
+            <div class="guide-card-body">${n.desc}</div>
+        </div>
+    `).join('');
+}
+
+// 7. 맵 정보 렌더링
 function renderMapsPage(filterCategory = 'ALL') {
     const container = document.getElementById('maps-container');
     const filtered = mapsData.filter(m => filterCategory === 'ALL' || m.size === filterCategory);
@@ -509,7 +619,7 @@ function filterMapCategory(cat) {
     renderMapsPage(cat);
 }
 
-// 5. 공략 렌더링
+// 8. 공략 렌더링
 function renderGuidePage() {
     const container = document.getElementById('guide-container');
     container.innerHTML = guidesData.map(g => `
