@@ -1,9 +1,9 @@
 // 나무위키(Phasmophobia/유령) 최신 데이터 기준 30종 전체 유령 DB
-// youtubeUrl 항목에 유령별 유튜브 영상 주소를 넣어주시면 됩니다.
+// 실제 업로드된 .webp 확장자 및 파일명 대조 적용
 const ghosts = [
     { 
         name: "스피릿 (Spirit)", 
-        icon: "images/ghosts/spirit.png",
+        icon: "images/ghosts/Spirit.webp",
         speed: "1.7 m/s (가속 O)", 
         sanity: "50%", 
         evidence: ["EMF 5", "고스트 라이팅", "스피릿 박스"], 
@@ -15,7 +15,7 @@ const ghosts = [
     },
     { 
         name: "레이스 (Wraith)", 
-        icon: "images/ghosts/wraith.png",
+        icon: "images/ghosts/Wraith.webp",
         speed: "1.7 m/s (가속 O)", 
         sanity: "50%", 
         evidence: ["EMF 5", "스피릿 박스", "DOTS"], 
@@ -27,7 +27,7 @@ const ghosts = [
     },
     { 
         name: "팬텀 (Phantom)", 
-        icon: "images/ghosts/phantom.png",
+        icon: "images/ghosts/Phantom.webp",
         speed: "1.7 m/s (가속 O)", 
         sanity: "50%", 
         evidence: ["스피릿 박스", "손자국", "DOTS"], 
@@ -39,7 +39,7 @@ const ghosts = [
     },
     { 
         name: "폴터가이스트 (Poltergeist)", 
-        icon: "images/ghosts/poltergeist.png",
+        icon: "images/ghosts/Poltergeist.webp",
         speed: "1.7 m/s (가속 O)", 
         sanity: "50%", 
         evidence: ["스피릿 박스", "손자국", "고스트 라이팅"], 
@@ -51,7 +51,7 @@ const ghosts = [
     },
     { 
         name: "밴시 (Banshee)", 
-        icon: "images/ghosts/banshee.png",
+        icon: "images/ghosts/Banshee.webp",
         speed: "1.7 m/s (가속 O)", 
         sanity: "목표물 50%", 
         evidence: ["손자국", "고스트 오브", "DOTS"], 
@@ -63,7 +63,7 @@ const ghosts = [
     },
     { 
         name: "진 (Jinn)", 
-        icon: "images/ghosts/jinn.png",
+        icon: "images/ghosts/Jinn.webp",
         speed: "1.7 ~ 2.5 m/s", 
         sanity: "50%", 
         evidence: ["EMF 5", "손자국", "서늘함"], 
@@ -75,7 +75,7 @@ const ghosts = [
     },
     { 
         name: "메어 (Mare)", 
-        icon: "images/ghosts/mare.png",
+        icon: "images/ghosts/Mare.webp",
         speed: "1.7 m/s (가속 O)", 
         sanity: "불 꺼짐 60% / 불 켜짐 40%", 
         evidence: ["스피릿 박스", "고스트 오브", "고스트 라이팅"], 
@@ -87,7 +87,7 @@ const ghosts = [
     },
     { 
         name: "레버넌트 (Revenant)", 
-        icon: "images/ghosts/revenant.png",
+        icon: "images/ghosts/Revenant.webp",
         speed: "1.0 / 3.0 m/s (가속 X)", 
         sanity: "50%", 
         evidence: ["고스트 오브", "고스트 라이팅", "서늘함"], 
@@ -99,7 +99,7 @@ const ghosts = [
     },
     { 
         name: "셰이드 (Shade)", 
-        icon: "images/ghosts/shade.png",
+        icon: "images/ghosts/Shade.webp",
         speed: "1.7 m/s (가속 O)", 
         sanity: "35%", 
         evidence: ["EMF 5", "고스트 라이팅", "서늘함"], 
@@ -111,7 +111,7 @@ const ghosts = [
     },
     { 
         name: "데몬 (Demon)", 
-        icon: "images/ghosts/demon.png",
+        icon: "images/ghosts/Demon.webp",
         speed: "1.7 m/s (가속 O)", 
         sanity: "70% (특수 100%)", 
         evidence: ["손자국", "고스트 라이팅", "서늘함"], 
@@ -123,7 +123,7 @@ const ghosts = [
     },
     { 
         name: "유레이 (Yurei)", 
-        icon: "images/ghosts/yurei.png",
+        icon: "images/ghosts/Yurei.webp",
         speed: "1.7 m/s (가속 O)", 
         sanity: "50%", 
         evidence: ["고스트 오브", "서늘함", "DOTS"], 
@@ -135,7 +135,7 @@ const ghosts = [
     },
     { 
         name: "오니 (Oni)", 
-        icon: "images/ghosts/oni.png",
+        icon: "images/ghosts/Oni.webp",
         speed: "1.7 m/s (가속 O)", 
         sanity: "50%", 
         evidence: ["EMF 5", "서늘함", "DOTS"], 
@@ -147,7 +147,7 @@ const ghosts = [
     },
     { 
         name: "요괴 (Yokai)", 
-        icon: "images/ghosts/yokai.png",
+        icon: "images/ghosts/Yokai.webp",
         speed: "1.7 m/s (가속 O)", 
         sanity: "80% (음성 반응)", 
         evidence: ["스피릿 박스", "고스트 오브", "DOTS"], 
@@ -159,7 +159,7 @@ const ghosts = [
     },
     { 
         name: "한투 (Hantu)", 
-        icon: "images/ghosts/hantu.png",
+        icon: "images/ghosts/Hantu.webp",
         speed: "1.4 ~ 2.7 m/s (가속 X)", 
         sanity: "50%", 
         evidence: ["손자국", "고스트 오브", "서늘함"], 
@@ -171,7 +171,7 @@ const ghosts = [
     },
     { 
         name: "고료 (Goryo)", 
-        icon: "images/ghosts/goryo.png",
+        icon: "images/ghosts/Goryo.webp",
         speed: "1.7 m/s (가속 O)", 
         sanity: "50%", 
         evidence: ["EMF 5", "손자국", "DOTS"], 
@@ -183,7 +183,7 @@ const ghosts = [
     },
     { 
         name: "마이링 (Myling)", 
-        icon: "images/ghosts/myling.png",
+        icon: "images/ghosts/Myling.webp",
         speed: "1.7 m/s (가속 O)", 
         sanity: "50%", 
         evidence: ["EMF 5", "손자국", "고스트 라이팅"], 
@@ -195,7 +195,7 @@ const ghosts = [
     },
     { 
         name: "온료 (Onryo)", 
-        icon: "images/ghosts/onryo.png",
+        icon: "images/ghosts/Onryo.webp",
         speed: "1.7 m/s (가속 O)", 
         sanity: "60%", 
         evidence: ["스피릿 박스", "고스트 오브", "서늘함"], 
@@ -207,7 +207,7 @@ const ghosts = [
     },
     { 
         name: "라이주 (Raiju)", 
-        icon: "images/ghosts/raiju.png",
+        icon: "images/ghosts/Raiju.webp",
         speed: "1.7 ~ 2.5 m/s", 
         sanity: "65% (전자기기 주변)", 
         evidence: ["EMF 5", "고스트 오브", "DOTS"], 
@@ -219,7 +219,7 @@ const ghosts = [
     },
     { 
         name: "오바케 (Obake)", 
-        icon: "images/ghosts/obake.png",
+        icon: "images/ghosts/Obake.webp",
         speed: "1.7 m/s (가속 O)", 
         sanity: "50%", 
         evidence: ["EMF 5", "손자국", "고스트 오브"], 
@@ -231,7 +231,7 @@ const ghosts = [
     },
     { 
         name: "미믹 (The Mimic)", 
-        icon: "images/ghosts/mimic.png",
+        icon: "images/ghosts/The_Mimic.webp",
         speed: "변동 (복제)", 
         sanity: "변동", 
         evidence: ["스피릿 박스", "손자국", "서늘함"], 
@@ -243,7 +243,7 @@ const ghosts = [
     },
     { 
         name: "모로이 (Moroi)", 
-        icon: "images/ghosts/moroi.png",
+        icon: "images/ghosts/Moroi.webp",
         speed: "1.5 ~ 2.25 m/s", 
         sanity: "50%", 
         evidence: ["스피릿 박스", "고스트 라이팅", "서늘함"], 
@@ -255,7 +255,7 @@ const ghosts = [
     },
     { 
         name: "데오겐 (Deogen)", 
-        icon: "images/ghosts/deogen.png",
+        icon: "images/ghosts/Deogen.webp",
         speed: "0.4 ~ 3.0 m/s (가속 X)", 
         sanity: "40%", 
         evidence: ["스피릿 박스", "고스트 라이팅", "DOTS"], 
@@ -267,7 +267,7 @@ const ghosts = [
     },
     { 
         name: "타에 (Thaye)", 
-        icon: "images/ghosts/thaye.png",
+        icon: "images/ghosts/Thaye.webp",
         speed: "1.0 ~ 2.75 m/s (가속 X)", 
         sanity: "75% ~ 15%", 
         evidence: ["고스트 오브", "고스트 라이팅", "DOTS"], 
@@ -279,7 +279,7 @@ const ghosts = [
     },
     { 
         name: "트윈스 (The Twins)", 
-        icon: "images/ghosts/twins.png",
+        icon: "images/ghosts/The_Twins.webp",
         speed: "1.5 m/s (본체) / 1.87 m/s (분신)", 
         sanity: "50%", 
         evidence: ["EMF 5", "스피릿 박스", "서늘함"], 
@@ -291,7 +291,7 @@ const ghosts = [
     },
     { 
         name: "다얀 (Dayan)", 
-        icon: "images/ghosts/dayan.png",
+        icon: "images/ghosts/Spirit.webp", // 이미지 없는 6종 스피릿으로 대체
         speed: "1.12 / 1.7 / 2.25 m/s (가속 X)", 
         sanity: "45% | 50% | 60%", 
         evidence: ["EMF 5", "고스트 오브", "스피릿 박스"], 
@@ -303,7 +303,7 @@ const ghosts = [
     },
     { 
         name: "갈루 (Gallu)", 
-        icon: "images/ghosts/gallu.png",
+        icon: "images/ghosts/Spirit.webp", // 스피릿으로 대체
         speed: "1.36 / 1.7 / 1.96 m/s (가속 O)", 
         sanity: "40% | 50% | 60%", 
         evidence: ["EMF 5", "손자국", "스피릿 박스"], 
@@ -315,7 +315,7 @@ const ghosts = [
     },
     { 
         name: "오밤보 (Obambo)", 
-        icon: "images/ghosts/obambo.png",
+        icon: "images/ghosts/Spirit.webp", // 스피릿으로 대체
         speed: "1.45 / 1.96 m/s (가속 O)", 
         sanity: "10% | 65%", 
         evidence: ["고스트 라이팅", "손자국", "DOTS"], 
@@ -327,7 +327,7 @@ const ghosts = [
     },
     { 
         name: "아스왕 (Aswang)", 
-        icon: "images/ghosts/aswang.png",
+        icon: "images/ghosts/Spirit.webp", // 스피릿으로 대체
         speed: "1.7 m/s (가속 O)", 
         sanity: "50%", 
         evidence: ["서늘함", "고스트 라이팅", "DOTS"], 
@@ -339,7 +339,7 @@ const ghosts = [
     },
     { 
         name: "코르모스 (Kormos)", 
-        icon: "images/ghosts/kormos.png",
+        icon: "images/ghosts/Spirit.webp", // 스피릿으로 대체
         speed: "1.7 m/s (가속 O)", 
         sanity: "50%", 
         evidence: ["고스트 오브", "스피릿 박스", "손자국"], 
@@ -351,7 +351,7 @@ const ghosts = [
     },
     { 
         name: "데일드가스트 (Deildegast)", 
-        icon: "images/ghosts/deildegast.png",
+        icon: "images/ghosts/Spirit.webp", // 스피릿으로 대체
         speed: "1.0 ~ 2.8 m/s (가속 X)", 
         sanity: "50%", 
         evidence: ["EMF 5", "고스트 라이팅", "DOTS"], 
@@ -509,7 +509,7 @@ function switchTab(tabName) {
     }
 }
 
-// 1. 증거 분석 UI 렌더링 (아이콘 및 유튜브 버튼 출력 포함)
+// 1. 증거 분석 UI 렌더링
 function renderUI() {
     const container = document.getElementById('ghost-list-container');
     const countBadge = document.getElementById('ghost-count');
@@ -540,7 +540,7 @@ function renderUI() {
     container.innerHTML = filtered.map(ghost => `
         <div class="ghost-card">
             <div class="ghost-card-header">
-                ${ghost.icon ? `<img src="${ghost.icon}" alt="${ghost.name}" class="ghost-icon" onerror="this.style.display='none'">` : ''}
+                ${ghost.icon ? `<img src="${ghost.icon}" alt="${ghost.name}" class="ghost-icon" onerror="this.src='images/ghosts/Spirit.webp'">` : ''}
                 <span class="ghost-name">${ghost.name}</span>
                 <div class="ghost-badge-group">
                     <span class="ghost-speed">속도: ${ghost.speed}</span>
@@ -583,7 +583,7 @@ function renderGhostDictionary() {
         <div class="dict-card">
             <div class="dict-header">
                 <div style="display:flex; align-items:center; gap:12px;">
-                    ${g.icon ? `<img src="${g.icon}" alt="${g.name}" class="ghost-icon" style="width:48px; height:48px;" onerror="this.style.display='none'">` : ''}
+                    ${g.icon ? `<img src="${g.icon}" alt="${g.name}" class="ghost-icon" style="width:48px; height:48px;" onerror="this.src='images/ghosts/Spirit.webp'">` : ''}
                     <span class="dict-title">${g.name}</span>
                 </div>
                 <span class="ghost-sanity">헌팅 기준: ${g.sanity}</span>
