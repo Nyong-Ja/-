@@ -375,13 +375,13 @@ body {
     margin-bottom: 0.9rem;
 }
 
-/* ✂️ 50% 축소 적용된 유령 아이콘 스타일 (28px) */
+/* 🔍 80px 큼직한 유령 아이콘 스타일 적용 */
 .ghost-icon {
-    width: 28px;
-    height: 28px;
+    width: 80px;
+    height: 80px;
     object-fit: contain;
-    margin-bottom: 2px;
-    filter: drop-shadow(0 0 6px rgba(166, 143, 255, 0.4)); 
+    margin-bottom: 6px;
+    filter: drop-shadow(0 0 10px rgba(166, 143, 255, 0.5)); 
 }
 
 .ghost-name {
