@@ -25,14 +25,14 @@
 body {
     background-color: var(--bg-color);
     color: var(--text-primary);
-    line-height: 1.6;
-    font-size: 18px; /* 25% 축소 조정 (24px -> 18px) */
+    line-height: 1.55;
+    font-size: 16.2px; /* 10% 추가 축소 적용 */
 }
 
 .main-container {
     max-width: 100%;
-    margin: 1.5rem auto;
-    padding: 0 1.5rem;
+    margin: 1.3rem auto;
+    padding: 0 1.3rem;
 }
 
 /* 상단 헤더 배치 */
@@ -40,8 +40,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 2rem;
-    gap: 20px;
+    margin-bottom: 1.8rem;
+    gap: 18px;
 }
 
 .title-left {
@@ -50,31 +50,30 @@ body {
 
 .sub-title {
     color: var(--accent-light);
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     font-weight: 700;
     letter-spacing: 1px;
 }
 
 .title-section h1 {
-    font-size: 2.5rem5; /* 축소 조정 */
-    font-size: 2.55rem;
-    margin: 0.3rem 0;
+    font-size: 2.3rem;
+    margin: 0.25rem 0;
     color: #ffffff;
-    text-shadow: 0 0 16px rgba(166, 143, 255, 0.25);
+    text-shadow: 0 0 14px rgba(166, 143, 255, 0.25);
 }
 
 .title-section p {
     color: var(--text-secondary);
-    font-size: 1.35rem;
+    font-size: 1.2rem;
 }
 
 /* 중앙 네비게이션 메뉴 탭 */
 .top-nav {
     display: flex;
-    gap: 8px;
+    gap: 7px;
     background-color: rgba(15, 18, 38, 0.85);
-    padding: 8px;
-    border-radius: 14px;
+    padding: 7px;
+    border-radius: 12px;
     border: 1.5px solid var(--card-border);
     flex-wrap: wrap;
 }
@@ -83,10 +82,10 @@ body {
     background: transparent;
     border: none;
     color: var(--text-secondary);
-    padding: 10px 18px;
-    border-radius: 10px;
+    padding: 9px 16px;
+    border-radius: 9px;
     font-weight: 600;
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     cursor: pointer;
     transition: all 0.2s ease;
     white-space: nowrap;
@@ -101,7 +100,7 @@ body {
     background: linear-gradient(135deg, var(--accent-vibrant), #5331ea);
     color: #ffffff;
     font-weight: 700;
-    box-shadow: 0 0 16px var(--accent-glow);
+    box-shadow: 0 0 14px var(--accent-glow);
 }
 
 /* 상단 검색창 */
@@ -112,16 +111,16 @@ body {
 }
 
 .top-search-bar input {
-    width: 350px;
-    padding: 12px 18px;
-    border-radius: 12px;
-    border: 2px solid var(--accent-vibrant);
+    width: 320px;
+    padding: 10px 16px;
+    border-radius: 11px;
+    border: 1.8px solid var(--accent-vibrant);
     background-color: rgba(6, 8, 20, 0.9);
     color: var(--text-primary);
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     outline: none;
     transition: all 0.2s ease;
-    box-shadow: 0 0 12px var(--accent-glow);
+    box-shadow: 0 0 10px var(--accent-glow);
 }
 
 .top-search-bar input::placeholder {
@@ -130,10 +129,10 @@ body {
 }
 
 .top-search-bar input:focus {
-    width: 390px;
+    width: 350px;
     border-color: var(--accent-light);
     background-color: var(--bg-color);
-    box-shadow: 0 0 18px rgba(166, 143, 255, 0.4);
+    box-shadow: 0 0 16px rgba(166, 143, 255, 0.4);
 }
 
 /* SPA 탭 컨텐츠 활성화 */
@@ -149,27 +148,27 @@ body {
 .content-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 22px;
+    gap: 20px;
 }
 
 .left-panel {
     width: 100%;
     background-color: var(--card-bg);
     border: 1.5px solid var(--card-border);
-    border-radius: 14px;
-    padding: 1.5rem 1.8rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+    padding: 1.3.5rem 1.6rem;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5);
 }
 
 .panel-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 0.9rem;
+    margin-bottom: 0.8rem;
 }
 
 .panel-header h2 {
-    font-size: 1.6rem;
+    font-size: 1.45rem;
     color: var(--accent-light);
 }
 
@@ -177,11 +176,11 @@ body {
     background: transparent;
     border: 1.5px solid var(--card-border);
     color: var(--text-secondary);
-    padding: 0.4rem 1.1rem;
-    border-radius: 8px;
+    padding: 0.35rem 1rem;
+    border-radius: 7px;
     cursor: pointer;
     transition: 0.2s;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 600;
 }
 
@@ -191,14 +190,14 @@ body {
 }
 
 .guide-text {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: var(--text-secondary);
-    margin-bottom: 1.1rem;
+    margin-bottom: 1rem;
 }
 
 .badge {
-    padding: 3px 8px;
-    border-radius: 6px;
+    padding: 2px 7px;
+    border-radius: 5px;
     font-weight: 600;
 }
 
@@ -208,19 +207,19 @@ body {
 .evidence-grid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    gap: 10px;
-    margin-bottom: 1rem;
+    gap: 9px;
+    margin-bottom: 0.9rem;
 }
 
 .evidence-btn {
     background-color: #080a18;
     border: 1.5px solid var(--card-border);
     color: var(--text-primary);
-    padding: 0.9rem 0.5rem;
-    border-radius: 10px;
+    padding: 0.8rem 0.45rem;
+    border-radius: 9px;
     cursor: pointer;
     font-weight: 600;
-    font-size: 1.3rem;
+    font-size: 1.15rem;
     transition: all 0.2s;
     text-align: center;
     white-space: nowrap;
@@ -236,7 +235,7 @@ body {
     background-color: rgba(52, 211, 153, 0.15);
     border-color: var(--accent-green);
     color: var(--accent-green);
-    box-shadow: 0 0 10px rgba(52, 211, 153, 0.25);
+    box-shadow: 0 0 9px rgba(52, 211, 153, 0.25);
 }
 
 .evidence-btn.excluded {
@@ -248,47 +247,47 @@ body {
 
 .info-notice {
     background-color: rgba(109, 76, 251, 0.12);
-    border-left: 4px solid var(--accent-vibrant);
-    padding: 0.7rem 1.1rem;
-    font-size: 1.2rem;
+    border-left: 3.5px solid var(--accent-vibrant);
+    padding: 0.6rem 1rem;
+    font-size: 1.1rem;
     color: var(--text-secondary);
-    border-radius: 0 8px 8px 0;
+    border-radius: 0 7px 7px 0;
 }
 
 .right-panel {
     width: 100%;
     background-color: var(--card-bg);
     border: 1.5px solid var(--card-border);
-    border-radius: 14px;
-    padding: 1.6rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+    padding: 1.4rem;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5);
 }
 
 .result-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 1.1rem;
+    padding-bottom: 1rem;
     border-bottom: 1.5px solid var(--card-border);
-    margin-bottom: 1.3rem;
+    margin-bottom: 1.2rem;
     font-weight: 700;
 }
 
 .result-header-left {
     display: flex;
     align-items: center;
-    gap: 18px;
+    gap: 16px;
     flex-wrap: wrap;
 }
 
 .result-header-left span {
     color: var(--accent-light);
-    font-size: 1.45rem;
+    font-size: 1.3rem;
 }
 
 .special-filters {
     display: flex;
-    gap: 8px;
+    gap: 7px;
     align-items: center;
     flex-wrap: wrap;
 }
@@ -305,9 +304,9 @@ body {
 }
 
 .filter-chip span {
-    font-size: 1.15rem;
-    padding: 6px 14px;
-    border-radius: 20px;
+    font-size: 1.05rem;
+    padding: 5px 12px;
+    border-radius: 18px;
     background-color: #080a18;
     border: 1.5px solid var(--card-border);
     color: var(--text-secondary);
@@ -319,7 +318,7 @@ body {
     background-color: rgba(109, 76, 251, 0.25);
     border-color: var(--accent-vibrant);
     color: #ffffff;
-    box-shadow: 0 0 10px var(--accent-glow);
+    box-shadow: 0 0 9px var(--accent-glow);
 }
 
 .filter-chip span:hover {
@@ -329,28 +328,28 @@ body {
 
 .count-badge strong {
     color: var(--accent-light);
-    font-size: 1.7rem;
+    font-size: 1.5rem;
 }
 
 /* 4열 유령 계산기 카드 */
 .ghost-list, #ghost-list-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    gap: 18px;
     padding-right: 4px;
 }
 
 .ghost-card {
     background-color: #080a18;
     border: 1.5px solid var(--card-border);
-    border-radius: 14px;
-    padding: 1.6rem 1.2rem 1.2rem 1.2rem;
+    border-radius: 12px;
+    padding: 1.4rem 1.1rem 1.1rem 1.1rem;
     transition: all 0.25s ease;
 }
 
 .ghost-card:hover {
     border-color: var(--accent-vibrant);
-    box-shadow: 0 0 16px var(--accent-glow);
+    box-shadow: 0 0 14px var(--accent-glow);
     transform: translateY(-2px);
 }
 
@@ -358,12 +357,12 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 1.1rem;
+    gap: 9px;
+    margin-bottom: 1rem;
 }
 
 .ghost-name {
-    font-size: 2.1rem; /* 가독성 최적화 유령 이름 크기 */
+    font-size: 1.9rem;
     font-weight: 700;
     color: #ffffff;
     text-align: center;
@@ -371,27 +370,27 @@ body {
 
 .ghost-badge-group {
     display: flex;
-    gap: 8px;
+    gap: 7px;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
 }
 
 .ghost-sanity {
-    font-size: 1.15rem;
+    font-size: 1.05rem;
     background-color: rgba(166, 143, 255, 0.15);
-    padding: 4px 10px;
-    border-radius: 14px;
+    padding: 3px 9px;
+    border-radius: 12px;
     color: var(--accent-light);
     border: 1px solid rgba(166, 143, 255, 0.4);
     font-weight: 600;
 }
 
 .ghost-speed {
-    font-size: 1.15rem;
+    font-size: 1.05rem;
     background-color: rgba(248, 113, 113, 0.15);
-    padding: 4px 10px;
-    border-radius: 14px;
+    padding: 3px 9px;
+    border-radius: 12px;
     color: var(--accent-red);
     border: 1px solid rgba(248, 113, 113, 0.4);
     font-weight: 600;
@@ -401,16 +400,16 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 7px;
-    margin-bottom: 1.1rem;
+    gap: 6px;
+    margin-bottom: 1rem;
 }
 
 .ev-tag {
-    font-size: 1.1rem;
+    font-size: 1.0rem;
     background-color: var(--card-bg);
     border: 1.5px solid var(--card-border);
-    padding: 5px 10px;
-    border-radius: 6px;
+    padding: 4px 9px;
+    border-radius: 5px;
     color: var(--text-secondary);
 }
 
@@ -420,9 +419,9 @@ body {
 }
 
 .ghost-details {
-    margin-top: 10px;
+    margin-top: 9px;
     border-top: 1.5px solid var(--card-border);
-    padding-top: 10px;
+    padding-top: 9px;
 }
 
 .ghost-summary {
@@ -430,7 +429,7 @@ body {
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
-    font-size: 1.15rem;
+    font-size: 1.05rem;
     color: var(--text-secondary);
     user-select: none;
 }
@@ -440,19 +439,19 @@ body {
 }
 
 .more-btn {
-    font-size: 1.0rem;
+    font-size: 0.9rem;
     color: #ffffff;
     background-color: rgba(109, 76, 251, 0.25);
     border: 1px solid var(--accent-vibrant);
-    padding: 3px 10px;
-    border-radius: 6px;
+    padding: 3px 9px;
+    border-radius: 5px;
     transition: all 0.2s ease;
 }
 
 .ghost-summary:hover .more-btn {
     background-color: var(--accent-vibrant);
     color: #ffffff;
-    box-shadow: 0 0 10px var(--accent-glow);
+    box-shadow: 0 0 9px var(--accent-glow);
 }
 
 .ghost-details[open] .more-btn {
@@ -462,9 +461,9 @@ body {
 }
 
 .ghost-tip-content {
-    margin-top: 8px;
-    font-size: 1.2rem;
-    line-height: 1.55;
+    margin-top: 7px;
+    font-size: 1.1rem;
+    line-height: 1.5;
     color: var(--text-primary);
     word-break: keep-all;
     text-align: left;
@@ -474,21 +473,21 @@ body {
 .ghost-dict-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 22px;
+    gap: 20px;
 }
 
 .dict-card {
     background-color: var(--card-bg);
     border: 1.5px solid var(--card-border);
-    border-radius: 14px;
-    padding: 1.6rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+    padding: 1.4rem;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5);
     transition: all 0.25s ease;
 }
 
 .dict-card:hover {
     border-color: var(--accent-vibrant);
-    box-shadow: 0 0 18px var(--accent-glow);
+    box-shadow: 0 0 16px var(--accent-glow);
 }
 
 .dict-header {
@@ -496,29 +495,30 @@ body {
     justify-content: space-between;
     align-items: center;
     border-bottom: 1.5px solid var(--card-border);
-    padding-bottom: 1rem;
-    margin-bottom: 1.1rem;
+    padding-bottom: 0.9rem;
+    margin-bottom: 1rem;
 }
 
 .dict-title {
-    font-size: 1.95rem;
+    font-size: 1.75rem;
     font-weight: 700;
     color: #ffffff;
 }
 
 .dict-spec-bar {
     display: flex;
-    gap: 14px;
-    margin-bottom: 1.1rem;
+    gap: 12px;
+    margin-bottom: 1m;
+    margin-bottom: 1rem;
     background-color: #080a18;
-    padding: 10px 16px;
-    border-radius: 10px;
+    padding: 9px 14px;
+    border-radius: 9px;
     border: 1px solid var(--card-border);
     flex-wrap: wrap;
 }
 
 .dict-spec-item {
-    font-size: 1.15rem;
+    font-size: 1.05rem;
     color: var(--text-secondary);
 }
 
@@ -527,18 +527,18 @@ body {
 }
 
 .dict-section-title {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     font-weight: 700;
     color: var(--accent-vibrant);
-    margin-top: 1.1rem;
-    margin-bottom: 0.4rem;
+    margin-top: 1rem;
+    margin-bottom: 0.35rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
 .dict-text {
-    font-size: 1.2rem;
-    line-height: 1.6;
+    font-size: 1.1rem;
+    line-height: 1.55;
     color: var(--text-primary);
 }
 
@@ -546,15 +546,15 @@ body {
 .equipment-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
+    gap: 20px;
 }
 
 .eq-card {
     background-color: var(--card-bg);
     border: 1.5px solid var(--card-border);
-    border-radius: 14px;
-    padding: 1.6rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+    padding: 1.4rem;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -564,65 +564,66 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 1.1rem;
+    margin-bottom: 1m;
+    margin-bottom: 1rem;
     border-bottom: 1px solid var(--card-border);
-    padding-bottom: 0.9rem;
+    padding-bottom: 0.8rem;
 }
 
 .eq-name {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: #ffffff;
 }
 
 .eq-category {
-    font-size: 1.05rem;
+    font-size: 0.95rem;
     background-color: rgba(109, 76, 251, 0.2);
     border: 1px solid var(--accent-vibrant);
     color: var(--accent-light);
-    padding: 3px 10px;
-    border-radius: 12px;
+    padding: 3px 9px;
+    border-radius: 10px;
     font-weight: 600;
 }
 
 .eq-tier-box {
     background-color: #080a18;
     border: 1px solid var(--card-border);
-    border-radius: 10px;
-    padding: 10px 14px;
-    margin-bottom: 9px;
+    border-radius: 9px;
+    padding: 9px 12px;
+    margin-bottom: 8px;
 }
 
 .eq-tier-title {
-    font-size: 1.15rem;
+    font-size: 1.05rem;
     font-weight: 700;
     color: var(--accent-light);
-    margin-bottom: 5px;
+    margin-bottom: 4px;
     display: flex;
     justify-content: space-between;
 }
 
 .eq-tier-desc {
-    font-size: 1.1rem;
+    font-size: 1.0rem;
     color: var(--text-secondary);
-    line-height: 1.45;
+    line-height: 1.4;
 }
 
 /* 4. 맵 정보 전용 레이아웃 */
 .map-filter-bar {
     display: flex;
-    gap: 10px;
-    margin-bottom: 1.6rem;
+    gap: 9px;
+    margin-bottom: 1.4rem;
 }
 
 .map-filter-btn {
     background-color: var(--card-bg);
     border: 1.5px solid var(--card-border);
     color: var(--text-secondary);
-    padding: 9px 20px;
-    border-radius: 22px;
+    padding: 8px 18px;
+    border-radius: 20px;
     font-weight: 600;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     cursor: pointer;
     transition: all 0.2s ease;
 }
@@ -631,27 +632,27 @@ body {
     background-color: rgba(109, 76, 251, 0.25);
     border-color: var(--accent-vibrant);
     color: #ffffff;
-    box-shadow: 0 0 10px var(--accent-glow);
+    box-shadow: 0 0 9px var(--accent-glow);
 }
 
 .maps-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
+    gap: 20px;
 }
 
 .map-card {
     background-color: var(--card-bg);
     border: 1.5px solid var(--card-border);
-    border-radius: 14px;
-    padding: 1.6rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+    padding: 1.4rem;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5);
     transition: all 0.25s ease;
 }
 
 .map-card:hover {
     border-color: var(--accent-vibrant);
-    box-shadow: 0 0 18px var(--accent-glow);
+    box-shadow: 0 0 16px var(--accent-glow);
 }
 
 .map-header {
@@ -659,20 +660,20 @@ body {
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid var(--card-border);
-    padding-bottom: 0.9rem;
-    margin-bottom: 1.1rem;
+    padding-bottom: 0.8rem;
+    margin-bottom: 1rem;
 }
 
 .map-name {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 700;
     color: #ffffff;
 }
 
 .map-badge {
-    font-size: 1.1rem;
-    padding: 3px 10px;
-    border-radius: 12px;
+    font-size: 1.0rem;
+    padding: 3px 9px;
+    border-radius: 10px;
     font-weight: 600;
 }
 
@@ -683,14 +684,14 @@ body {
 .map-info-list {
     background-color: #080a18;
     border: 1px solid var(--card-border);
-    border-radius: 10px;
-    padding: 10px 14px;
-    margin-bottom: 12px;
-    font-size: 1.15rem;
+    border-radius: 9px;
+    padding: 9px 12px;
+    margin-bottom: 10px;
+    font-size: 1.05rem;
 }
 
 .map-info-item {
-    margin-bottom: 5px;
+    margin-bottom: 4px;
     color: var(--text-secondary);
 }
 
@@ -702,82 +703,82 @@ body {
 .guide-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 22px;
+    gap: 20px;
 }
 
 .guide-card {
     background-color: var(--card-bg);
     border: 1.5px solid var(--card-border);
-    border-radius: 14px;
-    padding: 1.6rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+    padding: 1.4rem;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5);
 }
 
 .guide-card-title {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: var(--accent-light);
-    margin-bottom: 0.9rem;
+    margin-bottom: 0.8rem;
     border-bottom: 1px solid var(--card-border);
-    padding-bottom: 0.7rem;
+    padding-bottom: 0.6rem;
 }
 
 .guide-card-body {
-    font-size: 1.25rem;
-    line-height: 1.65;
+    font-size: 1.12rem;
+    line-height: 1.6;
     color: var(--text-primary);
 }
 
 /* 우측 플로팅 퀵바 */
 .quick-sidebar-bar {
     position: fixed;
-    right: 12px;
+    right: 11px;
     top: 50%;
     transform: translateY(-50%);
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 9px;
     z-index: 100;
 }
 
 .quick-icon-btn {
-    width: 80px;
-    height: 66px;
-    border-radius: 14px;
+    width: 72px;
+    height: 60px;
+    border-radius: 12px;
     background-color: #191c38;
-    border: 2px solid #524e8e;
+    border: 1.8px solid #524e8e;
     color: #ffffff;
-    font-size: 1.9rem;
+    font-size: 1.7rem;
     cursor: pointer;
     transition: all 0.2s ease;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.65);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.65);
 }
 
 .quick-icon-btn.search-btn {
     border-color: var(--accent-light);
     background-color: rgba(109, 76, 251, 0.35);
-    box-shadow: 0 0 16px var(--accent-glow);
+    box-shadow: 0 0 14px var(--accent-glow);
 }
 
 .quick-icon-btn:hover {
     background-color: #272852;
     border-color: var(--accent-light);
-    transform: translateX(-6px);
-    box-shadow: 0 0 20px var(--accent-glow);
+    transform: translateX(-5px);
+    box-shadow: 0 0 18px var(--accent-glow);
 }
 
 .quick-slide-panel {
     position: fixed;
     top: 0;
-    right: -400px;
-    width: 370px;
+    right: -360px;
+    width: 330px;
     height: 100vh;
     background-color: #080a18;
     border-left: 2px solid var(--accent-vibrant);
-    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.85);
+    box-shadow: -10px 0 28px rgba(0, 0, 0, 0.85);
     z-index: 200;
     transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
@@ -789,7 +790,7 @@ body {
 }
 
 .quick-slide-panel .panel-header {
-    padding: 1.4rem;
+    padding: 1.2rem;
     border-bottom: 1.5px solid var(--card-border);
     display: flex;
     justify-content: space-between;
@@ -798,14 +799,14 @@ body {
 
 .quick-slide-panel .panel-header h3 {
     color: var(--accent-light);
-    font-size: 1.5rem;
+    font-size: 1.35rem;
 }
 
 .quick-slide-panel .close-btn {
     background: transparent;
     border: none;
     color: var(--text-secondary);
-    font-size: 1.5rem;
+    font-size: 1.35rem;
     cursor: pointer;
 }
 
@@ -814,23 +815,23 @@ body {
 }
 
 .quick-slide-panel .panel-content {
-    padding: 1.4rem;
+    padding: 1.2rem;
     overflow-y: auto;
-    font-size: 1.2rem;
-    line-height: 1.6;
+    font-size: 1.1rem;
+    line-height: 1.55;
 }
 
 .search-input-box {
     width: 100%;
-    padding: 11px 16px;
-    border-radius: 10px;
+    padding: 10px 14px;
+    border-radius: 9px;
     border: 1.5px solid var(--accent-vibrant);
     background-color: rgba(6, 8, 20, 0.9);
     color: #fff;
-    font-size: 1.2rem;
-    margin-bottom: 1.1rem;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
     outline: none;
-    box-shadow: 0 0 12px var(--accent-glow);
+    box-shadow: 0 0 10px var(--accent-glow);
 }
 
 .search-input-box::placeholder {
@@ -839,29 +840,29 @@ body {
 }
 
 .search-input-box:focus {
-    box-shadow: 0 0 16px rgba(166, 143, 255, 0.4);
+    box-shadow: 0 0 14px rgba(166, 143, 255, 0.4);
 }
 
 .search-result-card {
     background: var(--card-bg);
     border: 1.5px solid var(--card-border);
-    border-radius: 8px;
-    padding: 12px;
-    margin-bottom: 10px;
+    border-radius: 7px;
+    padding: 10px;
+    margin-bottom: 9px;
 }
 
 .search-result-title {
     font-weight: bold;
     color: var(--accent-light);
-    font-size: 1.35rem;
-    margin-bottom: 5px;
+    font-size: 1.2rem;
+    margin-bottom: 4px;
 }
 
 footer {
     text-align: center;
-    padding: 2.2rem 0;
+    padding: 2rem 0;
     color: var(--text-secondary);
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 /* 반응형 대응 */
