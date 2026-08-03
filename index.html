@@ -11,7 +11,7 @@
         <!-- 상단 헤더 영역 -->
         <header class="title-section">
             <div class="title-left">
-                <!-- 📌 로고 클릭 시 메인 탭 전환 & 초기화 실행 -->
+                <!-- 로고 클릭 시 메인 탭 이동 및 초기화 -->
                 <div class="logo-title-wrapper" onclick="switchTab('evidence'); document.getElementById('reset-btn').click();" style="cursor: pointer;">
                     <img src="images/logo/logo.png" alt="뇽스모 로고" class="site-logo">
                 </div>
@@ -39,11 +39,14 @@
             <section id="tab-evidence" class="tab-content active">
                 <div class="content-wrapper">
                     <div class="left-panel">
+                        <!-- 📌 제목과 안내문구가 한 줄로 정렬된 헤더 -->
                         <div class="panel-header">
-                            <h2>증거 선택 (Evidence)</h2>
+                            <div class="panel-title-group">
+                                <h2>증거 선택 (Evidence)</h2>
+                                <p class="guide-text">* <span class="badge state-include">1번 클릭: 포함</span> | <span class="badge state-exclude">2번 클릭: 제외</span> | 3번 클릭: 미선택</p>
+                            </div>
                             <button id="reset-btn">🔄 선택 초기화</button>
                         </div>
-                        <p class="guide-text">* <span class="badge state-include">1번 클릭: 포함</span> | <span class="badge state-exclude">2번 클릭: 제외</span> | 3번 클릭: 미선택</p>
                         
                         <div class="evidence-grid">
                             <button class="evidence-btn" data-evidence="EMF 5">EMF 5</button>
