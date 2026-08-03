@@ -52,7 +52,7 @@ body {
     color: var(--accent-light);
     font-size: 1.0rem;
     font-weight: 700;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
 }
 
 .title-section h1 {
@@ -67,7 +67,7 @@ body {
     font-size: 1.08rem;
 }
 
-/* 상단 헤더 로고 이미지 스타일 (40% 확대: 55px -> 77px 적용) */
+/* 상단 헤더 로고 이미지 스타일 (77px) */
 .logo-title-wrapper {
     display: inline-flex;
     align-items: center;
@@ -81,7 +81,7 @@ body {
 }
 
 .site-logo {
-    height: 77px; /* 🔍 40% 확대된 77px 높이 적용 */
+    height: 77px;
     width: auto;
     object-fit: contain;
     margin: 4px 0;
@@ -181,16 +181,34 @@ body {
     box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5);
 }
 
+/* 📌 증거 선택 패널 헤더 (가로 한 줄 정렬) */
 .panel-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 0.7rem;
+    margin-bottom: 0.9rem;
+    flex-wrap: wrap;
+    gap: 12px;
 }
 
-.panel-header h2 {
+/* 제목 + 안내문 가로 연결 그룹 */
+.panel-title-group {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.panel-title-group h2 {
     font-size: 1.3rem;
     color: var(--accent-light);
+    margin: 0;
+}
+
+.guide-text {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin: 0;
 }
 
 #reset-btn {
@@ -208,12 +226,6 @@ body {
 #reset-btn:hover {
     background-color: var(--card-border);
     color: var(--text-primary);
-}
-
-.guide-text {
-    font-size: 1.0rem;
-    color: var(--text-secondary);
-    margin-bottom: 0.9rem;
 }
 
 .badge {
