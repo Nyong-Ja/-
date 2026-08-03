@@ -11,10 +11,10 @@
         <!-- 상단 헤더 영역 -->
         <header class="title-section">
             <div class="title-left">
-                <div class="logo-title-wrapper">
+                <!-- 📌 로고 클릭 시 메인 탭 전환 & 초기화 실행 -->
+                <div class="logo-title-wrapper" onclick="switchTab('evidence'); document.getElementById('reset-btn').click();" style="cursor: pointer;">
                     <img src="images/logo/logo.png" alt="뇽스모 로고" class="site-logo">
                 </div>
-                <!-- 요청하신 문구를 보라색 서브 타이틀로 변경 -->
                 <div class="sub-title" style="margin-top: 6px;">파스모포비아 한국 전용 공략 정보 사이트. 완벽한 유령 조사를 위한 필수 데이터와 팁을 빠르게 찾아보세요.</div>
             </div>
             <div class="top-search-bar">
