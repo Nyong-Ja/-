@@ -406,24 +406,21 @@ document.addEventListener('DOMContentLoaded', () => {
     renderGuides();
 });
 
-// 1. 증거 버튼 클릭 상태 토글 (미선택 -> 포함 -> 제외 -> 미선택)
+// 1. 증거 버튼 클릭 상태 토글
 function initEvidenceButtons() {
     const buttons = document.querySelectorAll('.evidence-btn');
     buttons.forEach(btn => {
         btn.addEventListener('click', () => {
             const ev = btn.getAttribute('data-evidence');
             if (!includedEvidences.includes(ev) && !excludedEvidences.includes(ev)) {
-                // 포함 상태로 변경
                 includedEvidences.push(ev);
                 btn.classList.add('included');
             } else if (includedEvidences.includes(ev)) {
-                // 제외 상태로 변경
                 includedEvidences = includedEvidences.filter(e => e !== ev);
                 btn.classList.remove('included');
                 excludedEvidences.push(ev);
                 btn.classList.add('excluded');
             } else {
-                // 미선택 상태로 초기화
                 excludedEvidences = excludedEvidences.filter(e => e !== ev);
                 btn.classList.remove('excluded');
             }
@@ -431,7 +428,6 @@ function initEvidenceButtons() {
         });
     });
 
-    // 선택 초기화 버튼
     const resetBtn = document.getElementById('reset-btn');
     if (resetBtn) {
         resetBtn.addEventListener('click', () => {
@@ -440,7 +436,6 @@ function initEvidenceButtons() {
             buttons.forEach(btn => {
                 btn.classList.remove('included', 'excluded');
             });
-            // 필터 칩 해제
             activeFilters = { hasAccel: false, hasSpecialSpeed: false, hasForcedEv: false, hasTargetRoam: false };
             document.querySelectorAll('.filter-chip input').forEach(input => input.checked = false);
             renderGhostList();
@@ -454,7 +449,7 @@ function toggleFilter(filterKey) {
     renderGhostList();
 }
 
-// 2. 유령 메인 추론 목록 렌더링
+// 2. 유령 메인 추론 목록 렌더링 (안전한 이미지 로딩 및 무한 루프 예방)
 function renderGhostList() {
     const container = document.getElementById('ghost-list-container');
     const countEl = document.getElementById('ghost-count');
@@ -463,15 +458,12 @@ function renderGhostList() {
     container.innerHTML = '';
 
     const filtered = GHOST_DATA.filter(ghost => {
-        // 포함 증거 체크
         for (let ev of includedEvidences) {
             if (!ghost.evidences.includes(ev)) return false;
         }
-        // 제외 증거 체크
         for (let ev of excludedEvidences) {
             if (ghost.evidences.includes(ev)) return false;
         }
-        // 특별 필터 조건
         if (activeFilters.hasAccel && !ghost.hasAccel) return false;
         if (activeFilters.hasSpecialSpeed && !ghost.hasSpecialSpeed) return false;
         if (activeFilters.hasForcedEv && !ghost.hasForcedEv) return false;
@@ -493,7 +485,11 @@ function renderGhostList() {
 
         card.innerHTML = `
             <div class="ghost-card-header">
-                <img src="images/ghosts/skull.png" onerror="this.src='https://api.iconify.design/game-icons:declared-identity.svg?color=%23b49eff'" class="ghost-icon" alt="유령">
+                <!-- 📌 영문 파일명 로드 실패 시 무한 루프 없이 인라인 보라색 SVG 유령 아이콘을 띄움 -->
+                <img src="images/ghosts/${ghost.engName}.webp" 
+                     onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'%23b49eff\'><path d=\'M12 2A9 9 0 0 0 3 11v11l3-3l3 3l3-3l3 3l3-3l3 3V11A9 9 0 0 0 12 2zm-3 7a1.5 1.5 0 1 1 0 3a1.5 1.5 0 0 1 0-3zm6 0a1.5 1.5 0 1 1 0 3a1.5 1.5 0 0 1 0-3z\'/></svg>'" 
+                     class="ghost-icon" 
+                     alt="${ghost.name}">
                 <div class="ghost-name">${ghost.name}</div>
                 <div class="ghost-badge-group">
                     <span class="ghost-speed">속도: ${ghost.speed}</span>
@@ -625,9 +621,8 @@ function renderGuides() {
     });
 }
 
-// 탭 전환 함수 (맵 정보 클릭 시 바로 '전체 맵' 렌더링 적용)
+// 탭 전환 함수
 function switchTab(tabId) {
-    // 버튼 활성화 스타일
     document.querySelectorAll('.nav-tab').forEach(tab => {
         if (tab.getAttribute('data-tab') === tabId) {
             tab.classList.add('active');
@@ -636,7 +631,6 @@ function switchTab(tabId) {
         }
     });
 
-    // 탭 컨텐츠 보이기
     document.querySelectorAll('.tab-content').forEach(content => {
         content.classList.remove('active');
     });
@@ -646,7 +640,6 @@ function switchTab(tabId) {
         activeContent.classList.add('active');
     }
 
-    // 맵 탭 선택 시 즉시 '전체 맵' 필터 렌더링 수행
     if (tabId === 'maps') {
         filterMapCategory('ALL');
     }
