@@ -245,7 +245,7 @@ const GHOST_DATA = [
     },
     {
         name: "트윈스",
-        engName: "The Twins",
+        engName: "The_Twins", // 📌 실제 파일명(The_Twins.webp)에 맞게 수정
         evidences: ["EMF 5", "스피릿 박스", "서늘함"],
         sanity: "50%",
         speed: "본체 1.5 m/s / 분신 1.87 m/s",
@@ -293,7 +293,7 @@ const GHOST_DATA = [
     },
     {
         name: "미믹",
-        engName: "The Mimic",
+        engName: "The_Mimic", // 📌 실제 파일명(The_Mimic.webp)에 맞게 수정
         evidences: ["스피릿 박스", "손자국", "서늘함", "고스트 오브(가짜 증거)"],
         sanity: "복제 유령 상태에 따라 다름",
         speed: "복제 유령 상태에 따라 다름",
@@ -449,7 +449,7 @@ function toggleFilter(filterKey) {
     renderGhostList();
 }
 
-// 2. 유령 메인 추론 목록 렌더링 (안전한 이미지 로딩 및 무한 루프 예방)
+// 2. 유령 메인 추론 목록 렌더링 (onerror 무한 루프 차단 안전장치 적용)
 function renderGhostList() {
     const container = document.getElementById('ghost-list-container');
     const countEl = document.getElementById('ghost-count');
@@ -485,7 +485,7 @@ function renderGhostList() {
 
         card.innerHTML = `
             <div class="ghost-card-header">
-                <!-- 📌 영문 파일명 로드 실패 시 무한 루프 없이 인라인 보라색 SVG 유령 아이콘을 띄움 -->
+                <!-- 📌 onerror 발생 시 무한 루프를 막기 위해 this.onerror=null 세팅 -->
                 <img src="images/ghosts/${ghost.engName}.webp" 
                      onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'%23b49eff\'><path d=\'M12 2A9 9 0 0 0 3 11v11l3-3l3 3l3-3l3 3l3-3l3 3V11A9 9 0 0 0 12 2zm-3 7a1.5 1.5 0 1 1 0 3a1.5 1.5 0 0 1 0-3zm6 0a1.5 1.5 0 1 1 0 3a1.5 1.5 0 0 1 0-3z\'/></svg>'" 
                      class="ghost-icon" 
